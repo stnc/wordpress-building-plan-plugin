@@ -636,7 +636,7 @@ function stnc_wp_floor_render_list_page()
         <!-- Now we can render the completed list table -->
         <?php
 
-			$testListTable->search_box('Ara', 'search_id');
+			$testListTable->search_box('Search', 'search_id');
 			$testListTable->display() ?>
     </form>
 
