@@ -1,0 +1,123 @@
+
+
+.stnc-footer {
+    padding: 21px 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--st-background-primary);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    box-shadow: 0px -4px 8px -3px rgb(0 0 0 / 5%), 0px -2px 6px -2px rgb(0 0 0 / 5%);
+}
+
+.stnc-title {
+    color: #2381BF;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+.stnc-title span {
+    font-size: 23px;
+    color: #006DB5;
+    font-weight: bold;
+}
+
+.stnc-card {
+    border-radius: 120px;
+    width: 140px;
+    margin-top: 0!important;
+    padding: 0!important;
+}
+
+
+.stnc-header-page #adminmenumain,
+.stnc-header-page #wpadminbar,
+.stnc-header-page #adminmenuback,
+.stnc-header-page #adminmenuwrap,
+.stnc-header-page #wpfooter {
+    display: none;
+}
+
+#wpcontent {
+    padding-left: 0 !important;
+}
+
+#wpcontent,
+#wpfooter {
+    margin-left: auto !important;
+}
+
+html.wp-toolbar {
+    padding-top: 0 !important;
+}
+
+
+#ex-040-stage {
+    /* width: 100%; */
+    position: relative;
+    display: block;
+}
+
+/* kurulumda boyutlandirma buradan da verilebilri  */
+#ex-040-draggable {
+    /* bottom: 122px;
+height: 20px;
+left: 30px;
+right: 104.609375px;
+top: 102px;
+width: 74.609375px; */
+    border-radius: 20px;
+    position: absolute;
+}
+
+#ex-040-wall2 {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.col>.stage-m {
+    margin-bottom: 0;
+}
+
+.stage-m-size {
+    width: 1120px;
+    height: 924px;
+
+}
+
+
+
+
+/*eklenen alt ksimlar selman*/
+
+
+
+.draggable {
+    display: inline-block;
+    padding: 3px 7px;
+    font-weight: bold;
+    color: white;
+    background-color: indianred;
+}
+
+
+
+.stage-m {
+    background-color: #d4d4d4;
+    margin-bottom: 1em;
+}
+
+#ex-040-wall2 path {
+    fill: #fff;
+}
+
+
+.bg-black{
+    background-color:#000;
+    color:#fff;
+}
