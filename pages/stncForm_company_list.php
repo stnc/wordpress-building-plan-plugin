@@ -621,11 +621,11 @@ function stnc_wp_floor_render_list_page()
 <div class="wrap">
 
     <div id="icon-users" class="icon32"><br /></div>
-    <h2>Erciyes Teknopark Firmalar Listesi</h2>
+    <h2>Company List</h2>
 
     <div
         style="background:#ECECEC;border:1px solid #CCC;padding:0 10px;margin-top:5px;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;">
-        <p>Kat Planlarındaki Firmalar Listesi</p>
+        <p>Compnay List </p>
 
     </div>
 
