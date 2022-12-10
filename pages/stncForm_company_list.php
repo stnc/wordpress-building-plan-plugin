@@ -409,19 +409,19 @@ if ($data -> media_id!=0){
 <div id="advanced" class="postbox ">
     <div class="inside">
         <div class="card shadow1" style="max-width:100%!important">
-            <h2> <strong><?php echo $data ->company_description;?></strong> --  Bilgileri</h2>
+            <h2> <strong><?php echo $data ->company_description;?></strong> --  Info</h2>
 
-            <div><mark class="dont">Firma:</mark> <?php echo $data ->company_description;?></div>
+            <div><mark class="dont">company:</mark> <?php echo $data ->company_description;?></div>
             <hr>
-            <div><mark class="dont">Detaylı Bilgi:</mark> <?php echo $data->company_name;?></div>
+            <div><mark class="dont">Detail info:</mark> <?php echo $data->company_name;?></div>
             <hr>
-            <div><mark class="dont">Telefon:</mark> <?php echo $data->phone;?></div>
+            <div><mark class="dont">Phone:</mark> <?php echo $data->phone;?></div>
             <hr>
-            <div><mark class="dont">Mail adresi:</mark> <?php echo $data->email;?></div>
+            <div><mark class="dont">E-Mail:</mark> <?php echo $data->email;?></div>
             <hr>
-            <div><mark class="dont">web site:</mark> <?php echo $data->web_site;?></div>
+            <div><mark class="dont">Web site:</mark> <?php echo $data->web_site;?></div>
             <hr>
-            <div><mark class="dont">Adres:</mark> <?php echo $data->address;?></div>
+            <div><mark class="dont">Address:</mark> <?php echo $data->address;?></div>
             <hr>  
 			
 			<div><mark class="dont"></mark> <a href="/wp-admin/admin.php?page=stnc_building_ext&st_trigger=show&binaid=<?php echo $data->building_id;?>&kat=<?php echo $data->floor_id;?>&id=<?php echo $data->id;?>">Düzenle</a>   </div>

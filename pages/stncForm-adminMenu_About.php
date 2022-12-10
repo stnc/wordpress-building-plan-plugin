@@ -6,7 +6,9 @@ function stnc_wp_floor_plans_adminMenu_About_contents()
         <div class="inside">
             <div class="card shadow1" style="max-width:100%!important">
                 <h2>support  </h2>
-   
+                eklemek istediginiz sayfaya bu kodu yerlestirin tum sayfaya gelecektir
+                sadece bir alani eklemek isterseniz shortcode menusuna bakiniz 
+                [stnc_building_for_company]
             </div>
         </div>
     </div>
