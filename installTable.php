@@ -21,8 +21,11 @@ function stnc_wp_floor_database_install1()
             map_location varchar(255) DEFAULT NULL,
             company_description TEXT DEFAULT NULL,
             address TEXT DEFAULT NULL,
+          
             media_id INT DEFAULT NULL,
             add_date DATETIME NOT NULL,
+            web_permission TEXT DEFAULT NULL,
+            is_empty TINYINT(1) NULL DEFAULT '0' ,
             PRIMARY KEY  (id)
         ) $charset_collate;";
         require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
@@ -60,6 +63,8 @@ function stnc_wp_floor_database_install1()
              id INT NOT NULL AUTO_INCREMENT,
              name varchar(255) DEFAULT NULL,
              short_name varchar(255) DEFAULT NULL,
+             text_color varchar(255) DEFAULT NULL,
+             color varchar(255) DEFAULT NULL,
              global_capacity INT(10) UNSIGNED NOT NULL,
              total_office INT(10) UNSIGNED NOT NULL,
              created_at TIMESTAMP NULL DEFAULT NULL,
@@ -107,7 +112,17 @@ function stnc_wp_floor_database_install1()
            require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
         dbDelta($sql);
        
-
+        $stncForm_tableNameMain = 'stnc_map_company_categories';
+        $charset_collate = $wpdb->get_charset_collate();
+         $sql = "CREATE TABLE IF NOT EXISTS  " . $wpdb->prefix . $stncForm_tableNameMain . " (
+                id INT NOT NULL AUTO_INCREMENT,
+                name VARCHAR(255) NOT NULL ,
+                status TINYINT(1) NULL DEFAULT '1' ,
+                PRIMARY KEY  (id)
+            ) $charset_collate;";
+            require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+         dbDelta($sql);
+        
     // echo $wpdb->last_error;
   //  INDEX `tekno_kats_building_id_foreign` (`building_id`) USING BTREE,
 //	CONSTRAINT `tekno_kats_building_id_foreign` FOREIGN KEY (`building_id`) REFERENCES `summit`.`wp_stnc_map_building` (`id`) ON UPDATE RESTRICT ON DELETE CASCADE
