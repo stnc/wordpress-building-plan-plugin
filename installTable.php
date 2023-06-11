@@ -59,6 +59,7 @@ function stnc_wp_floor_database_install1()
       $sql = "CREATE TABLE IF NOT EXISTS  " . $wpdb->prefix . $stncForm_tableNameMain . " (
              id INT NOT NULL AUTO_INCREMENT,
              name varchar(255) DEFAULT NULL,
+             short_name varchar(255) DEFAULT NULL,
              global_capacity INT(10) UNSIGNED NOT NULL,
              total_office INT(10) UNSIGNED NOT NULL,
              created_at TIMESTAMP NULL DEFAULT NULL,
