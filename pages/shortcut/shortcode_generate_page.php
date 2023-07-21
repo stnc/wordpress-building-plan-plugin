@@ -1,4 +1,3 @@
-
 <?php 
 
 function stnc_wp_floor_shortcut_page()

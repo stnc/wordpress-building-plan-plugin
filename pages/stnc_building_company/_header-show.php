@@ -1,4 +1,3 @@
-
 <header>
     <!-- Fixed navbar -->
     <nav class="navbar navbar-expand-md navbar-secondary fixed-top bg-black">
