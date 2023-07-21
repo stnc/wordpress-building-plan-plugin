@@ -50,6 +50,8 @@ function stnc_wp_floor_database_install1()
              company_description TEXT DEFAULT NULL,
              address TEXT DEFAULT NULL,
              media_id INT DEFAULT NULL,
+             web_permission TEXT DEFAULT NULL,
+             is_empty TINYINT(1) NULL DEFAULT '0' ,
              add_date DATETIME NOT NULL,
              PRIMARY KEY  (id)
          ) $charset_collate;";
