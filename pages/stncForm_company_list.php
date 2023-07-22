@@ -184,14 +184,14 @@ class Stnc_wp_floor_List_Table extends WP_List_Table
 		return array(
 			// 'cb'     => '<input type="checkbox"/>',
 		
-			'company_name'   => __('Şirket', 'admin-table-tut'),
-			'company_description'   => __('Şirket Detay', 'admin-table-tut'),
+			'company_name'   => __('Company', 'admin-table-tut'),
+			'company_description'   => __('Company Detail', 'admin-table-tut'),
 			'email'  => __('Email', 'admin-table-tut'),
-			'phone' => __('Telefon', 'admin-table-tut'),
+			'phone' => __('Phone', 'admin-table-tut'),
 		
-			'web_site'   => __('Web Sitesi', 'admin-table-tut'),
+			'web_site'   => __('Web Site', 'admin-table-tut'),
 			
-			'bina'   => __('Bina', 'admin-table-tut'),
+			'bina'   => __('Build', 'admin-table-tut'),
 		
 		);
 	}
@@ -217,10 +217,11 @@ class Stnc_wp_floor_List_Table extends WP_List_Table
 		$delete_nonce = wp_create_nonce('sp_delete_stncMapFloors');
 
 		$title = '<strong>' . $item['company_name'] . '</strong>';
-
+      	$showLang = __( 'Show', 'the-stnc-map' ) ;
+      	$editLangs = __( 'Edit', 'the-stnc-map' ) ;
 		$actions = [
-			'view' => sprintf('<a href="?page=%s&action=%s&stncMapFloors=%s&_wpnonce=%s">Göster</a>', esc_attr($_REQUEST['page']), 'view', absint($item['id']), $delete_nonce),
-			'edit' => sprintf('<a href="?page=stnc_building_ext&st_trigger=show&binaid=%s&kat=%s&id=%s">Düzenle</a>',absint($item['building_id']),absint($item['floor_id']),  absint($item['id']), $delete_nonce)
+			'view' => sprintf('<a href="?page=%s&action=%s&stncMapFloors=%s&_wpnonce=%s">%s</a>', esc_attr($_REQUEST['page']), 'view', absint($item['id']), $delete_nonce,	$showLang ),
+			'edit' => sprintf('<a href="?page=stnc_building_ext&st_trigger=show&binaid=%s&kat=%s&id=%s">%s</a>',absint($item['building_id']),absint($item['floor_id']),  absint($item['id']), $editLangs )
 		];
 
 		return $title . $this->row_actions($actions);
@@ -411,20 +412,20 @@ if ($data -> media_id!=0){
         <div class="card shadow1" style="max-width:100%!important">
             <h2> <strong><?php echo $data ->company_description;?></strong> --  Info</h2>
 
-            <div><mark class="dont">company:</mark> <?php echo $data ->company_description;?></div>
+            <div><mark class="dont"><?php esc_html_e( 'Company', 'the-stnc-map' ) ?> :</mark> <?php echo $data ->company_description;?></div>
             <hr>
-            <div><mark class="dont">Detail info:</mark> <?php echo $data->company_name;?></div>
+            <div><mark class="dont"><?php esc_html_e( 'Detail Info', 'the-stnc-map' ) ?>:</mark> <?php echo $data->company_name;?></div>
             <hr>
-            <div><mark class="dont">Phone:</mark> <?php echo $data->phone;?></div>
+            <div><mark class="dont"><?php esc_html_e( 'Phone', 'the-stnc-map' ) ?>:</mark> <?php echo $data->phone;?></div>
             <hr>
-            <div><mark class="dont">E-Mail:</mark> <?php echo $data->email;?></div>
+            <div><mark class="dont"><?php esc_html_e( 'Email', 'the-stnc-map' ) ?>:</mark> <?php echo $data->email;?></div>
             <hr>
-            <div><mark class="dont">Web site:</mark> <?php echo $data->web_site;?></div>
+            <div><mark class="dont"><?php esc_html_e( 'Web Site', 'the-stnc-map' ) ?>:</mark> <?php echo $data->web_site;?></div>
             <hr>
-            <div><mark class="dont">Address:</mark> <?php echo $data->address;?></div>
+            <div><mark class="dont"><?php esc_html_e( 'Adresss', 'the-stnc-map' ) ?>:</mark> <?php echo $data->address;?></div>
             <hr>  
 			
-			<div><mark class="dont"></mark> <a href="/wp-admin/admin.php?page=stnc_building_ext&st_trigger=show&binaid=<?php echo $data->building_id;?>&kat=<?php echo $data->floor_id;?>&id=<?php echo $data->id;?>">Düzenle</a>   </div>
+			<div><mark class="dont"></mark> <a href="/wp-admin/admin.php?page=stnc_building_ext&st_trigger=show&binaid=<?php echo $data->building_id;?>&kat=<?php echo $data->floor_id;?>&id=<?php echo $data->id;?>"><?php esc_html_e( 'Edit', 'the-stnc-map' ) ?></a>   </div>
             <hr>
             <!-- <div><mark class="dont">Eklenen Dosya:</mark><?php echo $oynat?></div> -->
         </div>
@@ -621,11 +622,11 @@ function stnc_wp_floor_render_list_page()
 <div class="wrap">
 
     <div id="icon-users" class="icon32"><br /></div>
-    <h2>Company List</h2>
+    <h2> <?php esc_html_e( 'Company list', 'the-stnc-map' ) ?></h2>
 
     <div
         style="background:#ECECEC;border:1px solid #CCC;padding:0 10px;margin-top:5px;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;">
-        <p>Compnay List </p>
+        <p><?php esc_html_e( 'Company list', 'the-stnc-map' ) ?> </p>
 
     </div>
 
@@ -635,8 +636,8 @@ function stnc_wp_floor_render_list_page()
         <input type="hidden" name="page" value="<?php echo $_REQUEST['page'] ?>" />
         <!-- Now we can render the completed list table -->
         <?php
-
-			$testListTable->search_box('Search', 'search_id');
+   $searchLang=  __( 'Company list', 'the-stnc-map' ) ;
+			$testListTable->search_box( $searchLang, 'search_id');
 			$testListTable->display() ?>
     </form>
 

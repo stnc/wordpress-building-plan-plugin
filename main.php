@@ -5,7 +5,7 @@ Plugin URI:	https://github.com/stnc/wp-kat-planlari
 Description: Erciyes Teknopark Kat Planları
 Version: 2.0.0
 Author: selman tunç
-Text Domain: stnc-wp-floor-plans
+Text Domain: the-stnc-map
 Domain Path: /languages/
 
 * Template Name: Firmalar Listesi
@@ -65,11 +65,10 @@ add_action( 'login_enqueue_scripts', 'mytheme_enqueue_login_style' );
 */
 
 
-// Load plugin text-domain
+// Load plugin text-domain https://daext.com/blog/how-to-make-a-wordpress-plugin-translatable/
 
-// $locale = apply_filters('plugin_locale', get_locale(), 'CHfw-staff');
-
-// load_textdomain('CHfw-staff', WP_LANG_DIR . 'CHfw-staff/CHfw-staff-' . $locale . '.mo');
-// load_plugin_textdomain('CHfw-staff', false, plugin_basename(dirname(__FILE__)) . '/languages');
-
-
+function stnc_wp_floor_initialize_plugin_lang() {
+	// Retrieve the directory for the internationalization files
+    load_plugin_textdomain('the-stnc-map', false, dirname(plugin_basename(__FILE__)) . '/languages/');
+}
+add_action( 'plugins_loaded', 'stnc_wp_floor_initialize_plugin_lang' );
