@@ -78,24 +78,3 @@ function stnc_wp_floor_plans_hide_notices_to_all_but_super_admin(){
 
 
 
-/*---bu kısımı sileceğiz --*/
-//staff pagination fix ---panelde sayfalama yapacak ama işe yaramadı
-// $scFW_staffLimit_posts = 5;
-
-// function stnc_wp_kiosk_mp_staff_posts_per_page($query)
-// {
-//     global $scFW_staffLimit_posts;
-//     if (isset($query->query_vars['post_type'])) {
-//         if ($query->query_vars['post_type'] == 'stnc_kiosk') {
-//             $query->query_vars['posts_per_page'] = 5;
-//         }
-//     }
-
-//     return $query;
-// }
-
-// if (!is_admin()) {
-//     add_filter('pre_get_posts', 'stnc_wp_kiosk_mp_staff_posts_per_page');
-// }
-
-

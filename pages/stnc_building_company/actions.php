@@ -219,7 +219,7 @@ function stnc_wp_floor_adminMenu_stnc_building_ext()
      
 
         $success =   $wpdb->insert(
-            $wpdb->prefix .'stnc_map_floors_locations_old_company',
+            $wpdb->prefix .'stnc_map_floors_locations_off_company',
             array(
                 'floors_locations_id' =>$floors_locations_id,
                 'building_id' =>   $building_id,

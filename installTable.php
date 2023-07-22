@@ -32,7 +32,11 @@ function stnc_wp_floor_database_install1()
      dbDelta($sql);
 
 
-     $stncForm_tableNameMain = 'stnc_map_floors_locations_old_company';
+
+
+  
+
+     $stncForm_tableNameMain = 'stnc_map_floors_locations_off_company';
      $charset_collate = $wpdb->get_charset_collate();
       $sql = "CREATE TABLE IF NOT EXISTS  " . $wpdb->prefix . $stncForm_tableNameMain . " (
              id INT NOT NULL AUTO_INCREMENT,
@@ -125,6 +129,8 @@ function stnc_wp_floor_database_install1()
             require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
          dbDelta($sql);
         
+
+
     // echo $wpdb->last_error;
   //  INDEX `tekno_kats_building_id_foreign` (`building_id`) USING BTREE,
 //	CONSTRAINT `tekno_kats_building_id_foreign` FOREIGN KEY (`building_id`) REFERENCES `summit`.`wp_stnc_map_building` (`id`) ON UPDATE RESTRICT ON DELETE CASCADE
@@ -138,13 +144,14 @@ function stnc_wp_floor_remove_database()
 {
 
     global $wpdb;
-    global $stncForm_tableNameMain;
-
-    $sql = "DROP TABLE IF EXISTS " . $wpdb->prefix . $stncForm_tableNameMain . "";
+    // global $stncForm_tableNameMain;
+    $stncForm_DeleteTableNameMain = 'stnc_map_floors_locations_old_company';
+    echo $sql = "DROP TABLE  " . $wpdb->prefix . $stncForm_DeleteTableNameMain ;
     $wpdb->query($sql);
     //  delete_option("my_plugin_db_version");
     require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
     dbDelta($sql);
+    die;
 }
 
 register_uninstall_hook(__FILE__, 'stnc_wp_floor_remove_database');

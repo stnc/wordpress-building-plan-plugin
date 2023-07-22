@@ -12,10 +12,8 @@ add_action("wp_enqueue_scripts", "stnc_wp_floor_front");
 // load css into the website's front-end
 function stnc_wp_floor_MainMenu_enqueue_style()
 {
-    wp_enqueue_style( "stnc-style-boot",plugins_url("assets/css/bootstrap.min.css", __FILE__)
-    );
-    wp_enqueue_style( "stnc-style-style2", plugins_url("assets/css/stnc-admin.css", __FILE__)
-    );
+    wp_enqueue_style( "stnc-style-boot",plugins_url("assets/css/bootstrap.min.css", __FILE__)  );
+    wp_enqueue_style( "stnc-style-style2", plugins_url("assets/css/stnc-admin.css", __FILE__) );
 }
 
 function stnc_wp_floor_script_in_admin($hook)

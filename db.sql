@@ -46,8 +46,8 @@ INSERT INTO `wp_stnc_map_floors_locations` (`id`, `building_id`, `floor_id`, `co
 	(5, 5, 23, 16, 34, 'yahoo.com', '234', 'test@yahoo.com', '855 587 5858', '855 587 5458', 'yahoo.com', '{"left":12,"top":112,"width":82.42500305175781,"height":30,"x":12,"y":112,"right":94.42500305175781,"bottom":142}', 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum', 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum', 0, '2022-12-08 11:49:48', '', 0);
 /*!40000 ALTER TABLE `wp_stnc_map_floors_locations` ENABLE KEYS */;
 
-/*!40000 ALTER TABLE `wp_stnc_map_floors_locations_old_company` DISABLE KEYS */;
-/*!40000 ALTER TABLE `wp_stnc_map_floors_locations_old_company` ENABLE KEYS */;
+/*!40000 ALTER TABLE `wp_stnc_map_floors_locations_off_company` DISABLE KEYS */;
+/*!40000 ALTER TABLE `wp_stnc_map_floors_locations_off_company` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;

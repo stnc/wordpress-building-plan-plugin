@@ -391,10 +391,10 @@ INSERT INTO `wp_stnc_map_floors_locations` (`id`, `building_id`, `floor_id`, `co
 -- --------------------------------------------------------
 
 --
--- Table structure for table `wp_stnc_map_floors_locations_old_company`
+-- Table structure for table `wp_stnc_map_floors_locations_off_company`
 --
 
-CREATE TABLE `wp_stnc_map_floors_locations_old_company` (
+CREATE TABLE `wp_stnc_map_floors_locations_off_company` (
   `id` int(11) NOT NULL,
   `floors_locations_id` int(11) DEFAULT NULL,
   `building_id` tinyint(4) DEFAULT NULL,
@@ -416,10 +416,10 @@ CREATE TABLE `wp_stnc_map_floors_locations_old_company` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `wp_stnc_map_floors_locations_old_company`
+-- Dumping data for table `wp_stnc_map_floors_locations_off_company`
 --
 
-INSERT INTO `wp_stnc_map_floors_locations_old_company` (`id`, `floors_locations_id`, `building_id`, `floor_id`, `door_number`, `company_name`, `square_meters`, `email`, `phone`, `mobile_phone`, `web_site`, `map_location`, `company_description`, `address`, `media_id`, `add_date`, `web_permission`, `is_empty`) VALUES
+INSERT INTO `wp_stnc_map_floors_locations_off_company` (`id`, `floors_locations_id`, `building_id`, `floor_id`, `door_number`, `company_name`, `square_meters`, `email`, `phone`, `mobile_phone`, `web_site`, `map_location`, `company_description`, `address`, `media_id`, `add_date`, `web_permission`, `is_empty`) VALUES
 (239, 5, 1, 2, 11, 'ABİS TEKNOLOJİ', '52.45', 'info@abisteknoloji.com.tr', '+90 (352) 380 00 11', '+90 (352) 380 00 10', 'https://www.abisteknoloji.com.tr/', '{\\\"left\\\":824,\\\"top\\\":295.60003662109375,\\\"width\\\":138.96875,\\\"height\\\":30,\\\"x\\\":824,\\\"y\\\":295.60003662109375,\\\"right\\\":962.96875,\\\"bottom\\\":325.60003662109375}', 'ABİS TEKNOLOJİ LTD.ŞTİ.', 'Erciyes Üniversitesi Teknoloji Geliştirme Bölgesi Tekno-1 Binası Giriş Kat No:11, KAYSERİ', 1, '2022-06-01 03:55:22', '[{\\\"door_number_permission\\\":false,\\\"square_meters_permission\\\":false,\\\"email_permission\\\":false,\\\"phone_permission\\\":false,\\\"mobile_phone_permission\\\":false,\\\"web_site_permission\\\":false,\\\"company_description_permission\\\":false,\\\"address_permission\\\":false}]', 0),
 (240, 226, 1, 1, 33, 'test', '33', '33', '333', '333', '33', '{\"left\":12,\"top\":112,\"width\":82.42500305175781,\"height\":30,\"x\":12,\"y\":112,\"right\":94.42500305175781,\"bottom\":142}', '3333', '33', 0, '2022-06-22 05:40:40', '', 0),
 (241, 226, 1, 1, 33, 'testeeee', '3333', 'selmantunc@gmail.com', '333', 'wewe', 'wewe', '{\"left\":12,\"top\":112,\"width\":82.42500305175781,\"height\":30,\"x\":12,\"y\":112,\"right\":94.42500305175781,\"bottom\":142}', 'wewe', 'wewe', 0, '2022-06-22 05:47:43', '[{\\\"door_number_permission\\\":false,\\\"square_meters_permission\\\":false,\\\"email_permission\\\":false,\\\"phone_permission\\\":false,\\\"mobile_phone_permission\\\":false,\\\"web_site_permission\\\":false,\\\"company_description_permission\\\":false,\\\"address_permission\\\":false}]', 0),
@@ -454,9 +454,9 @@ ALTER TABLE `wp_stnc_map_floors_locations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `wp_stnc_map_floors_locations_old_company`
+-- Indexes for table `wp_stnc_map_floors_locations_off_company`
 --
-ALTER TABLE `wp_stnc_map_floors_locations_old_company`
+ALTER TABLE `wp_stnc_map_floors_locations_off_company`
   ADD PRIMARY KEY (`id`) USING BTREE;
 
 --
@@ -488,9 +488,9 @@ ALTER TABLE `wp_stnc_map_floors_locations`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=227;
 
 --
--- AUTO_INCREMENT for table `wp_stnc_map_floors_locations_old_company`
+-- AUTO_INCREMENT for table `wp_stnc_map_floors_locations_off_company`
 --
-ALTER TABLE `wp_stnc_map_floors_locations_old_company`
+ALTER TABLE `wp_stnc_map_floors_locations_off_company`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=243;
 COMMIT;
 
