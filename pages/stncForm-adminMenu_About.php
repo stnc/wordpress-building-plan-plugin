@@ -5,10 +5,11 @@ function stnc_wp_floor_plans_adminMenu_About_contents()
     <div id="advanced" class="postbox ">
         <div class="inside">
             <div class="card shadow1" style="max-width:100%!important">
-                <h2>support  </h2>
-                eklemek istediginiz sayfaya bu kodu yerlestirin tum sayfaya gelecektir
-                sadece bir alani eklemek isterseniz shortcode menusuna bakiniz 
-                [stnc_building_for_company]
+                <h2>    <?php esc_html_e( 'Support', 'the-stnc-map' ) ?>  </h2>
+                <?php esc_html_e( 'Place this code on the page you want to add, it will come to the whole page. If you want to add only one field, see the shortcode menu.', 'the-stnc-map' ) ?>
+              <p></p>
+              <pre> [stnc_building_for_company]</pre>
+               
             </div>
         </div>
     </div>

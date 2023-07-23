@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Build\n"
 "POT-Creation-Date: 2023-07-21 21:41-0600\n"
-"PO-Revision-Date: 2023-07-21 21:50-0600\n"
+"PO-Revision-Date: 2023-07-23 02:14-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: tr_TR\n"
@@ -17,19 +17,19 @@ msgstr ""
 
 #: company-frontpage.php:119
 msgid "Choose Sector"
-msgstr ""
+msgstr "Sektör Seçiniz"
 
 #: company-frontpage.php:121 company-frontpage.php:131
 msgid "Show All"
-msgstr ""
+msgstr "Tumunu Göster"
 
 #: company-frontpage.php:129
 msgid "Select Building"
-msgstr ""
+msgstr "Bina Seçiniz"
 
 #: company-frontpage.php:301
 msgid "edit"
-msgstr ""
+msgstr "düzenle"
 
 #: helper.php:23
 msgid "Hata"
@@ -40,7 +40,7 @@ msgstr ""
 #: pages/stnc_map_view/_header-editor.php:65
 #: pages/stnc_map_view/_header-show.php:64
 msgid "Building List"
-msgstr ""
+msgstr "Bina Listesi"
 
 #: pages/homepage.php:36
 msgid "Wordpress Panel"
@@ -48,42 +48,42 @@ msgstr ""
 
 #: pages/homepage.php:39
 msgid "Table List"
-msgstr ""
+msgstr "Tablo Listesi"
 
 #: pages/homepage.php:43 pages/stnc_building_company/_header-show.php:41
 #: pages/stnc_map_editor_building/_header-show.php:50
 #: pages/stnc_map_view/_header-editor.php:102
 #: pages/stnc_map_view/_header-show.php:103
 msgid "STNC building floors"
-msgstr ""
+msgstr "Erciyes Teknopark Bina"
 
 #: pages/homepage.php:82
 msgid "Building"
-msgstr ""
+msgstr "Bina"
 
 #: pages/homepage.php:90
 msgid "FULL"
-msgstr ""
+msgstr "Tam"
 
 #: pages/homepage.php:99 pages/stnc_map_view/editor.php:50
 #: pages/stnc_map_view/show.php:56
 msgid "Total Office"
-msgstr ""
+msgstr "Toplam Ofis"
 
 #: pages/homepage.php:100 pages/stnc_map_view/editor.php:52
 #: pages/stnc_map_view/editor.php:81 pages/stnc_map_view/show.php:58
 #: pages/stnc_map_view/show.php:85
 msgid "Empty Office"
-msgstr ""
+msgstr "Boş Ofis"
 
 #: pages/homepage.php:102 pages/stnc_map_view/editor.php:51
 #: pages/stnc_map_view/show.php:57
 msgid "Full Office"
-msgstr ""
+msgstr "Dolu Ofis"
 
 #: pages/homepage.php:106
 msgid "Select Floor"
-msgstr ""
+msgstr "Kat Seciniz"
 
 #: pages/stncForm_company_list.php:74
 msgid "stncMapFloors"
@@ -95,21 +95,21 @@ msgstr ""
 
 #: pages/stncForm_company_list.php:128
 msgid "No posts found."
-msgstr ""
+msgstr "Icerik Bulunamadi."
 
 #: pages/stncForm_company_list.php:187 pages/stncForm_company_list.php:415
 #: pages/stnc_map_editor_building/add_edit.php:15
 #: pages/stnc_map_view/editor.php:64 pages/stnc_map_view/show.php:69
 msgid "Company"
-msgstr ""
+msgstr "Firma"
 
 #: pages/stncForm_company_list.php:188
 msgid "Company Detail"
-msgstr ""
+msgstr "Firma Detay"
 
 #: pages/stncForm_company_list.php:189 pages/stncForm_company_list.php:421
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: pages/stncForm_company_list.php:190 pages/stncForm_company_list.php:419
 msgid "Phone"
@@ -121,79 +121,79 @@ msgstr ""
 
 #: pages/stncForm_company_list.php:194
 msgid "Build"
-msgstr ""
+msgstr "Bina"
 
 #: pages/stncForm_company_list.php:220
 msgid "Show"
-msgstr ""
+msgstr "Göster"
 
 #: pages/stncForm_company_list.php:221 pages/stncForm_company_list.php:428
 #: pages/stnc_map_view/editor.php:84 pages/stnc_map_view/editor.php:106
 #: pages/stnc_map_view/show.php:92
 msgid "Edit"
-msgstr ""
+msgstr "Düzenle"
 
 #: pages/stncForm_company_list.php:417
 msgid "Detail Info"
-msgstr ""
+msgstr "Firma Detay"
 
 #: pages/stncForm_company_list.php:425
 msgid "Adresss"
-msgstr ""
+msgstr "Adres"
 
 #: pages/stncForm_company_list.php:522
 msgid "Filter by Post Type"
-msgstr ""
+msgstr "Icerik tipine gore filtrele"
 
 #: pages/stncForm_company_list.php:533
 msgid "Filter"
-msgstr ""
+msgstr "Filtre"
 
 #: pages/stncForm_company_list.php:625 pages/stncForm_company_list.php:629
 #: pages/stncForm_company_list.php:639
 msgid "Company list"
-msgstr ""
+msgstr "Firma Listesi"
 
 #: pages/stnc_building_company/_header-show.php:21
 #: pages/stnc_map_editor_building/_header-show.php:22
 msgid "Show company list of this building"
-msgstr ""
+msgstr "Binalara gore firmaları göster"
 
 #: pages/stnc_building_company/_header-show.php:28
 #: pages/stnc_map_view/_header-show.php:87
 msgid "Other Floors"
-msgstr ""
+msgstr "Diğer Katlar"
 
 #: pages/stnc_building_company/_header-show.php:35
 #: pages/stnc_map_editor_building/_header-show.php:44
 #: pages/stnc_map_view/_header-show.php:97
 msgid "WP Dashbord"
-msgstr ""
+msgstr "Wordpress Anasayfa"
 
 #: pages/stnc_building_company/actions.php:112
 msgid "Record Updated"
-msgstr ""
+msgstr "Kayit Guncellendi"
 
 #: pages/stnc_building_company/actions.php:190
 #: pages/stnc_building_company/actions.php:268
 msgid "Record Save"
-msgstr ""
+msgstr "Kayıt yapıldı"
 
 #: pages/stnc_building_company/add_edit.php:101
 msgid "THIS OFFICE IS EMPTY"
-msgstr ""
+msgstr "BU OFIS BOS DURUMDADIR"
 
 #: pages/stnc_building_company/add_edit.php:122
 msgid "Company Add"
-msgstr ""
+msgstr "Firma Ekle"
 
 #: pages/stnc_building_company/add_edit.php:126
 msgid "Door number"
-msgstr ""
+msgstr "Kapı numarası"
 
 #: pages/stnc_building_company/add_edit.php:130
 msgid "Floor number must be numeric"
-msgstr ""
+msgstr "Kapı numarası sayı olmalıdır"
 
 #: pages/stnc_building_company/add_edit.php:132
 #: pages/stnc_building_company/add_edit.php:172
@@ -203,119 +203,152 @@ msgstr ""
 #: pages/stnc_building_company/add_edit.php:212
 #: pages/stnc_building_company/add_edit.php:220
 msgid "Do not show on web frontend"
-msgstr ""
+msgstr "Web sayfasında gösterme"
 
 #: pages/stnc_building_company/add_edit.php:137
 msgid "Company Name"
-msgstr ""
+msgstr "Firma Adi"
 
 #: pages/stnc_building_company/add_edit.php:144
 msgid "Building square meters"
-msgstr ""
+msgstr "Bina Metrekaresi"
 
 #: pages/stnc_building_company/add_edit.php:169
 msgid "Company email address"
-msgstr ""
+msgstr "Firma email adresi"
 
 #: pages/stnc_building_company/add_edit.php:177
 msgid "Company phone"
-msgstr ""
+msgstr "Firma Telefonu"
 
 #: pages/stnc_building_company/add_edit.php:193
 msgid "Company mobile phone"
-msgstr ""
+msgstr "Firma Mobil Telefonu"
 
 #: pages/stnc_building_company/add_edit.php:202
 msgid "Company website"
-msgstr ""
+msgstr "Firma Web Sitesi"
 
 #: pages/stnc_building_company/add_edit.php:209
 msgid "Detailed information about the company"
-msgstr ""
+msgstr "Firma Hakkinda Detaylı Bilgi"
 
 #: pages/stnc_building_company/add_edit.php:217
 msgid "Address"
-msgstr ""
+msgstr "Adres"
 
 #: pages/stnc_building_company/add_edit.php:239
 msgid "Upload / Select Image"
-msgstr ""
+msgstr "Yüklemek icin resim seciniz"
 
 #: pages/stnc_building_company/add_edit.php:254
 msgid "Vacate the Office"
-msgstr ""
+msgstr "Ofisi Bosalt"
 
 #: pages/stnc_building_company/add_edit.php:260
 msgid "Next Company"
-msgstr ""
+msgstr "Sonraki Firma"
 
 #: pages/stnc_building_company/add_edit.php:263
 msgid "Previous Company"
-msgstr ""
+msgstr "Önceki Firma"
 
 #: pages/stnc_building_company/add_edit.php:270
 #: pages/stnc_map_editor_building/add_edit.php:49
 msgid "Save"
-msgstr ""
+msgstr "Kaydet"
 
 #: pages/stnc_map_editor_building/_header-show.php:29
 msgid "Other"
-msgstr ""
+msgstr "Diğer"
 
 #: pages/stnc_map_editor_building/add_edit.php:17
 msgid "Name"
-msgstr ""
+msgstr "İsim"
 
 #: pages/stnc_map_editor_building/add_edit.php:22
 msgid "Total area"
-msgstr ""
+msgstr "Toplam Alan"
 
 #: pages/stnc_map_editor_building/add_edit.php:28
 msgid "Full Field"
-msgstr ""
+msgstr "Toplam Sahasi"
 
 #: pages/stnc_map_editor_building/add_edit.php:34
 msgid "Free Space"
-msgstr ""
+msgstr "Boş Alan"
 
 #: pages/stnc_map_view/_header-editor.php:70
 #: pages/stnc_map_view/_header-show.php:68
 msgid "Add New Company"
-msgstr ""
+msgstr "Yeni Firma Ekle"
 
 #: pages/stnc_map_view/_header-editor.php:75
 msgid "Show location"
-msgstr ""
+msgstr "Konumu göster"
 
 #: pages/stnc_map_view/_header-editor.php:80
 #: pages/stnc_map_view/_header-show.php:81
 msgid "Upload Map"
-msgstr ""
+msgstr "Harita Yukle"
 
 #: pages/stnc_map_view/_header-editor.php:86
 msgid "Other floors"
-msgstr ""
+msgstr "Diğer Katlar"
 
 #: pages/stnc_map_view/_header-editor.php:96
 msgid "Wordpress Dashbord"
-msgstr ""
+msgstr "Wordpress Anasayfa"
 
 #: pages/stnc_map_view/_header-show.php:75
 msgid "Change Placement"
-msgstr ""
+msgstr "Yerleşimi Değiştir"
 
 #: pages/stnc_map_view/editor.php:45
 msgid "You can move the red boxes on the map by dragging and dropping them."
-msgstr ""
+msgstr "Haritadaki kırmızı kutuları sürükleyip bırakarak hareket ettirebilirsiniz."
 
 #: pages/stnc_map_view/editor.php:58 pages/stnc_map_view/show.php:63
 msgid "Company List"
-msgstr ""
+msgstr "Firma Listesi"
 
 #: pages/stnc_map_view/editor.php:63 pages/stnc_map_view/show.php:68
 msgid "Door No "
-msgstr ""
+msgstr "Kapı Numarası "
 
 #: pages/stnc_map_view/editor.php:66 pages/stnc_map_view/show.php:71
 msgid "Action"
-msgstr ""
+msgstr "Olay"
+
+msgid "STNC Building"
+msgstr "Erciyes Teknopark Bina"
+
+msgid "Companies List"
+msgstr "Firma Listesi"
+
+msgid "Shortcut"
+msgstr "WP Kısa Kod"
+
+msgid "About"
+msgstr "Hakkinda"
+
+msgid "Support"
+msgstr "Destek"
+
+msgid "Place this code on the page you want to add, it will come to the whole page. If you want to add only one field, see the shortcode menu."
+msgstr "Eklemek istediginiz sayfaya bu kodu yerlestirin, tum sayfaya gelecektir. Sadece bir alani eklemek isterseniz shortcode menusuna bakiniz."
+
+msgid "Shortcode List for Company Lists"
+msgstr "Firma Listeleri icin Shortcode Listesi"
+
+msgid "shortcode ; keywords written between square brackets"
+msgstr "shortcode ; köşeli parantezler arasına yazılan anahtar kelimelerdir"
+
+msgid "Detailed information"
+msgstr "Detayli bilgi"
+
+msgid "Sample Code"
+msgstr "Ornek Kod"
+
+msgid "add the above code inside the page"
+msgstr "yukarıdaki kodu sayfanın içine ekleyin"

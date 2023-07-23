@@ -19,13 +19,13 @@ function copyData(containerid) {
 </script>
 <div class="inside">
             <div class="card shadow1" style="max-width:100%!important">
-                <h2>Erciyes Teknopark Firma Listeleri Shortcode Listesi</h2>
-                <p>Shortcode ; köşeli parantezler arasına yazılan anahtar kelimelerdir</p>
-                <a href="https://www.kemalkefeli.com.tr/wordpresse-shortcode-ekleme.html">Ayrıntılı Bilgi</a>
-                <strong>Örnek Kod </strong>
+                <h2><?php esc_html_e( 'Shortcode List for Company Lists', 'the-stnc-map' ) ?></h2>
+                <p><?php esc_html_e( 'shortcode ; keywords written between square brackets', 'the-stnc-map' ) ?></p>  
+                <a href="https://www.kemalkefeli.com.tr/wordpresse-shortcode-ekleme.html"><?php esc_html_e( 'Detailed information', 'the-stnc-map' ) ?></a>
+                <strong><?php esc_html_e( 'Sample Code', 'the-stnc-map' ) ?></strong>
                 <pre>[stnc_building title="TEKNO-1 - BODRUM KAT" id="1"]</pre>
-                <p><mark class="dont">Ekleme:</mark>&nbsp; üstteki kodu sayfa içine içine ekleyiniz</p>
-                <a href="/tekno-1-bodrum-kat-firmalari/">Örnek Sayfa</a>
+                <p><mark class="dont"><?php esc_html_e( 'Adding', 'the-stnc-map' ) ?></mark>&nbsp;  <?php esc_html_e( 'add the above code inside the page', 'the-stnc-map' ) ?></p>
+       
             </div>
         </div>
 

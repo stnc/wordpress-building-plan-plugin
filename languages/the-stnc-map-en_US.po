@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Build\n"
 "POT-Creation-Date: 2023-07-21 21:41-0600\n"
-"PO-Revision-Date: 2023-07-21 21:44-0600\n"
+"PO-Revision-Date: 2023-07-23 02:15-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -317,4 +317,34 @@ msgstr ""
 
 #: pages/stnc_map_view/editor.php:66 pages/stnc_map_view/show.php:71
 msgid "Action"
+msgstr ""
+
+msgid "STNC Building"
+msgstr ""
+
+msgid "Companies List"
+msgstr ""
+
+msgid "Shortcut"
+msgstr ""
+
+msgid "About"
+msgstr ""
+
+msgid "Place this code on the page you want to add, it will come to the whole page. If you want to add only one field, see the shortcode menu."
+msgstr ""
+
+msgid "Shortcode List for Company Lists"
+msgstr ""
+
+msgid "shortcode ; keywords written between square brackets"
+msgstr ""
+
+msgid "Detailed information"
+msgstr ""
+
+msgid "Sample Code"
+msgstr ""
+
+msgid "add the above code inside the page"
 msgstr ""

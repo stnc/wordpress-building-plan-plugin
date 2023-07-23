@@ -66,7 +66,6 @@ add_action( 'login_enqueue_scripts', 'mytheme_enqueue_login_style' );
 
 
 // Load plugin text-domain https://daext.com/blog/how-to-make-a-wordpress-plugin-translatable/
-
 function stnc_wp_floor_initialize_plugin_lang() {
 	// Retrieve the directory for the internationalization files
     load_plugin_textdomain('the-stnc-map', false, dirname(plugin_basename(__FILE__)) . '/languages/');
