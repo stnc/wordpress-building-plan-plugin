@@ -2,9 +2,8 @@
 
 function stnc_wp_floor_shortcut_page()
 {
-    global $wpdb;
-
-    ?>
+global $wpdb;
+?>
 <script>
     //https://jsfiddle.net/5p8k4vno/
 function copyData(containerid) {
