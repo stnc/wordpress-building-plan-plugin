@@ -11,12 +11,12 @@
 <main class="flex-shrink-0" style="margin-top:88px">
 
 
-    <div class="container-fluid">
+    <div class="stnc-container-fluid">
 
         <div class="row">
             <h3><?php echo $binaName ?> / <?php echo $kat_adi ?></h3>
 
-            <div class="col-lg-9">
+            <div class="stnc-col-9">
                 <div id="ex-040-stage" class="stage-m stage-m-size">
                     <div id="ex-040-wall1">
                       
@@ -41,15 +41,15 @@
 
             </div><!-- /.col-lg-9 -->
 
-            <div class="col-lg-3">
+            <div class="stnc-col-3">
             <h6 style="color:red"> <?php esc_html_e( 'You can move the red boxes on the map by dragging and dropping them.', 'the-stnc-map' ) ?></h6>
 
-            <div class="col-md-12">
+            <div class="stnc-col-12">
             <div class="card flex-md-row mb-4 box-shadow h-md-250">
                 <div class="d-flex flex-column align-items-start">
-                <strong class="d-inline-block mb-2 text-primary"> <strong><?php echo $totalOffice?></strong> <?php esc_html_e( 'Total Office', 'the-stnc-map' ) ?></strong>
-                <strong class="d-inline-block mb-2 text-success"> <strong><?php echo $totalFullOffice?></strong>  <?php esc_html_e( 'Full Office', 'the-stnc-map' ) ?></strong>
-                <strong class="d-inline-block mb-2 text-warning"><strong><?php echo $totalEmptyOffice?></strong> <?php esc_html_e( 'Empty Office', 'the-stnc-map' ) ?></strong>
+                <strong class="d-inline-block mb-2 text-primary"> <strong class="badge bg-primary rounded-pill"><?php echo $totalOffice  ?></strong> <?php esc_html_e('Total Office', 'the-stnc-map') ?></strong>
+                        <strong class="d-inline-block mb-2 text-success"> <strong class="badge bg-success rounded-pill"><?php echo $totalFullOffice ?></strong>  <?php esc_html_e('Full Office', 'the-stnc-map') ?></strong>
+                        <strong class="d-inline-block mb-2 text-warning"><strong class="badge bg-warning rounded-pill"> <?php echo $totalEmptyOffice ?></strong> <?php esc_html_e('Empty Office', 'the-stnc-map') ?></strong>
                 <!-- <strong class="d-inline-block mb-2 text-primary"><strong>487.69</strong> M2</strong> -->
                 </div>
             </div>
@@ -78,10 +78,11 @@
                           <tr  <?php if  ($result->is_empty === "1") :   ?> class="table-danger"    <?php endif ; ?>>
                          
                           <td><?php echo $result->door_number; ?></td>
-                         <td>  <?php if  ($result->is_empty === "1") :   ?>  <?php esc_html_e( 'Empty Office', 'the-stnc-map' ) ?><?php else : ?> <?php echo $result->company_name; ?> <?php endif ; ?></td>
+                         <td>  <?php if  ($result->is_empty === "1") :   ?>  <?php esc_html_e( 'Empty Office', 'the-stnc-map' ) ?><?php else : ?> <?php echo $result->company_name; ?> 
+                            <?php endif ; ?></td>
                                         <td><?php echo $result->company_name; ?></td>
                                     
-     <td><a  href="/wp-admin/admin.php?page=stnc_building_ext&st_trigger=show&binaid=<?php echo $binaId?>&kat=<?php echo $katId?>&id=<?php echo $result->id; ?>"><?php esc_html_e( 'Edit', 'the-stnc-map' ) ?></a></td>
+     <td><a  href="/wp-admin/admin.php?page=stnc_building_company&st_trigger=show&binaid=<?php echo $binaId?>&kat=<?php echo $katId?>&id=<?php echo $result->id; ?>"><?php esc_html_e( 'Edit', 'the-stnc-map' ) ?></a></td>
                                         </tr>
                             
 
@@ -103,6 +104,7 @@
 </main>
 
 <div class="dropdown-menu dropdown-menu-sm" id="context-menu">
+    <a class="dropdown-item edit" href="#"><?php esc_html_e( 'Edit', 'the-stnc-map' ) ?></a>
     <a class="dropdown-item edit" href="#"><?php esc_html_e( 'Edit', 'the-stnc-map' ) ?></a>
     <!-- <a class="dropdown-item" href="#">Another action</a>
           <a class="dropdown-item" href="#">Something else here</a> -->
@@ -201,7 +203,7 @@ var editId = 0;
 jQuery(document).ready(function($) {
     $('.draggable').on('contextmenu', function(e) {
         $("#context-menu a.edit").attr("href",
-            "/wp-admin/admin.php?page=stnc_building_ext&binaid=<?php echo $binaId?>&kat=<?php echo $katId?>&st_trigger=show&id=" + $( this).data('id'))
+            "/wp-admin/admin.php?page=stnc_building_company&binaid=<?php echo $binaId?>&kat=<?php echo $katId?>&st_trigger=show&id=" + $( this).data('id'))
         var top = e.pageY - 1;
         var left = e.pageX - 90;
         $("#context-menu").css({

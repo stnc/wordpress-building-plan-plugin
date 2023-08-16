@@ -6,9 +6,6 @@
 function stnc_wp_floor_adminMenu_stnc_map_editor_stnc()
 {
 
-
-//http://summit.test/wp-admin/admin.php?page=stnc_map_editor_building&st_trigger=show&katid=2
-
     global $wpdb;
 
     date_default_timezone_set('Europe/Istanbul');
@@ -27,10 +24,9 @@ function stnc_wp_floor_adminMenu_stnc_map_editor_stnc()
 
          $id=$_GET['id'];
 
-        $title ="Düzenleme";
+         $title =esc_html_e( 'Show', 'the-stnc-map' ) ;
         $form = '<form action="/wp-admin/admin.php?page=stnc_map_editor_building&st_trigger=update&id='. $_GET['id'] .'&teknoid='.$_GET['teknoid'].'" method="post">';
-//    echo "SELECT *  FROM ".   $stncForm_tableNameMain." AS kat where id=".$id;
-//    die;
+
         $map = $wpdb->get_row($wpdb->prepare("SELECT *  FROM ".   $stncForm_tableNameMain." AS kat where id=%d",$id));
 
          $scheme = $map->scheme;
@@ -79,12 +75,11 @@ function stnc_wp_floor_adminMenu_stnc_map_editor_stnc()
   
 
         if ($success) {
-            $_SESSION['stnc_map_flash_msg'] = 'Kayıt Güncellendi';
+            $_SESSION['stnc_map_flash_msg'] = __( 'Record Update', 'the-stnc-map' );
             wp_redirect('/wp-admin/admin.php?page=stnc_map_editor_building&st_trigger=show&teknoid='.$_GET['teknoid'].'&id='.$_GET['id'], 302);
              die;
         } else {
-            echo "bir sorun oluştu";
-            $_SESSION['stnc_map_flash_msg'] = 'bir sorun oluştu '.$success;
+            $_SESSION['stnc_map_flash_msg'] = 'There is a problem '.$success;
            wp_redirect('/wp-admin/admin.php?page=stnc_map_editor_building&st_trigger=show&teknoid='.$_GET['teknoid'].'&id='.$_GET['id'], 302);
             die("sorun");
         }
@@ -152,7 +147,7 @@ function stnc_wp_floor_adminMenu_stnc_map_editor_stnc()
         if ($success) {
             $_SESSION['stnc_map_flash_msg'] = 'Kayıt Yapıldı';
             $lastid = $wpdb->insert_id;
-            wp_redirect('/wp-admin/admin.php?page=stnc_building_ext&binaid='.$building_id.'&kat='. $floor_id.'&st_trigger=show&id='. $lastid, 302);
+            wp_redirect('/wp-admin/admin.php?page=stnc_building_company&binaid='.$building_id.'&kat='. $floor_id.'&st_trigger=show&id='. $lastid, 302);
             die;
         }
 

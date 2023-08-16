@@ -65,7 +65,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" st_trigger=new
-                            href="/wp-admin/admin.php?page=stnc_building_ext&st_trigger=new&binaid=<?php echo $_GET['binaid']?>&kat=<?php echo $_GET['kat']?>"><?php esc_html_e( 'Add New Company', 'the-stnc-map' ) ?></a>
+                            href="/wp-admin/admin.php?page=stnc_building_company&st_trigger=new&binaid=<?php echo $_GET['binaid']?>&kat=<?php echo $_GET['kat']?>"><?php esc_html_e( 'Add New Company', 'the-stnc-map' ) ?></a>
 
                     </li>
 

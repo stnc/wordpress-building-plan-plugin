@@ -352,3 +352,16 @@ msgstr "Ornek Kod"
 
 msgid "add the above code inside the page"
 msgstr "yukarıdaki kodu sayfanın içine ekleyin"
+
+
+msgid "Map Load"
+msgstr "Harita Yukle"
+
+msgid "Edit / Upload Map"
+msgstr "Duzenle / Harita Yukle"
+
+msgid "Record Update"
+msgstr "Kayit Guncellendi"
+
+msgid "Information about this building"
+msgstr "Bu binaya ait bilgiler"

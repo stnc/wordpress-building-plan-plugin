@@ -348,3 +348,16 @@ msgstr ""
 
 msgid "add the above code inside the page"
 msgstr ""
+
+msgid "Map Load"
+msgstr ""
+
+msgid "Edit / Upload Map"
+msgstr ""
+
+msgid "Information about this building"
+msgstr ""
+
+
+msgid "Record Update"
+msgstr ""

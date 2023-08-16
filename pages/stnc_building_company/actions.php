@@ -1,8 +1,8 @@
 <?php
-function stnc_wp_floor_adminMenu_stnc_building_ext()
+function stnc_wp_floor_adminMenu_stnc_building_company()
 {
     // session_start();
-    //  stnc_building_ext
+    //  stnc_building_company
     global $wpdb;
     $stncForm_tableNameMain =$wpdb->prefix .'stnc_map_floors_locations' ;
 
@@ -11,23 +11,23 @@ function stnc_wp_floor_adminMenu_stnc_building_ext()
 
     if ((isset($_GET['st_trigger'])) && ($_GET['st_trigger'] === 'show')) {
         // session_start();
-        $thepost = $wpdb->get_row($wpdb->prepare("SELECT *  FROM " . $stncForm_tableNameMain . "  WHERE id = %d", $_GET['id']));
-        $door_number = $thepost->door_number;
-        $floors_locations_id = $thepost->id;
-        $company_name = $thepost->company_name;
-        $square_meters = $thepost->square_meters;
-        $email =  $thepost->email;
-        $phone = $thepost->phone;
-        $mobile_phone = $thepost->mobile_phone;
-        $web_site = $thepost->web_site;
-        $map_location = $thepost->map_location;
-        $company_description =  $thepost->company_description;
-        $address =  $thepost->address;
-        $id =  $thepost->id;
-        $media_id =  $thepost->media_id;
-        $web_permission =  $thepost->web_permission;
-        $is_empty =  $thepost->is_empty;
-        $company_category_id =  $thepost->company_category_id;
+        $floorInfoData = $wpdb->get_row($wpdb->prepare("SELECT *  FROM " . $stncForm_tableNameMain . "  WHERE id = %d", $_GET['id']));
+        $door_number = $floorInfoData->door_number;
+        $floors_locations_id = $floorInfoData->id;
+        $company_name = $floorInfoData->company_name;
+        $square_meters = $floorInfoData->square_meters;
+        $email =  $floorInfoData->email;
+        $phone = $floorInfoData->phone;
+        $mobile_phone = $floorInfoData->mobile_phone;
+        $web_site = $floorInfoData->web_site;
+        $map_location = $floorInfoData->map_location;
+        $company_description =  $floorInfoData->company_description;
+        $address =  $floorInfoData->address;
+        $id =  $floorInfoData->id;
+        $media_id =  $floorInfoData->media_id;
+        $web_permission =  $floorInfoData->web_permission;
+        $is_empty =  $floorInfoData->is_empty;
+        $company_category_id =  $floorInfoData->company_category_id;
         $data =  str_replace([" ", '\\'], null, $web_permission);
         $web_permission =  json_decode($data, true, JSON_UNESCAPED_SLASHES);
 
@@ -110,7 +110,7 @@ function stnc_wp_floor_adminMenu_stnc_building_ext()
 
         if ($success) {
             $_SESSION['stnc_map_flash_msg'] =  esc_html_e( 'Record Updated', 'the-stnc-map' );
-            wp_redirect('/wp-admin/admin.php?page=stnc_building_ext&binaid='.$building_id.'&kat='. $floor_id.'&st_trigger=show&id='.$_GET['id'], 302);
+            wp_redirect('/wp-admin/admin.php?page=stnc_building_company&binaid='.$building_id.'&kat='. $floor_id.'&st_trigger=show&id='.$_GET['id'], 302);
             die;
         }
         // include ('add_edit.php');
@@ -189,7 +189,7 @@ function stnc_wp_floor_adminMenu_stnc_building_ext()
         if ($success) {
             $_SESSION['stnc_map_flash_msg'] =  esc_html_e( 'Record Save', 'the-stnc-map' );
             $lastid = $wpdb->insert_id;
-            wp_redirect('/wp-admin/admin.php?page=stnc_building_ext&binaid='.$building_id.'&kat='. $floor_id.'&st_trigger=show&id='. $lastid, 302);
+            wp_redirect('/wp-admin/admin.php?page=stnc_building_company&binaid='.$building_id.'&kat='. $floor_id.'&st_trigger=show&id='. $lastid, 302);
             die;
         }
 
@@ -198,24 +198,24 @@ function stnc_wp_floor_adminMenu_stnc_building_ext()
 
     if ((isset($_GET['st_trigger'])) && ($_GET['st_trigger'] === 'office_empty')) {
    
-        $thepost = $wpdb->get_row($wpdb->prepare("SELECT *  FROM " . $stncForm_tableNameMain . "  WHERE id = %d", $_GET['id']));
+        $floorInfoData = $wpdb->get_row($wpdb->prepare("SELECT *  FROM " . $stncForm_tableNameMain . "  WHERE id = %d", $_GET['id']));
 
-        $door_number = $thepost->door_number;
-        $floors_locations_id = $thepost->id;
-        $building_id = $thepost->building_id;
-        $floor_id = $thepost->floor_id;
-        $company_name = $thepost->company_name;
-        $square_meters = $thepost->square_meters;
-        $email =  $thepost->email;
-        $phone = $thepost->phone;
-        $mobile_phone = $thepost->mobile_phone;
-        $web_site = $thepost->web_site;
-        $map_location = $thepost->map_location;
-        $company_description =  $thepost->company_description;
-        $address =  $thepost->address;
-        $id =  $thepost->id;
-        $media_id =  $thepost->media_id;
-        $web_permission =  $thepost->web_permission;
+        $door_number = $floorInfoData->door_number;
+        $floors_locations_id = $floorInfoData->id;
+        $building_id = $floorInfoData->building_id;
+        $floor_id = $floorInfoData->floor_id;
+        $company_name = $floorInfoData->company_name;
+        $square_meters = $floorInfoData->square_meters;
+        $email =  $floorInfoData->email;
+        $phone = $floorInfoData->phone;
+        $mobile_phone = $floorInfoData->mobile_phone;
+        $web_site = $floorInfoData->web_site;
+        $map_location = $floorInfoData->map_location;
+        $company_description =  $floorInfoData->company_description;
+        $address =  $floorInfoData->address;
+        $id =  $floorInfoData->id;
+        $media_id =  $floorInfoData->media_id;
+        $web_permission =  $floorInfoData->web_permission;
      
 
         $success =   $wpdb->insert(
@@ -266,7 +266,7 @@ function stnc_wp_floor_adminMenu_stnc_building_ext()
     
         if ($success) {
             $_SESSION['stnc_map_flash_msg'] =  esc_html_e( 'Record Save', 'the-stnc-map' );
-            wp_redirect('/wp-admin/admin.php?page=stnc_building_ext&st_trigger=show&binaid='.$building_id.'&kat='. $floor_id.'&id='. $floors_locations_id, 302);
+            wp_redirect('/wp-admin/admin.php?page=stnc_building_company&st_trigger=show&binaid='.$building_id.'&kat='. $floor_id.'&id='. $floors_locations_id, 302);
             die;
         }
     }

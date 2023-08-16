@@ -1,15 +1,14 @@
 <?php include("_header-show.php") ?>
 <main class="flex-shrink-0" style="margin-top:88px">
-  <div class="container-fluid"> 
+  <div class="stnc-container-fluid"> 
     <?php if (isset($_SESSION['stnc_map_flash_msg'] )) { ?> <p class="alert alert-success"> <?php echo $_SESSION['stnc_map_flash_msg']; ?> 
     </p> <?php unset($_SESSION['stnc_map_flash_msg']); ?> <?php } ?> <div>
-      <span style="color:red"> <?php echo $building_id ?>. Bina / <?php echo $katadi ?> </span> için firma <?php  echo $title?> işlemi
-    </div> <?php echo $form  ?> <div class="row">
-      <div class="col-md-4">
+      <span style="color:red"> <?php echo $building_id ?>. <?php esc_html_e( 'Building', 'the-stnc-map' ) ?> / <?php echo $katadi ?>
+    </div> <?php echo $form  ?> <div class="stnc-row">
+      <div class="stnc-col-4">
         <div class="form-group">
         
-          <input type="hidden" value="
-										<?php echo $id ?>" name="id" id="id">
+          <input type="hidden" value="<?php echo $id ?>" name="id" id="id">
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">  <?php esc_html_e( 'Company', 'the-stnc-map' ) ?> <?php  echo $title?> </h5>
@@ -41,7 +40,7 @@
             </div>
           </div>
           <div class="form-group">
-          <input id="stnc_wp_kiosk_Metabox_video_extra" class="page_upload_trigger_element btn btn-danger" name="stnc_wp_kiosk_Metabox_video_extra" type="button" value="Harita Yükle / Seç" style="">
+          <input id="stnc_wp_kiosk_Metabox_video_extra" class="page_upload_trigger_element btn btn-danger" name="stnc_wp_kiosk_Metabox_video_extra" type="button" value="<?php esc_html_e( 'Map Load', 'the-stnc-map' ) ?>" style="">
 
           </div>
           <br>
@@ -50,7 +49,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-8"> 
+      <div class="stnc-col-8"> 
          <input type="hidden" value="<?php echo $scheme_media_id ?>" name="media_id" id="media_id">
         <?php  if ((isset($_GET['st_trigger'])) && ($_GET['st_trigger'] === 'show')) :  ?> 
         <div class="background_attachment_metabox_container">
