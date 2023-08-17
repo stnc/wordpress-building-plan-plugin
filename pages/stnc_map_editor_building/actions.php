@@ -104,7 +104,7 @@ function stnc_wp_floor_adminMenu_stnc_map_editor_stnc()
 
 
 
-    if ((isset($_GET['st_trigger'])) && ($_GET['st_trigger'] === 'add_save')) {
+    if ((isset($_GET['st_trigger'])) && ($_GET['st_trigger'] === 'store')) {
 
         $door_number = isset($_POST["door_number"]) ? sanitize_text_field($_POST["door_number"]) : "0";
         $company_name = isset($_POST["company_name"]) ? sanitize_text_field($_POST["company_name"]) : " isim eklenmemiş";

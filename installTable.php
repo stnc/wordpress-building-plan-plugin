@@ -6,16 +6,6 @@ function stnc_wp_floor_database_install1()
 
     $stncForm_tableNameMain = 'stnc_map_floors_locations';
 
-    // $sql = " ALTER TABLE  " . $wpdb->prefix ."stnc_map_floors DROP web_permission";
-    // @$wpdb->query( $sql );
-
-    // $sql = " ALTER TABLE  " . $wpdb->prefix ."stnc_map_floors DROP is_empty";
-    // @$wpdb->query( $sql );
-
-    // $sql = " ALTER TABLE " . $wpdb->prefix . $stncForm_tableNameMain . " ADD open_web TINYINT(1)  NULL DEFAULT '0' AFTER status ";
-    // @$wpdb->query( $sql );
-
-
     $charset_collate = $wpdb->get_charset_collate();
      $sql = "CREATE TABLE IF NOT EXISTS  " . $wpdb->prefix . $stncForm_tableNameMain . " (
             id INT NOT NULL AUTO_INCREMENT,
@@ -37,7 +27,7 @@ function stnc_wp_floor_database_install1()
             add_date DATETIME NOT NULL,
             web_permission TEXT DEFAULT NULL,
             is_empty TINYINT(1) NULL DEFAULT '0' ,
-            open_web TINYINT(1) NULL DEFAULT '0' ,
+            is_show TINYINT(1) NULL DEFAULT '0' ,
             PRIMARY KEY  (id)
         ) $charset_collate;";
         require_once(ABSPATH . 'wp-admin/includes/upgrade.php');

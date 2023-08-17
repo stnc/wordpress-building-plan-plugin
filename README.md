@@ -1,15 +1,7 @@
-kurulumdan once stnc_map_floors dan 
-  web_permission TEXT DEFAULT NULL,
-              is_empty TINYINT(1) NULL DEFAULT '0' , 
-
-              silinecek 
-
-              
-bunun icinde birde eklenen alan vardi  stnc_map_floors_locations alanina            open_web TINYINT(1) NULL DEFAULT '0' ,
-
+  //http://localhost:8082/wp-admin/admin.php?page=stnc_map_update
 yukardaki sql sorgusu kaldi 
 mail gonderme kaldi 
-
+http://localhost:8082/wp-admin/admin.php?page=stnc_building_setting  buraya mail adreslerini yazman lazim 
 
 # wordpress-building-plan-plugin
 

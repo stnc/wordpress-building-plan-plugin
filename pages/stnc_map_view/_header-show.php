@@ -17,11 +17,23 @@
 .fer {
     color:#fff;
 }
-.dragAbsoluteSpan1 {
+.dragAbsoluteSpanBlue {
     border-radius: 78px;
     /* padding: 1px; */
     color: blanchedalmond;
     background-color: blue;
+    display: inline-block;
+    width: 26px;
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+.dragAbsoluteSpanRed {
+    border-radius: 78px;
+    /* padding: 1px; */
+    color: blanchedalmond;
+    background-color: red;
     display: inline-block;
     width: 26px;
     float: left;

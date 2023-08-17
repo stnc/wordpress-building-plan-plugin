@@ -35,8 +35,7 @@ function stnc_map_building_company_shortcode($attr)
     wp_enqueue_script("stnc-front");
 
     $wp_stnc_map_floors1 =
-        $wpdb->prefix .
-        "stnc_map_floors_locations where is_empty=0  order by company_name asc";
+        $wpdb->prefix ."stnc_map_floors_locations where is_empty=0  and is_show=1 order by company_name asc";
     //  $wp_stnc_map_floors1 =$wpdb->prefix . 'stnc_map_floors_locations WHERE floor_id='.$args['id'].'';
     $sql = "SELECT * FROM " . $wp_stnc_map_floors1 . " ";
     $buildingsList = $wpdb->get_results($sql);

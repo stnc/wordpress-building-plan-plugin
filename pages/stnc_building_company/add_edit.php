@@ -32,7 +32,7 @@ $map = $wpdb->get_row($wpdb->prepare($sql, $binaId,$katId));
 
       
          $title ="Ekleme";
-         $form = '<form action="/wp-admin/admin.php?page=stnc_building_company&st_trigger=add_save&binaid='. $_GET['binaid'] .'&kat='. $_GET['kat'] .'" method="post">';
+         $form = '<form action="/wp-admin/admin.php?page=stnc_building_company&st_trigger=store&binaid='. $_GET['binaid'] .'&kat='. $_GET['kat'] .'" method="post">';
 
          if ((isset($_GET['st_trigger'])) && ($_GET['st_trigger'] === 'show')) {
             $title =esc_html_e( 'Show', 'the-stnc-map' ) ;
@@ -237,7 +237,7 @@ $map = $wpdb->get_row($wpdb->prepare($sql, $binaId,$katId));
                     <div class="form-group">
                            
                  
-                            <input type="checkbox" class="open_web"  name="open_web" <?php  echo $open_web==1 ? 'checked' : '' ?> id="open_web"> 
+                            <input type="checkbox" class="is_show"  name="is_show" <?php  echo $is_show==0 ? 'checked' : '' ?> id="is_show"> 
                             <label for="email"> <strong><?php esc_html_e( 'Sirket bilgisini web sitesinde gosterme', 'the-stnc-map' ) ?></strong> </label>
                         </div>
                         <br>

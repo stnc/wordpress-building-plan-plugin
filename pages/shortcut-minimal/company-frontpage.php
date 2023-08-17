@@ -6,7 +6,7 @@
 
 
 
-add_shortcode( "stnc_building_modern",  "stnc_map_stnc_building_modern_shortcode");
+add_shortcode( "stnc_building_minimal",  "stnc_map_stnc_building_minimal_shortcode");
 
 
 /**
@@ -14,7 +14,7 @@ add_shortcode( "stnc_building_modern",  "stnc_map_stnc_building_modern_shortcode
  *
  * @param      array  $atts   User defined attributes in shortcode tag
  */
-function stnc_map_stnc_building_modern_shortcode($attr)
+function stnc_map_stnc_building_minimal_shortcode($attr)
 {
     global $wpdb;
 
@@ -32,11 +32,8 @@ function stnc_map_stnc_building_modern_shortcode($attr)
     // wp_register_script( "simple-datatable",plugins_url("../../assets/js/simple-datatables.js", __FILE__), "", $ver, false );
     // wp_enqueue_script("simple-datatable");
 
-
-
     $table = $wpdb->prefix . "stnc_map_floors_locations";
- 
-    $sql = "SELECT * FROM " . $table . " where is_empty=0 and open_web=1  order by company_name asc";
+    $sql = "SELECT * FROM " . $table . " where is_empty=0 and is_show=1  order by company_name asc";
     $buildingsList = $wpdb->get_results($sql);
 
 
@@ -328,6 +325,13 @@ table.datatable-table:focus {
 		  	foreach ($buildingsList as $building) : ?>
                 <tr>
                     <td><?php echo $building->company_name ?></td>
+
+                  
+      <?php if ( current_user_can("editor") ||  current_user_can("administrator")) { ?>  <td>
+          <a href="/wp-admin/admin.php?page=stnc_building_company&binaid=1&kat=<?php echo $building->floor_id; ?>&st_trigger=show&id=<?php echo $building->id; ?>"><?php esc_html_e( 'edit', 'the-stnc-map' ) ?></a>
+          </td> <?php } ?>
+
+               
                 </tr>
        
 		<?php endforeach ?>

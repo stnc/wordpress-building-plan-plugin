@@ -45,16 +45,13 @@
                                 ] != ""
                                 ? $position["top"] - 116
                                 : "0"; ?>px;" title="<h4 class='fer'>
-                            <?php if (
-                                $result->is_empty === "1"
-                                ): ?>   BOŞ OFİS <?php else: ?>
-                            <?php echo $result->company_name; ?> 
-                            <?php endif; ?>
+                            <?php if ( $result->is_empty === "1" ): ?>   BOŞ OFİS <?php else: ?><?php echo $result->company_name; ?>  <?php endif; ?>
                             </h4> <br> <span>
                             <?php echo $result->phone; ?></span> 
                             <?php echo $result->email; ?> <br><?php echo $result->company_description; ?><br>   <?php echo $image; ?>" data-bs-html="true"
                             id="ex-<?php echo $result->door_number; ?>-draggable" data-bs-toggle="tooltip" class="dragAbsolute">
-                            <span class="dragAbsoluteSpan1"><?php echo $result->door_number; ?></span>
+                            
+                            <span class="<?php if ( $result->is_empty === "1" ): ?> dragAbsoluteSpanRed<?php else: ?>dragAbsoluteSpanBlue<?php endif; ?>"><?php echo $result->door_number; ?></span>
                             <span class="dragAbsoluteSpan2"><?php echo $result->square_meters; ?> m2</span>
                         </div>
                         <?php
@@ -133,11 +130,7 @@
                                         </svg>
                                         <?php echo  $empty_area ?> m²
                                     </small>
-                               <small>     <a href="/wp-admin/admin.php?page=stnc_map_editor_building&st_trigger=show&teknoid=<?php echo $_GET[
-                                "binaid"
-                                ]; ?>&id=<?php echo $_GET[
-                                "kat"
-                                ]; ?>"><?php esc_html_e("Edit / Upload Map", "the-stnc-map"); ?></a></small>
+                               <small>     <a href="/wp-admin/admin.php?page=stnc_map_editor_building&st_trigger=show&teknoid=<?php echo $_GET["binaid"]; ?>&id=<?php echo $_GET["kat"]; ?>"><?php esc_html_e("Edit / Upload Map", "the-stnc-map"); ?></a></small>
                                 </span>
                             </label>
                           

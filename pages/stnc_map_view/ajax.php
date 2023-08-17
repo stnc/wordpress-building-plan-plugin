@@ -1,5 +1,5 @@
 <?php
-
+//bunu haritada konum kaydederken  kullaniyor , plaindraggle.js  
 
 function stnc_wp_floor_stncStatus_ajax_request() {
 

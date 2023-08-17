@@ -48,11 +48,12 @@ include ('pages/stnc_map_view/ajax.php');
 require_once "pages/company_list_data_table/stncForm_company_list.php";
 require_once "pages/company_empty_list_data_table/stncForm_empty_company_list.php";
 require_once "pages/about/stncForm-adminMenu_About.php";
+require_once "pages/update/update_pack.php";
 
 require_once "pages/shortcut-classic/shortcode_admin.php";
 require_once "pages/shortcut-classic/company-frontpage.php";
 
-require_once "pages/shortcut-modern/company-frontpage.php";
+require_once "pages/shortcut-minimal/company-frontpage.php";
 
 require_once 'codestar-framework/codestar-framework.php';
 require_once 'codestar-framework/samples/admin-options.php';

@@ -28,7 +28,7 @@ function stnc_wp_floor_adminMenu_stnc_building_company()
         $web_permission =  $floorInfoData->web_permission;
         $is_empty =  $floorInfoData->is_empty;
         $company_category_id =  $floorInfoData->company_category_id;
-        $open_web =  $floorInfoData->open_web;
+        $is_show =  $floorInfoData->is_show;
         $data =  str_replace([" ", '\\'], null, $web_permission);
         $web_permission =  json_decode($data, true, JSON_UNESCAPED_SLASHES);
 
@@ -62,7 +62,7 @@ function stnc_wp_floor_adminMenu_stnc_building_company()
         $media_id = isset($_POST["media_id"]) ? sanitize_text_field($_POST["media_id"]) : 0;
         $company_category_id = isset($_POST["company_category_id"]) ? sanitize_text_field($_POST["company_category_id"]) :16;
         $web_permission = isset($_POST["web_permission"]) ? $_POST["web_permission"] : '';
-        $open_web = isset($_POST["open_web"]) ? 1: 0;
+        $is_show = isset($_POST["is_show"]) ? 0: 1;
 
  /*   
         $tempData = str_replace("\\", "",  $web_permission );
@@ -106,7 +106,7 @@ function stnc_wp_floor_adminMenu_stnc_building_company()
                 'web_permission' =>    $web_permission,
                 'add_date' =>   $date,
                 'is_empty' =>0,
-                'open_web' =>$open_web,
+                'is_show' =>$is_show,
             ),
             array('id' => $_GET['id'])
         );
@@ -134,7 +134,7 @@ function stnc_wp_floor_adminMenu_stnc_building_company()
         $address = isset($_POST["address"]) ? sanitize_text_field($_POST["address"]) : " ";
         $media_id = isset($_POST["media_id"]) ? sanitize_text_field($_POST["media_id"]) : " ";
         $company_category_id = isset($_POST["company_category_id"]) ? sanitize_text_field($_POST["company_category_id"]) : 0;
-        $open_web = isset($_POST["open_web"]) ? 1: 0;
+        $is_show = isset($_POST["is_show"]) ? 0: 1;
         $web_permission = '[{\"door_number_permission\":false,\"square_meters_permission\":false,\"email_permission\":false,\"phone_permission\":false,\"mobile_phone_permission\":false,\"web_site_permission\":false,\"company_description_permission\":false,\"address_permission\":false}]';
         $data =  str_replace([" ", '\\'], null, $web_permission);
         $web_permission =  json_decode($data, true, JSON_UNESCAPED_SLASHES);
@@ -149,7 +149,7 @@ function stnc_wp_floor_adminMenu_stnc_building_company()
 
 
 
-    if ((isset($_GET['st_trigger'])) && ($_GET['st_trigger'] === 'add_save')) {
+    if ((isset($_GET['st_trigger'])) && ($_GET['st_trigger'] === 'store')) {
         // session_start();
         $door_number = isset($_POST["door_number"]) ? sanitize_text_field($_POST["door_number"]) : "0";
         $company_name = isset($_POST["company_name"]) ? sanitize_text_field($_POST["company_name"]) : " isim eklenmemiş";
@@ -166,7 +166,7 @@ function stnc_wp_floor_adminMenu_stnc_building_company()
         $media_id = isset($_POST["media_id"]) ? sanitize_text_field($_POST["media_id"]) : 0;
    
         $company_category_id = isset($_POST["company_category_id"]) ? sanitize_text_field($_POST["company_category_id"]) : 16;
-        $open_web = isset($_POST["open_web"]) ? 1: 0;
+        $is_show = isset($_POST["is_show"]) ? 0: 1;
         $web_permission = isset($_POST["web_permission"]) ? "" : '';
 // print_r(  json_decode($_POST["web_permission"], true) );
 // die;
@@ -191,7 +191,7 @@ function stnc_wp_floor_adminMenu_stnc_building_company()
                 'media_id' =>      $media_id ,
                 'web_permission' =>    $web_permission,
                 'add_date' =>   $date,
-                'open_web' =>   $open_web,
+                'is_show' =>   $is_show,
                    'is_empty' => 0,
             ),
         );
@@ -275,6 +275,7 @@ function stnc_wp_floor_adminMenu_stnc_building_company()
        // echo $wpdb->last_query;
     
         if ($success) {
+         
             $_SESSION['stnc_map_flash_msg'] =  __( 'Record Save', 'the-stnc-map' );
             wp_redirect('/wp-admin/admin.php?page=stnc_building_company&st_trigger=show&binaid='.$building_id.'&kat='. $floor_id.'&id='. $floors_locations_id, 302);
             die;
