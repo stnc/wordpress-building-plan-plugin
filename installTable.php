@@ -2,9 +2,20 @@
 
 function stnc_wp_floor_database_install1()
 {
-    global $wpdb; //wp_stnc_map_floors
+    global $wpdb; 
 
     $stncForm_tableNameMain = 'stnc_map_floors_locations';
+
+    // $sql = " ALTER TABLE  " . $wpdb->prefix ."stnc_map_floors DROP web_permission";
+    // @$wpdb->query( $sql );
+
+    // $sql = " ALTER TABLE  " . $wpdb->prefix ."stnc_map_floors DROP is_empty";
+    // @$wpdb->query( $sql );
+
+    // $sql = " ALTER TABLE " . $wpdb->prefix . $stncForm_tableNameMain . " ADD open_web TINYINT(1)  NULL DEFAULT '0' AFTER status ";
+    // @$wpdb->query( $sql );
+
+
     $charset_collate = $wpdb->get_charset_collate();
      $sql = "CREATE TABLE IF NOT EXISTS  " . $wpdb->prefix . $stncForm_tableNameMain . " (
             id INT NOT NULL AUTO_INCREMENT,
@@ -26,6 +37,7 @@ function stnc_wp_floor_database_install1()
             add_date DATETIME NOT NULL,
             web_permission TEXT DEFAULT NULL,
             is_empty TINYINT(1) NULL DEFAULT '0' ,
+            open_web TINYINT(1) NULL DEFAULT '0' ,
             PRIMARY KEY  (id)
         ) $charset_collate;";
         require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
@@ -99,8 +111,6 @@ function stnc_wp_floor_database_install1()
               created_at TIMESTAMP NULL DEFAULT NULL,
               updated_at TIMESTAMP NULL DEFAULT NULL,
               class VARCHAR(255) NULL DEFAULT NULL,
-              web_permission TEXT DEFAULT NULL,
-              is_empty TINYINT(1) NULL DEFAULT '0' ,
               PRIMARY KEY  (id)
           ) $charset_collate;";
           require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
@@ -146,7 +156,7 @@ function stnc_wp_floor_remove_database()
     global $wpdb;
     // global $stncForm_tableNameMain;
     $stncForm_DeleteTableNameMain = 'stnc_map_floors_locations_old_company';
-    echo $sql = "DROP TABLE  " . $wpdb->prefix . $stncForm_DeleteTableNameMain ;
+     $sql = "DROP TABLE  " . $wpdb->prefix . $stncForm_DeleteTableNameMain ;
     $wpdb->query($sql);
     //  delete_option("my_plugin_db_version");
     require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
@@ -157,11 +167,5 @@ function stnc_wp_floor_remove_database()
 register_uninstall_hook(__FILE__, 'stnc_wp_floor_remove_database');
 register_deactivation_hook(__FILE__, 'stnc_wp_floor_remove_database');
 
-// function stncForm_load_textdomain()
-// {
-//     load_plugin_textdomain('stnc', false, dirname(plugin_basename(__FILE__)) . '/i18n/languages/');
-// }
-
-// add_action('plugins_loaded', 'stncForm_load_textdomain');
 
 // add_action('admin_init','stncForm_remove_database');

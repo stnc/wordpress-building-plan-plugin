@@ -3,7 +3,7 @@
 Plugin Name:  Teknopark Binalar
 Plugin URI:	https://github.com/stnc/wp-kat-planlari		
 Description: Erciyes Teknopark Kat Planları
-Version: 3.0.0
+Version: 2.4.0
 Author: selman tunç
 Text Domain: the-stnc-map
 Domain Path: /languages/
@@ -46,12 +46,13 @@ include ('pages/stnc_map_view/ajax.php');
 
 
 require_once "pages/company_list_data_table/stncForm_company_list.php";
+require_once "pages/company_empty_list_data_table/stncForm_empty_company_list.php";
 require_once "pages/about/stncForm-adminMenu_About.php";
-require_once "pages/shortcut/shortcode_generate_page.php";
-require_once "pages/shortcut/shortcode_embed.php";
+require_once "pages/shortcut/shortcode_admin.php";
 require_once "pages/shortcut/company-frontpage.php";
-
-
+require_once 'codestar-framework/codestar-framework.php';
+require_once 'codestar-framework/samples/admin-options.php';
+require_once 'my-options.php';
 
 /*
 // load css into the login page

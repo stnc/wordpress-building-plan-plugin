@@ -21,9 +21,8 @@ AS bina_id,kat.id AS katid  FROM ".   $wp_stnc_map_floors." AS kat INNER JOIN ".
 $map = $wpdb->get_row($wpdb->prepare($sql, $binaId,$katId));
   
 
-//    $nextCompany= $wpdb->get_var('SELECT building_id FROM ' . $wp_stnc_map_floors . ' WHERE id > ' .  $map->katid  );
-   $nextCompany= $wpdb->get_var("select building_id from " .  $wp_stnc_map_floors_locations  . " where id = (select min(id) from " .  $wp_stnc_map_floors_locations  . " where id > ".$id.")" );
-   $prevCompany= $wpdb->get_var("select building_id from " .  $wp_stnc_map_floors_locations  . " where id = (select min(id) from " .  $wp_stnc_map_floors_locations  .  " where id < ".$id.")" );
+//    $nextCompany= $wpdb->get_var("select building_id from " .  $wp_stnc_map_floors_locations  . " where id = (select min(id) from " .  $wp_stnc_map_floors_locations  . " where id > ".$id.")" );
+//    $prevCompany= $wpdb->get_var("select building_id from " .  $wp_stnc_map_floors_locations  . " where id = (select min(id) from " .  $wp_stnc_map_floors_locations  .  " where id < ".$id.")" );
 
          $scheme = $map->scheme;
     
@@ -150,7 +149,7 @@ $map = $wpdb->get_row($wpdb->prepare($sql, $binaId,$katId));
                         <hr>
 
                         <div class="form-group">
-                            <label for="company_category_id"> <strong></strong> </label>
+                            <label for="company_category_id"> <strong><?php esc_html_e( 'Company Categories', 'the-stnc-map' ) ?></strong> </label>
                               <select name="company_category_id">
                                     <?php foreach ($categoriesList as $categories) : ?>
                                         <option  <?php if ($categories->id == $company_category_id) echo 'selected'; ?> value="<?php echo $categories->id ?>">
@@ -253,7 +252,7 @@ $map = $wpdb->get_row($wpdb->prepare($sql, $binaId,$katId));
 
 
                 <?php  if ($is_empty === "0") :   ?>
-                <a href="/wp-admin/admin.php?page=stnc_building_company&st_trigger=show&binaid=1&kat=1&id=<?php echo $_GET['id']?>" class="btn btn-danger"> <?php esc_html_e( 'Vacate the Office', 'the-stnc-map' ) ?></a>
+                <a href="/wp-admin/admin.php?page=stnc_building_company&st_trigger=office_empty&binaid=1&kat=1&id=<?php echo $_GET['id']?>" class="btn btn-danger"> <?php esc_html_e( 'Vacate the Office', 'the-stnc-map' ) ?></a>
                 <br>
                  <br>
                 <?php endif ; ?>

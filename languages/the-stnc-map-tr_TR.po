@@ -47,8 +47,8 @@ msgid "Wordpress Panel"
 msgstr ""
 
 #: pages/homepage.php:39
-msgid "Table List"
-msgstr "Tablo Listesi"
+msgid "Company List"
+msgstr "Firma Listesi"
 
 #: pages/homepage.php:43 pages/stnc_building_company/_header-show.php:41
 #: pages/stnc_map_editor_building/_header-show.php:50
@@ -63,7 +63,7 @@ msgstr "Bina"
 
 #: pages/homepage.php:90
 msgid "FULL"
-msgstr "Tam"
+msgstr "Full"
 
 #: pages/homepage.php:99 pages/stnc_map_view/editor.php:50
 #: pages/stnc_map_view/show.php:56
@@ -154,10 +154,9 @@ msgstr "Filtre"
 msgid "Company list"
 msgstr "Firma Listesi"
 
-#: pages/stnc_building_company/_header-show.php:21
-#: pages/stnc_map_editor_building/_header-show.php:22
-msgid "Show company list of this building"
-msgstr "Binalara gore firmaları göster"
+
+msgid "Show Location On Map"
+msgstr "Haritada Konumunu Göster"
 
 #: pages/stnc_building_company/_header-show.php:28
 #: pages/stnc_map_view/_header-show.php:87
@@ -365,3 +364,35 @@ msgstr "Kayit Guncellendi"
 
 msgid "Information about this building"
 msgstr "Bu binaya ait bilgiler"
+
+
+msgid "Copy Shortcode"
+msgstr "Kodu Kopyala"
+
+msgid "Building and Floor Information"
+msgstr "Bina ve Kat Bilgisi"
+
+msgid "Company Categories"
+msgstr "Firma Kategorisi"
+
+
+msgid "Show Location On Map"
+msgstr "Haritada Konumunu Göster"
+
+msgid "Empty Companies List"
+msgstr "Bos Firmalar Listesi"
+
+msgid "Empty Buildings"
+msgstr "Bos Binalar"
+
+msgid "Options"
+msgstr "Ayarlar"
+
+msgid "Is mailing enabled for events?"
+msgstr "Olaylar icin email gonderimi aktif olsun mu?"
+
+msgid "You can increase email addresses by pressing the plus sign."
+msgstr "Email adreslerini arti isaretine basarak artirabilirsiniz"
+
+msgid "Email Addresses"
+msgstr "Email Adresleri"

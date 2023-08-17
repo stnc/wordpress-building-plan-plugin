@@ -109,7 +109,7 @@ function stnc_wp_floor_adminMenu_stnc_building_company()
         );
 
         if ($success) {
-            $_SESSION['stnc_map_flash_msg'] =  esc_html_e( 'Record Updated', 'the-stnc-map' );
+            $_SESSION['stnc_map_flash_msg'] =  __( 'Record Updated', 'the-stnc-map' );
             wp_redirect('/wp-admin/admin.php?page=stnc_building_company&binaid='.$building_id.'&kat='. $floor_id.'&st_trigger=show&id='.$_GET['id'], 302);
             die;
         }
@@ -136,7 +136,10 @@ function stnc_wp_floor_adminMenu_stnc_building_company()
         $web_permission =  json_decode($data, true, JSON_UNESCAPED_SLASHES);
         print_r(     $web_permission);
         $is_empty = 0;
-        
+
+        $table=$wpdb->prefix.'stnc_building_ext_categories';
+        $sql_company_list = 'SELECT * FROM ' . $table .'  WHERE status=1' ;
+        $categoriesList = $wpdb->get_results($sql_company_list);
         include ('add_edit.php');
     }
 
@@ -187,7 +190,7 @@ function stnc_wp_floor_adminMenu_stnc_building_company()
         );
 
         if ($success) {
-            $_SESSION['stnc_map_flash_msg'] =  esc_html_e( 'Record Save', 'the-stnc-map' );
+            $_SESSION['stnc_map_flash_msg'] =  __( 'Record Save', 'the-stnc-map' );
             $lastid = $wpdb->insert_id;
             wp_redirect('/wp-admin/admin.php?page=stnc_building_company&binaid='.$building_id.'&kat='. $floor_id.'&st_trigger=show&id='. $lastid, 302);
             die;
@@ -265,7 +268,7 @@ function stnc_wp_floor_adminMenu_stnc_building_company()
        // echo $wpdb->last_query;
     
         if ($success) {
-            $_SESSION['stnc_map_flash_msg'] =  esc_html_e( 'Record Save', 'the-stnc-map' );
+            $_SESSION['stnc_map_flash_msg'] =  __( 'Record Save', 'the-stnc-map' );
             wp_redirect('/wp-admin/admin.php?page=stnc_building_company&st_trigger=show&binaid='.$building_id.'&kat='. $floor_id.'&id='. $floors_locations_id, 302);
             die;
         }

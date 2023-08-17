@@ -46,7 +46,7 @@ msgid "Wordpress Panel"
 msgstr ""
 
 #: pages/homepage.php:39
-msgid "Table List"
+msgid "Company List"
 msgstr ""
 
 #: pages/homepage.php:43 pages/stnc_building_company/_header-show.php:41
@@ -153,10 +153,7 @@ msgstr ""
 msgid "Company list"
 msgstr ""
 
-#: pages/stnc_building_company/_header-show.php:21
-#: pages/stnc_map_editor_building/_header-show.php:22
-msgid "Show company list of this building"
-msgstr ""
+
 
 #: pages/stnc_building_company/_header-show.php:28
 #: pages/stnc_map_view/_header-show.php:87
@@ -325,6 +322,9 @@ msgstr ""
 msgid "Companies List"
 msgstr ""
 
+msgid "Empty Companies List"
+msgstr ""
+
 msgid "Shortcut"
 msgstr ""
 
@@ -360,4 +360,31 @@ msgstr ""
 
 
 msgid "Record Update"
+msgstr ""
+
+msgid "Copy Shortcode"
+msgstr ""
+
+msgid "Building and Floor Information"
+msgstr ""
+
+msgid "Company Categories"
+msgstr ""
+
+msgid "Show Location On Map"
+msgstr ""
+
+msgid "Empty Buildings"
+msgstr ""
+
+msgid "Options"
+msgstr ""
+
+msgid "Is mailing enabled for events?"
+msgstr ""
+
+msgid "You can increase email addresses by pressing the plus sign."
+msgstr ""
+
+msgid "Email Addresses"
 msgstr ""

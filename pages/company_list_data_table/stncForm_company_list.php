@@ -292,10 +292,10 @@ class Stnc_wp_floor_List_Table extends WP_List_Table
 
 			$search = trim($search);
 
-			$sql = "SELECT loc.*,build.name AS build_name,floors.name AS floors_name,CONCAT(build.name , ' - ',  floors.name) as bina  
+		    $sql = "SELECT loc.*,build.name AS build_name,floors.name AS floors_name,CONCAT(build.name , ' - ',  floors.name) as bina  
 			FROM {$wpdb->prefix}stnc_map_floors_locations AS loc 
 			INNER JOIN {$wpdb->prefix}stnc_map_building AS build  ON  loc.building_id=build.id 
-			INNER JOIN  {$wpdb->prefix}stnc_map_floors AS floors  ON  loc.floor_id=floors.id  
+			INNER JOIN  {$wpdb->prefix}stnc_map_floors AS floors  ON  loc.floor_id=floors.id 
 			WHERE company_name LIKE '%$search%' OR company_description LIKE '%$search%' ";
 			if (!empty($_REQUEST['orderby'])) {
 				$sql .= ' ORDER BY ' . esc_sql($_REQUEST['orderby']);
@@ -306,10 +306,10 @@ class Stnc_wp_floor_List_Table extends WP_List_Table
 			$sql .= ' OFFSET ' . ($page_number - 1) * $per_page;
 			$result = $wpdb->get_results($sql, 'ARRAY_A');
 		} else {
-			 $sql = "SELECT loc.*,build.name AS build_name,floors.name AS floors_name,CONCAT(build.name , '- ',  floors.name) as bina  
+			  $sql = "SELECT loc.*,build.name AS build_name,floors.name AS floors_name,CONCAT(build.name , '- ',  floors.name) as bina  
 			 FROM {$wpdb->prefix}stnc_map_floors_locations AS loc 
 			 INNER JOIN {$wpdb->prefix}stnc_map_building AS build  ON  loc.building_id=build.id 
-			 INNER JOIN  {$wpdb->prefix}stnc_map_floors AS floors  ON  loc.floor_id=floors.id ";
+			 INNER JOIN  {$wpdb->prefix}stnc_map_floors AS floors  ON  loc.floor_id=floors.id  ";
 	
 			if (!empty($_REQUEST['orderby'])) {
 				$sql .= ' ORDER BY ' . esc_sql($_REQUEST['orderby']);

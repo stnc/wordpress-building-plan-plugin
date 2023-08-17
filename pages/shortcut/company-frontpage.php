@@ -4,25 +4,9 @@
 // [stnc_building_for_company]
 
 
-function stnc_building_for_company_js_css()
-{
-    wp_register_script(
-        "isotope-pkgd-min-jscss-script",
-        plugins_url("/assets/js/isotope.pkgd.min.js", __FILE__),
-        ["jquery"],
-        "2.0",
-        true
-    );
-    // wp_register_script("list-min-jscss-script", plugins_url("/assets/js/list.min.js", __FILE__), array('jquery'), "2.0", true);
-    // wp_register_style("zz-shortcode-jscss-style", plugins_url("style.css", __FILE__), array(), "1.0", "all");
-}
 
-add_action("init", "stnc_building_for_company_js_css");
 
-add_shortcode(
-    "stnc_building_for_company",
-    "stnc_map_building_company_shortcode"
-);
+add_shortcode( "stnc_building_for_company",  "stnc_map_building_company_shortcode");
 
 
 /**
@@ -83,31 +67,6 @@ function stnc_map_building_company_shortcode($attr)
     ?>
 
 
-<script>
- 'use strict';
- jQuery.noConflict();
-
-jQuery(document).ready(function ($) {
-   // init Isotopefdsdf4325435h6h
-var $grid = $('.grid').isotope({
-  itemSelector: '.element-item',
-  // layoutMode: 'fitRows'
-});
-
-// bind filter on select change
-jQuery('.filters-select').on( 'change', function() {
-  var filterValue = this.value;
-  $grid.isotope({ filter: filterValue });
-});
-
-// bind filter on select change
-jQuery('.filters-select-comnpany').on( 'change', function() {
-  var filterValue = this.value;
-  $grid.isotope({ filter: filterValue });
-});
-
-});
- </script>
 
 <div class="row" style="margin: 20px 0 20px 0 !important;
 display: block;
