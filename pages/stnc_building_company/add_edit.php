@@ -41,6 +41,9 @@ $map = $wpdb->get_row($wpdb->prepare($sql, $binaId,$katId));
          include ("_header-show.php");
 
 
+
+
+
     $door_number_permission_check="";
     $square_meters_permission_check="";
     $email_permission_check="";
@@ -231,7 +234,14 @@ $map = $wpdb->get_row($wpdb->prepare($sql, $binaId,$katId));
       
             <br>
                     <br>
-
+                    <div class="form-group">
+                           
+                 
+                            <input type="checkbox" class="open_web"  name="open_web" <?php  echo $open_web==1 ? 'checked' : '' ?> id="open_web"> 
+                            <label for="email"> <strong><?php esc_html_e( 'Sirket bilgisini web sitesinde gosterme', 'the-stnc-map' ) ?></strong> </label>
+                        </div>
+                        <br>
+                        <br>
                 <div class="form-group">
                     <input type="hidden" value="<?php echo $media_id ?>" name="media_id" id="media_id">
                     <input type="hidden" value="<?php echo $floors_locations_id ?>" name="floors_locations_id" id="floors_locations_id">

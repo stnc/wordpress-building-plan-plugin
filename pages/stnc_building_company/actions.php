@@ -28,11 +28,12 @@ function stnc_wp_floor_adminMenu_stnc_building_company()
         $web_permission =  $floorInfoData->web_permission;
         $is_empty =  $floorInfoData->is_empty;
         $company_category_id =  $floorInfoData->company_category_id;
+        $open_web =  $floorInfoData->open_web;
         $data =  str_replace([" ", '\\'], null, $web_permission);
         $web_permission =  json_decode($data, true, JSON_UNESCAPED_SLASHES);
 
-         $table=$wpdb->prefix.'stnc_building_ext_categories';
-          $sql_company_list = 'SELECT * FROM ' . $table .'  WHERE status=1' ;
+        $table=$wpdb->prefix.'stnc_building_ext_categories';
+        $sql_company_list = 'SELECT * FROM ' . $table .'  WHERE status=1' ;
 
         $categoriesList = $wpdb->get_results($sql_company_list);
 
@@ -61,6 +62,7 @@ function stnc_wp_floor_adminMenu_stnc_building_company()
         $media_id = isset($_POST["media_id"]) ? sanitize_text_field($_POST["media_id"]) : 0;
         $company_category_id = isset($_POST["company_category_id"]) ? sanitize_text_field($_POST["company_category_id"]) :16;
         $web_permission = isset($_POST["web_permission"]) ? $_POST["web_permission"] : '';
+        $open_web = isset($_POST["open_web"]) ? 1: 0;
 
  /*   
         $tempData = str_replace("\\", "",  $web_permission );
@@ -104,6 +106,7 @@ function stnc_wp_floor_adminMenu_stnc_building_company()
                 'web_permission' =>    $web_permission,
                 'add_date' =>   $date,
                 'is_empty' =>0,
+                'open_web' =>$open_web,
             ),
             array('id' => $_GET['id'])
         );
@@ -131,10 +134,11 @@ function stnc_wp_floor_adminMenu_stnc_building_company()
         $address = isset($_POST["address"]) ? sanitize_text_field($_POST["address"]) : " ";
         $media_id = isset($_POST["media_id"]) ? sanitize_text_field($_POST["media_id"]) : " ";
         $company_category_id = isset($_POST["company_category_id"]) ? sanitize_text_field($_POST["company_category_id"]) : 0;
+        $open_web = isset($_POST["open_web"]) ? 1: 0;
         $web_permission = '[{\"door_number_permission\":false,\"square_meters_permission\":false,\"email_permission\":false,\"phone_permission\":false,\"mobile_phone_permission\":false,\"web_site_permission\":false,\"company_description_permission\":false,\"address_permission\":false}]';
         $data =  str_replace([" ", '\\'], null, $web_permission);
         $web_permission =  json_decode($data, true, JSON_UNESCAPED_SLASHES);
-        print_r(     $web_permission);
+  
         $is_empty = 0;
 
         $table=$wpdb->prefix.'stnc_building_ext_categories';
@@ -160,7 +164,9 @@ function stnc_wp_floor_adminMenu_stnc_building_company()
         $building_id = isset($_GET["binaid"]) ? sanitize_text_field($_GET["binaid"]) : " ";
         $floor_id = isset($_GET["kat"]) ? sanitize_text_field($_GET["kat"]) : " ";
         $media_id = isset($_POST["media_id"]) ? sanitize_text_field($_POST["media_id"]) : 0;
+   
         $company_category_id = isset($_POST["company_category_id"]) ? sanitize_text_field($_POST["company_category_id"]) : 16;
+        $open_web = isset($_POST["open_web"]) ? 1: 0;
         $web_permission = isset($_POST["web_permission"]) ? "" : '';
 // print_r(  json_decode($_POST["web_permission"], true) );
 // die;
@@ -185,6 +191,7 @@ function stnc_wp_floor_adminMenu_stnc_building_company()
                 'media_id' =>      $media_id ,
                 'web_permission' =>    $web_permission,
                 'add_date' =>   $date,
+                'open_web' =>   $open_web,
                    'is_empty' => 0,
             ),
         );

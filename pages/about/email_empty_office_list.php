@@ -16,7 +16,7 @@ function stnc_wp_floor_email_empty_office_list(){
 ?>        
 
 <table class="dcf-table dcf-table-responsive dcf-table-bordered dcf-table-striped dcf-w-100%">
-	<caption>BOS OFISLER</caption>
+	<caption>Bos Ofisler</caption>
 	<thead>
 		<tr>
 			<th class="dcf-txt-center" scope="col">Bina / Kat </th>

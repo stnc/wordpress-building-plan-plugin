@@ -396,3 +396,6 @@ msgstr "Email adreslerini arti isaretine basarak artirabilirsiniz"
 
 msgid "Email Addresses"
 msgstr "Email Adresleri"
+
+msgid "Show company information on website"
+msgstr ""

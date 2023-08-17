@@ -8,7 +8,7 @@ require "email_footer.php";
 function stnc_wp_floor_plans_adminMenu_About_contents()
 {
   global $wpdb; 
- echo  $sql = " ALTER TABLE  " . $wpdb->prefix ."stnc_building_ext_categories DROP test";
+
   $options = get_option( 'stnc_wp_floor_option' ); // unique id of the framework
 echo "<pre>";
   print_r($options['email_adress']); // id of the field
@@ -92,6 +92,7 @@ echo "<pre>";
 - Implemented: ayarlar icin codestar framework kullanilacak https://codestarframework.com/documentation/#/ 
 - Implemented: cakismalari onlemek icin css de boostrap grid yerine SIMPLE GRID yapisina gecis yapildi
 - Implemented: bos binalar listelemesi yapildi 
+- Implemented: firmanin web sitesinde tamamen gorunmesi icin KVKK bla bla eklendi 
 - Changed: pages yapisi degistirildi daha anlasilir hale geldi
 - Changed: css ve js yukleyici yenilendi daha anlasilir hale geldi TODO: asset klasoru admin ve frontend olarak ayrilacak  
 - Bug fix: TODO : onceki sonraki ofis olayi iptal edildi ilerde acilacak 

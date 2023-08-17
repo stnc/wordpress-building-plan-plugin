@@ -35,7 +35,7 @@
                 array(
                   'id'    => 'mailadress',
                   'type'  => 'text',
-                  'title' => 'Email Adres',
+                  'title' => 'Email',
                 ),
               ),
               'default'   => array(

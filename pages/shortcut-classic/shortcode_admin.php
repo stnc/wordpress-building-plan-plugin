@@ -18,10 +18,20 @@ function copyData(containerid) {
 </script>
 <div class="inside">
             <div class="card shadow1" style="max-width:100%!important">
+            Classic Arayuz icin
             <?php esc_html_e( 'Place this code on the page you want to add, it will come to the whole page. If you want to add only one field, see the shortcode menu.', 'the-stnc-map' ) ?>
               <p></p>
-              <pre> [stnc_building_for_company]</pre>
+              <pre> [stnc_building_classic]</pre>
               <hr>
+              Modern Arayuz icin
+              <?php  esc_html_e( 'Place this code on the page you want to add, it will come to the whole page. If you want to add only one field, see the shortcode menu.', 'the-stnc-map' ) ?>
+              <p>perpage : her sayfada kac adet firma gosterilecek </p>
+              <pre> stnc_building_modern perpage=40]</pre>
+              <hr>
+
+              
+
+
                 <h2><?php esc_html_e( 'Shortcode List for Company Lists', 'the-stnc-map' ) ?></h2>
                 <p><?php esc_html_e( 'shortcode ; keywords written between square brackets', 'the-stnc-map' ) ?></p>  
                 <a href="https://www.kemalkefeli.com.tr/wordpresse-shortcode-ekleme.html"><?php esc_html_e( 'Detailed information', 'the-stnc-map' ) ?></a>

@@ -75,15 +75,22 @@ function stnc_wp_floor_front()
 add_action("wp_enqueue_scripts", "stnc_wp_floor_front");
 
 
-function stnc_building_for_company_js_css()
+// bu shortcode icindi ama onun icine eklendi 
+// function stnc_building_for_company_js_css()
+// {
+//     global $ver;
+//     wp_register_script( "isotope-pkgd-min-jscss-script",plugins_url("/assets/js/isotope.pkgd.min.js", __FILE__), array( 'jquery' ), $ver, true );
+//     wp_enqueue_script("isotope-pkgd-min-jscss-script");
+
+//     wp_register_script( "stnc-front",plugins_url("/assets/js/stnc-front.js", __FILE__), array( 'jquery' ), $ver, true );
+//     wp_enqueue_script("stnc-front");
+// }
+// add_action("wp_enqueue_scripts", "stnc_building_for_company_js_css",999999);
+
+function stnc_building_modern_js_css()
 {
     global $ver;
-    wp_register_script( "isotope-pkgd-min-jscss-script",plugins_url("/assets/js/isotope.pkgd.min.js", __FILE__), array( 'jquery' ), $ver, true );
-    wp_enqueue_script("isotope-pkgd-min-jscss-script");
-
-    wp_register_script( "stnc-front",plugins_url("/assets/js/stnc-front.js", __FILE__), array( 'jquery' ), $ver, true );
-    wp_enqueue_script("stnc-front");
-    // wp_register_script("list-min-jscss-script", plugins_url("/assets/js/list.min.js", __FILE__), array('jquery'), "2.0", true);
-    // wp_register_style("zz-shortcode-jscss-style", plugins_url("style.css", __FILE__), array(), "1.0", "all");
+    wp_register_script( "simple-datatable",plugins_url("assets/js/simple-datatables.js", __FILE__), "", $ver, false );
+    wp_enqueue_script("simple-datatable");
 }
-add_action("wp_enqueue_scripts", "stnc_building_for_company_js_css",999999);
+add_action("wp_enqueue_scripts", "stnc_building_modern_js_css",1);

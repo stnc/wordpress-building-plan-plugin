@@ -1,12 +1,12 @@
 <?php
 // https://codepen.io/desandro/pen/YzPMBx
 // uses
-// [stnc_building_for_company]
+// [stnc_building_classic]
 
 
 
 
-add_shortcode( "stnc_building_for_company",  "stnc_map_building_company_shortcode");
+add_shortcode( "stnc_building_classic",  "stnc_map_building_company_shortcode");
 
 
 /**
@@ -26,24 +26,13 @@ function stnc_map_building_company_shortcode($attr)
         $attr
     );
 
-    wp_enqueue_script(
-        "isotope-pkgd-min-jscss-script",
-        ["jquery"],
-        "1.0",
-        false
-    );
-    // wp_enqueue_script("list-min-jscss-script",array('jquery') , '1.0', false);
-    wp_enqueue_script("jquery");
-    if ($args["id"] == "") {
-        return "Missing parameter";
-    }
 
-    // if (isset( $_GET['firma'] ) ){
-    //   echo "sdds";
+    $ver="2.4.0";
+    wp_register_script( "isotope-pkgd-min-jscss-script",plugins_url("../../assets/js/isotope.pkgd.min.js", __FILE__), array( 'jquery' ), $ver, true );
+    wp_enqueue_script("isotope-pkgd-min-jscss-script");
 
-    // } else {
-
-    // }
+    wp_register_script( "stnc-front",plugins_url("../../assets/js/stnc-front.js", __FILE__), array( 'jquery' ), $ver, true );
+    wp_enqueue_script("stnc-front");
 
     $wp_stnc_map_floors1 =
         $wpdb->prefix .

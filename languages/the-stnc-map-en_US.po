@@ -388,3 +388,6 @@ msgstr ""
 
 msgid "Email Addresses"
 msgstr ""
+
+msgid "Show company information on website"
+msgstr "Sirket bilgisini web sitesinde gosterme"
