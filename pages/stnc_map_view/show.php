@@ -1,6 +1,9 @@
 <?php
     //get event trıgger
     //page=stnc_map_view & st_trigger === 'show'
+
+
+
     ?>
 <?php
     include "_header-show.php";
@@ -65,7 +68,7 @@
                 <div class="stnc-row">
                  
                     <div class="stnc-col-7">
-                    <h3 class="btn-secondary text-center" style="padding:5px"><?php echo $binaName; ?> / <?php echo $kat_adi; ?></h3>
+                    <h3 class="btn-secondary text-center" style="padding:5px"><?php echo $building_name; ?> / <?php echo $floor_name; ?></h3>
 
                         <div class="card flex-md-row mb-4 box-shadow h-md-250">
                             
@@ -85,7 +88,7 @@
                                     ); ?></strong>
                             </div>
                         </div>
-                        <a href="/wp-admin/admin.php?page=stnc_map_view&st_trigger=editor&binaid=<?php echo $_GET['binaid']?>&kat=<?php echo $_GET['kat']?>" class="btn btn-danger rounded-pill px-2" type="button"> <?php esc_html_e( "Change Placement", "the-stnc-map"  ); ?></a>
+                        <a href="/wp-admin/admin.php?page=stnc_map_view&st_trigger=editor&building_id=<?php echo $_GET['building_id']?>&floor_id=<?php echo $_GET['floor_id']?>" class="btn btn-danger rounded-pill px-2" type="button"> <?php esc_html_e( "Change Placement", "the-stnc-map"  ); ?></a>
                     </div>
 
                     <div class="stnc-col-5">
@@ -130,7 +133,7 @@
                                         </svg>
                                         <?php echo  $empty_area ?> m²
                                     </small>
-                               <small>     <a href="/wp-admin/admin.php?page=stnc_map_editor_building&st_trigger=show&teknoid=<?php echo $_GET["binaid"]; ?>&id=<?php echo $_GET["kat"]; ?>"><?php esc_html_e("Edit / Upload Map", "the-stnc-map"); ?></a></small>
+                               <small>     <a href="/wp-admin/admin.php?page=stnc_map_editor_building&st_trigger=show&teknoid=<?php echo $_GET["building_id"]; ?>&id=<?php echo $_GET["floor_id"]; ?>"><?php esc_html_e("Edit / Upload Map", "the-stnc-map"); ?></a></small>
                                 </span>
                             </label>
                           
@@ -190,7 +193,7 @@
                                         <?php endif; ?>
                                     </td>
                                     <td>
-                                        <a href="/wp-admin/admin.php?page=stnc_building_company&st_trigger=show&binaid=<?php echo $binaId; ?>&kat=<?php echo $katId; ?>&id=<?php echo $result->id; ?>"><?php esc_html_e(
+                                        <a href="/wp-admin/admin.php?page=stnc_building_company&st_trigger=show&building_id=<?php echo $building_id; ?>&floor_id=<?php echo $floor_id; ?>&id=<?php echo $result->id; ?>"><?php esc_html_e(
                                             "Edit",
                                             "the-stnc-map"
                                             ); ?></a>

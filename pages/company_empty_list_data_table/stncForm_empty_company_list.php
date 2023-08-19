@@ -203,7 +203,7 @@ class Stnc_wp_floor_Empty_List_Table extends WP_List_Table
       	$editLangs = __( 'Edit', 'the-stnc-map' ) ;
 		$actions = [
 			'view' => sprintf('<a href="?page=%s&action=%s&stncMapFloors=%s&_wpnonce=%s">%s</a>', esc_attr($_REQUEST['page']), 'view', absint($item['id']), $delete_nonce,	$showLang ),
-			'edit' => sprintf('<a href="?page=stnc_building_company&st_trigger=show&binaid=%s&kat=%s&id=%s">%s</a>',absint($item['building_id']),absint($item['floor_id']),  absint($item['id']), $editLangs )
+			'edit' => sprintf('<a href="?page=stnc_building_company&st_trigger=show&building_id=%s&floor_id=%s&id=%s">%s</a>',absint($item['building_id']),absint($item['floor_id']),  absint($item['id']), $editLangs )
 		];
 
 		return $title . $this->row_actions($actions);
@@ -407,7 +407,7 @@ if ($data -> media_id!=0){
             <div><mark class="dont"><?php esc_html_e( 'Adresss', 'the-stnc-map' ) ?>:</mark> <?php echo $data->address;?></div>
             <hr>  
 			
-			<div><mark class="dont"></mark> <a href="/wp-admin/admin.php?page=stnc_building_company&st_trigger=show&binaid=<?php echo $data->building_id;?>&kat=<?php echo $data->floor_id;?>&id=<?php echo $data->id;?>"><?php esc_html_e( 'Edit', 'the-stnc-map' ) ?></a>   </div>
+			<div><mark class="dont"></mark> <a href="/wp-admin/admin.php?page=stnc_building_company&st_trigger=show&building_id=<?php echo $data->building_id;?>&floor_id=<?php echo $data->floor_id;?>&id=<?php echo $data->id;?>"><?php esc_html_e( 'Edit', 'the-stnc-map' ) ?></a>   </div>
             <hr>
             <!-- <div><mark class="dont">Eklenen Dosya:</mark><?php echo $oynat?></div> -->
         </div>

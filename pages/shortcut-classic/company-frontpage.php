@@ -245,7 +245,7 @@ border-radius: 5px;">
               </ul>
 
       <?php if ( current_user_can("editor") ||  current_user_can("administrator")) { ?>
-          <a href="/wp-admin/admin.php?page=stnc_building_company&binaid=1&kat=<?php echo $building->floor_id; ?>&st_trigger=show&id=<?php echo $building->id; ?>"><?php esc_html_e( 'edit', 'the-stnc-map' ) ?></a>
+          <a href="/wp-admin/admin.php?page=stnc_building_company&building_id=1&floor_id=<?php echo $building->floor_id; ?>&st_trigger=show&id=<?php echo $building->id; ?>"><?php esc_html_e( 'edit', 'the-stnc-map' ) ?></a>
         <?php } ?>
             </div>
           </div>

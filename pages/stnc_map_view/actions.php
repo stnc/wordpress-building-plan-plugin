@@ -1,28 +1,38 @@
 <?php
-//stnc_map_view&st_trigger=show&binaid=2&kat=9
+//stnc_map_view&st_trigger=show&building_id=2&floor_id=9
 //allow redirection, even if my theme starts to send output to the browser
 function stnc_wp_floor_adminMenu_stnc_map_view()
 {
 
     global $wpdb;
-    $binaId = $_GET['binaid'];
-    $katId = $_GET['kat'];
+    $building_id = $_GET['building_id'];
+    $floor_id = $_GET['floor_id'];
 
     $wp_stnc_map_floors = $wpdb->prefix . 'stnc_map_floors';
     $wp_stnc_map_building = $wpdb->prefix . 'stnc_map_building';
 
-    $map = $wpdb->get_row($wpdb->prepare("SELECT bina.name AS bina,kat.name kat_adi,kat.building_id,kat.scheme,bina.id
-      AS bina_id,kat.id AS katid ,kat.scheme_media_id,full_area,empty_area,total_area  FROM " . $wp_stnc_map_floors . " AS kat INNER JOIN " . $wp_stnc_map_building . " 
-       AS bina  ON  bina.id=%d AND kat.id = %d", $binaId, $katId));
-        // echo $wpdb->last_query;
-        //  die;
-    $scheme = $map->scheme;
+// SELECT bina.name AS bina,kat.name kat_adi,kat.building_id,kat.scheme,bina.id  AS bina_id,kat.id AS floor_id ,kat.scheme_media_id,full_area,empty_area,total_area  
+    
 
-    // echo '<br>';
-    $binaName = $map->bina;
-    $name = $map->bina;
-    // echo '<br>';
-    $kat_adi = $map->kat_adi;
+
+
+     echo $sql="SELECT building.name AS building_name ,floor.name as floor_name,floor.building_id,floor.scheme,floor.id AS floor_id 
+    ,building.id AS building_id ,floor.scheme_media_id,full_area,empty_area,total_area  FROM ".   $wp_stnc_map_floors." AS floor 
+     INNER JOIN ".$wp_stnc_map_building."  AS building  ON  building.id=%d AND floor.id = %d";
+   
+   $map = $wpdb->get_row($wpdb->prepare($sql, $building_id,$floor_id));
+     
+    // echo $wpdb->last_query;
+        //  die;
+
+
+ $scheme = $map->scheme;
+ 
+ $building_name = $map->building_name;
+
+ $floor_name = $map->floor_name;
+
+
 
 
     $full_area  = $map->full_area;//dolu alan 
@@ -32,18 +42,18 @@ function stnc_wp_floor_adminMenu_stnc_map_view()
 
     $results = array();
     $stncForm_tableNameMain = $wpdb->prefix . 'stnc_map_floors_locations';
-    $sql = "SELECT * FROM " . $stncForm_tableNameMain . ' WHERE building_id=' . $binaId . ' and  floor_id=' . $katId . ' order by door_number';
+    $sql = "SELECT * FROM " . $stncForm_tableNameMain . ' WHERE building_id=' . $building_id . ' and  floor_id=' . $floor_id . ' order by door_number';
 
     $results = $wpdb->get_results($sql);
     $i = 0;
     $top = 88;
 
     //others build
-    $sql = 'SELECT * FROM ' . $wp_stnc_map_floors . ' WHERE building_id=' . $binaId ;
+    $sql = 'SELECT * FROM ' . $wp_stnc_map_floors . ' WHERE building_id=' . $building_id ;
 
 
-     $totalOffice = $wpdb->get_var('SELECT COUNT(*) FROM ' . $stncForm_tableNameMain . ' WHERE building_id=' . $binaId . ' and  floor_id=' . $katId  );
-     $totalEmptyOffice = $wpdb->get_var('SELECT COUNT(*) FROM ' . $stncForm_tableNameMain . ' WHERE  is_empty=1 and building_id=' . $binaId . ' and  floor_id=' . $katId  );
+     $totalOffice = $wpdb->get_var('SELECT COUNT(*) FROM ' . $stncForm_tableNameMain . ' WHERE building_id=' . $building_id . ' and  floor_id=' . $floor_id  );
+     $totalEmptyOffice = $wpdb->get_var('SELECT COUNT(*) FROM ' . $stncForm_tableNameMain . ' WHERE  is_empty=1 and building_id=' . $building_id . ' and  floor_id=' . $floor_id  );
 
      $totalOffice=((int)$totalOffice);
   

@@ -1,7 +1,7 @@
 <?php
 
-$binaId=$_GET['binaid'];
-$katId=$_GET['kat'];
+$building_id=$_GET['building_id'];
+$floor_id=$_GET['floor_id'];
 $id=$_GET['id'];
 
 
@@ -15,10 +15,12 @@ $id=$_GET['id'];
 
 
 
- $sql="SELECT bina.name AS bina,kat.name kat_adi,kat.building_id,kat.scheme,bina.id
-AS bina_id,kat.id AS katid  FROM ".   $wp_stnc_map_floors." AS kat INNER JOIN ".$wp_stnc_map_building."  AS bina  ON  bina.id=%d AND kat.id = %d";
+  $sql="SELECT building.name AS building_name ,floor.name as floor_name,floor.building_id,floor.scheme,floor.id AS floor_id 
+ ,building.id AS building_id 
+ FROM ".   $wp_stnc_map_floors." AS floor
+  INNER JOIN ".$wp_stnc_map_building."  AS building  ON  building.id=%d AND floor.id = %d";
 
-$map = $wpdb->get_row($wpdb->prepare($sql, $binaId,$katId));
+$map = $wpdb->get_row($wpdb->prepare($sql, $building_id,$floor_id));
   
 
 //    $nextCompany= $wpdb->get_var("select building_id from " .  $wp_stnc_map_floors_locations  . " where id = (select min(id) from " .  $wp_stnc_map_floors_locations  . " where id > ".$id.")" );
@@ -26,17 +28,17 @@ $map = $wpdb->get_row($wpdb->prepare($sql, $binaId,$katId));
 
          $scheme = $map->scheme;
     
-         $binaName = $map->bina;
+         $building_name = $map->building_name;
     
-         $kat_adi = $map->kat_adi;
+         $floor_name = $map->floor_name;
 
       
          $title ="Ekleme";
-         $form = '<form action="/wp-admin/admin.php?page=stnc_building_company&st_trigger=store&binaid='. $_GET['binaid'] .'&kat='. $_GET['kat'] .'" method="post">';
+         $form = '<form action="/wp-admin/admin.php?page=stnc_building_company&st_trigger=store&building_id='. $_GET['building_id'] .'&floor_id='. $_GET['floor_id'] .'" method="post">';
 
          if ((isset($_GET['st_trigger'])) && ($_GET['st_trigger'] === 'show')) {
             $title =esc_html_e( 'Show', 'the-stnc-map' ) ;
-            $form = '<form action="/wp-admin/admin.php?page=stnc_building_company&st_trigger=update&binaid='. $_GET['binaid'] .'&kat='. $_GET['kat'] .'&id='. $_GET['id'] .'" method="post">';
+            $form = '<form action="/wp-admin/admin.php?page=stnc_building_company&st_trigger=update&building_id='. $_GET['building_id'] .'&floor_id='. $_GET['floor_id'] .'&id='. $_GET['id'] .'" method="post">';
          }
          include ("_header-show.php");
 
@@ -95,7 +97,7 @@ $map = $wpdb->get_row($wpdb->prepare($sql, $binaId,$katId));
 <main class="flex-shrink-0" style="margin-top:88px">
     <div class="stnc-container-fluid">
         <div> 
-        <span style="color:red"><?php echo $binaName ?> / <?php  echo $kat_adi ?> </span> EDIT
+        <span style="color:red"><?php echo $building_name ?> / <?php  echo $floor_name ?> </span> 
         </div>
 
         <?php if  ($is_empty === "1") :   ?>
@@ -137,7 +139,7 @@ $map = $wpdb->get_row($wpdb->prepare($sql, $binaId,$katId));
                         <div class="form-group">
                             <label for="company_name"><strong> <?php esc_html_e( 'Company Name', 'the-stnc-map' ) ?></strong> </label>
                             <input type="text" name="company_name" value="<?php echo $company_name ?>" class="form-control" id="company_name" min="1" max="50">
-                            <input type="hidden" name="floor_id" value="<?php echo  isset($_GET["kat"])?>" >
+                            <input type="hidden" name="floor_id" value="<?php echo  isset($_GET["floor_id"])?>" >
                         </div>
                         <hr>
 
@@ -252,16 +254,16 @@ $map = $wpdb->get_row($wpdb->prepare($sql, $binaId,$katId));
 
 
                 <?php  if ($is_empty === "0") :   ?>
-                <a href="/wp-admin/admin.php?page=stnc_building_company&st_trigger=office_empty&binaid=1&kat=1&id=<?php echo $_GET['id']?>" class="btn btn-danger"> <?php esc_html_e( 'Vacate the Office', 'the-stnc-map' ) ?></a>
+                <a href="/wp-admin/admin.php?page=stnc_building_company&st_trigger=office_empty&building_id=1&floor_id=1&id=<?php echo $_GET['id']?>" class="btn btn-danger"> <?php esc_html_e( 'Vacate the Office', 'the-stnc-map' ) ?></a>
                 <br>
                  <br>
                 <?php endif ; ?>
              
-                <!-- <a href="/wp-admin/admin.php?page=stnc_building_company&st_trigger=show&binaid=<?php echo $_GET['binaid']?>&kat=<?php echo $_GET['kat']?>&id=<?php echo $nextCompany?>" class="btn btn-warning">
+                <!-- <a href="/wp-admin/admin.php?page=stnc_building_company&st_trigger=show&building_id=<?php echo $_GET['building_id']?>&floor_id=<?php echo $_GET['floor_id']?>&id=<?php echo $nextCompany?>" class="btn btn-warning">
                  <?php esc_html_e( 'Next Company', 'the-stnc-map' ) ?></a>
 
 
-                <a href="/wp-admin/admin.php?page=stnc_building_company&st_trigger=show&binaid=<?php echo $_GET['binaid']?>&kat=<?php echo $_GET['kat']?>&id=<?php echo $prevCompany?>" class="btn btn-warning"> <?php esc_html_e( 'Previous Company', 'the-stnc-map' ) ?></a> -->
+                <a href="/wp-admin/admin.php?page=stnc_building_company&st_trigger=show&building_id=<?php echo $_GET['building_id']?>&floor_id=<?php echo $_GET['floor_id']?>&id=<?php echo $prevCompany?>" class="btn btn-warning"> <?php esc_html_e( 'Previous Company', 'the-stnc-map' ) ?></a> -->
 
                 <textarea id="web_permission" name="web_permission" style="display:none"></textarea>
 <br>

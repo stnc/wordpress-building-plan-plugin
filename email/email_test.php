@@ -141,7 +141,7 @@ table.body .article {
             <td style="font-family: sans-serif; font-size: 15px; vertical-align: top;  text-align: center; padding:10px; color:#000;border-bottom:solid #000 1px" valign="top" align="left" >  
 Warning: Undefined variable $binaName in /var/www/html/wp-content/plugins/building-plan-plugin-main/email/email_building_info.php on line 16
  / 
-Warning: Undefined variable $kat_adi in /var/www/html/wp-content/plugins/building-plan-plugin-main/email/email_building_info.php on line 16
+Warning: Undefined variable $build_name in /var/www/html/wp-content/plugins/building-plan-plugin-main/email/email_building_info.php on line 16
  </td>
          
             <td style="font-family: sans-serif; font-size: 15px; font-weight:bold; vertical-align: top;  text-align: center; padding:10px; color:#000 ; border-left:solid #000 1px;border-bottom:solid #000 1px " valign="top" align="center" >  Kapı numarası </td>

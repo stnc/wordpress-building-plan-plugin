@@ -37,7 +37,7 @@ function stnc_wp_floor_email_empty_office_list(){
 		<tr>
 			<td style="font-family: sans-serif; font-size: 15px; font-weight:bold; vertical-align: top;  text-align: center; padding:10px;  color:#000;border:solid #000 1px " valign="top" align="right" >  <?php echo $building->build ?> / <?php echo $building->floorName ?></td>
 			<td style="font-family: sans-serif; font-size: 15px; font-weight:bold; vertical-align: top;  text-align: center; padding:10px;  color:#000;border:solid #000 1px " valign="top" align="right" ><?php echo $building->door_number ?></td>
-			<td style="font-family: sans-serif; font-size: 15px; font-weight:bold; vertical-align: top;  text-align: center; padding:10px;  color:#000;border:solid #000 1px " valign="top" align="right" > <a href="https://erciyesteknopark.com/wp-admin/admin.php?page=stnc_building_company&st_trigger=show&binaid=<?php echo $building->building_id ?>&kat=<?php echo $building->floor_id ?>&id=<?php echo $building->id ?>"></a>  <?php echo $building->door_number ?></td>
+			<td style="font-family: sans-serif; font-size: 15px; font-weight:bold; vertical-align: top;  text-align: center; padding:10px;  color:#000;border:solid #000 1px " valign="top" align="right" > <a href="https://erciyesteknopark.com/wp-admin/admin.php?page=stnc_building_company&st_trigger=show&building_id=<?php echo $building->building_id ?>&floor_id=<?php echo $building->floor_id ?>&id=<?php echo $building->id ?>"></a>  <?php echo $building->door_number ?></td>
 		</tr>
     <?php endforeach ?>
         </tbody>

@@ -17,7 +17,7 @@
 
                     <li class="nav-item">
                         <a class="nav-link"
-                            href="/wp-admin/admin.php?page=stnc_map_view&st_trigger=show&binaid=<?php echo $_GET['binaid']?>&kat=<?php echo $_GET['kat']?>">
+                            href="/wp-admin/admin.php?page=stnc_map_view&st_trigger=show&building_id=<?php echo $_GET['building_id']?>&floor_id=<?php echo $_GET['floor_id']?>">
                             <?php esc_html_e( 'Show Location On Map', 'the-stnc-map' ) ?></a>
                      </a>
                     </li>

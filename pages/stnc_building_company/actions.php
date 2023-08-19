@@ -57,8 +57,8 @@ function stnc_wp_floor_adminMenu_stnc_building_company()
         $company_description = isset($_POST["company_description"]) ? sanitize_text_field($_POST["company_description"]) : " ";
         $address = isset($_POST["address"]) ? sanitize_text_field($_POST["address"]) : " ";
         $media_id = isset($_POST["media_id"]) ? sanitize_text_field($_POST["media_id"]) : " ";
-        $building_id = isset($_GET["binaid"]) ? sanitize_text_field($_GET["binaid"]) : " ";
-        $floor_id = isset($_GET["kat"]) ? sanitize_text_field($_GET["kat"]) : " ";
+        $building_id = isset($_GET["building_id"]) ? sanitize_text_field($_GET["building_id"]) : " ";
+        $floor_id = isset($_GET["floor_id"]) ? sanitize_text_field($_GET["floor_id"]) : " ";
         $media_id = isset($_POST["media_id"]) ? sanitize_text_field($_POST["media_id"]) : 0;
         $company_category_id = isset($_POST["company_category_id"]) ? sanitize_text_field($_POST["company_category_id"]) :16;
         $web_permission = isset($_POST["web_permission"]) ? $_POST["web_permission"] : '';
@@ -113,7 +113,7 @@ function stnc_wp_floor_adminMenu_stnc_building_company()
 
         if ($success) {
             $_SESSION['stnc_map_flash_msg'] =  __( 'Record Updated', 'the-stnc-map' );
-            wp_redirect('/wp-admin/admin.php?page=stnc_building_company&binaid='.$building_id.'&kat='. $floor_id.'&st_trigger=show&id='.$_GET['id'], 302);
+            wp_redirect('/wp-admin/admin.php?page=stnc_building_company&st_trigger=show&building_id='.$building_id.'&floor_id='. $floor_id.'&id='.$_GET['id'], 302);
             die;
         }
         // include ('add_edit.php');
@@ -161,8 +161,8 @@ function stnc_wp_floor_adminMenu_stnc_building_company()
         $map_location = '{"left":12,"top":112,"width":82.42500305175781,"height":30,"x":12,"y":112,"right":94.42500305175781,"bottom":142}';
         $company_description = isset($_POST["company_description"]) ? sanitize_text_field($_POST["company_description"]) : " ";
         $address = isset($_POST["address"]) ? sanitize_text_field($_POST["address"]) : " ";
-        $building_id = isset($_GET["binaid"]) ? sanitize_text_field($_GET["binaid"]) : " ";
-        $floor_id = isset($_GET["kat"]) ? sanitize_text_field($_GET["kat"]) : " ";
+        $building_id = isset($_GET["building_id"]) ? sanitize_text_field($_GET["building_id"]) : " ";
+        $floor_id = isset($_GET["floor_id"]) ? sanitize_text_field($_GET["floor_id"]) : " ";
         $media_id = isset($_POST["media_id"]) ? sanitize_text_field($_POST["media_id"]) : 0;
    
         $company_category_id = isset($_POST["company_category_id"]) ? sanitize_text_field($_POST["company_category_id"]) : 16;
@@ -200,7 +200,7 @@ function stnc_wp_floor_adminMenu_stnc_building_company()
             stnc_wp_floor_plans_send_email($door_number,$company_name,$square_meters,$email,$phone,$web_site,$map_location,$company_description,$address,"added");
             $_SESSION['stnc_map_flash_msg'] =  __( 'Record Save', 'the-stnc-map' );
             $lastid = $wpdb->insert_id;
-            wp_redirect('/wp-admin/admin.php?page=stnc_building_company&binaid='.$building_id.'&kat='. $floor_id.'&st_trigger=show&id='. $lastid, 302);
+            wp_redirect('/wp-admin/admin.php?page=stnc_building_company&building_id='.$building_id.'&floor_id='. $floor_id.'&st_trigger=show&id='. $lastid, 302);
             die;
         }
 
@@ -278,7 +278,7 @@ function stnc_wp_floor_adminMenu_stnc_building_company()
         if ($success) {
             stnc_wp_floor_plans_send_email($door_number,$company_name,$square_meters,$email,$phone,$web_site,$map_location,$company_description,$address,"empty");
             $_SESSION['stnc_map_flash_msg'] =  __( 'Record Save', 'the-stnc-map' );
-            wp_redirect('/wp-admin/admin.php?page=stnc_building_company&st_trigger=show&binaid='.$building_id.'&kat='. $floor_id.'&id='. $floors_locations_id, 302);
+            wp_redirect('/wp-admin/admin.php?page=stnc_building_company&st_trigger=show&building_id='.$building_id.'&floor_id='. $floor_id.'&id='. $floors_locations_id, 302);
             die;
         }
     }

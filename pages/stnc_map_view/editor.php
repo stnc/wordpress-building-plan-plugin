@@ -14,7 +14,7 @@
     <div class="stnc-container-fluid">
 
         <div class="row">
-            <h3><?php echo $binaName ?> / <?php echo $kat_adi ?></h3>
+            <h3><?php echo $building_name ?> / <?php echo $floor_name ?>  </h3>
 
             <div class="stnc-col-9">
                 <div id="ex-040-stage" class="stage-m stage-m-size">
@@ -44,7 +44,7 @@
             <div class="stnc-col-3">
             <h6 style="color:red"> <?php esc_html_e( 'You can move the red boxes on the map by dragging and dropping them.', 'the-stnc-map' ) ?></h6>
             <a class="btn btn-danger rounded-pill px-2"
-                            href="/wp-admin/admin.php?page=stnc_map_view&st_trigger=show&binaid=<?php echo $_GET['binaid']?>&kat=<?php echo $_GET['kat']?>"> <?php esc_html_e( 'Show location', 'the-stnc-map' ) ?></a>
+                            href="/wp-admin/admin.php?page=stnc_map_view&st_trigger=show&building_id=<?php echo $_GET['building_id']?>&floor_id=<?php echo $_GET['floor_id']?>"> <?php esc_html_e( 'Show location', 'the-stnc-map' ) ?></a>
             <div class="stnc-col-12">
             <div class="card flex-md-row mb-4 box-shadow h-md-250">
                 <div class="d-flex flex-column align-items-start">
@@ -84,7 +84,7 @@
                             <?php endif ; ?></td>
                                         <td><?php echo $result->company_name; ?></td>
                                     
-     <td><a  href="/wp-admin/admin.php?page=stnc_building_company&st_trigger=show&binaid=<?php echo $binaId?>&kat=<?php echo $katId?>&id=<?php echo $result->id; ?>"><?php esc_html_e( 'Edit', 'the-stnc-map' ) ?></a></td>
+     <td><a  href="/wp-admin/admin.php?page=stnc_building_company&st_trigger=show&building_id=<?php echo $building_id?>&floor_id=<?php echo $floor_id?>&id=<?php echo $result->id; ?>"><?php esc_html_e( 'Edit', 'the-stnc-map' ) ?></a></td>
                                         </tr>
                             
 
@@ -205,7 +205,7 @@ var editId = 0;
 jQuery(document).ready(function($) {
     $('.draggable').on('contextmenu', function(e) {
         $("#context-menu a.edit").attr("href",
-            "/wp-admin/admin.php?page=stnc_building_company&binaid=<?php echo $binaId?>&kat=<?php echo $katId?>&st_trigger=show&id=" + $( this).data('id'))
+            "/wp-admin/admin.php?page=stnc_building_company&building_id=<?php echo $building_id?>&floor_id=<?php echo $floor_id?>&st_trigger=show&id=" + $( this).data('id'))
         var top = e.pageY - 1;
         var left = e.pageX - 90;
         $("#context-menu").css({

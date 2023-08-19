@@ -5,16 +5,7 @@ function stnc_wp_floor_email_general_info(){
     $stncForm_tableNameMain =$wpdb->prefix .'stnc_map_building' ;
     $sql = "SELECT * FROM " .   $stncForm_tableNameMain ;
     $buildingsList = $wpdb->get_results($sql);
-
-
-
-  
-
 ?>        
-
-
-
-
 <div class="dcf-overflow-x-auto" tabindex="0">
 <table class="dcf-table dcf-table-bordered dcf-table-striped dcf-w-100%">
 	<caption>Genel Bilgi</caption>
@@ -43,11 +34,11 @@ function stnc_wp_floor_email_general_info(){
 
 		$totalFullOffice= $totalOffice - $totalEmptyOffice;
 
-		$yuzde =  round( $totalFullOffice /  $totalOffice * 100);
+		$percentage =  round( $totalFullOffice /  $totalOffice * 100);
 		?> 
 		<tr>
 			<td class="dcf-txt-center" style="font-weight:bold"><?php echo $building->short_name ?>. Bina </td>
-			<td>% <?php echo $yuzde?> Dolu</td>
+			<td>% <?php echo $percentage?> Dolu</td>
 			<td><?php echo $totalOffice?>   </td>
 			<td><?php echo $totalEmptyOffice?></td>
 			<td><?php echo $totalFullOffice?></td>

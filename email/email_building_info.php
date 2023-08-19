@@ -15,7 +15,7 @@ function stnc_wp_floor_email_building_info($door_number,$company_name,$square_me
             <td style="font-family: sans-serif; font-size: 15px; font-weight:bold; vertical-align: top;  text-align: center; padding:10px;  color:#000;border-bottom:solid #000 1px " valign="top" align="right" >  <?php esc_html_e( 'Building and Floor Information', 'the-stnc-map' ) ?> </td>
             <td style="border-bottom:solid #000 1px"> => </td>
 
-            <td style="font-family: sans-serif; font-size: 15px; vertical-align: top;  text-align: center; padding:10px; color:#000;border-bottom:solid #000 1px" valign="top" align="left" >  <?php echo    $binaName?> / <?php echo    $kat_adi?> </td>
+            <td style="font-family: sans-serif; font-size: 15px; vertical-align: top;  text-align: center; padding:10px; color:#000;border-bottom:solid #000 1px" valign="top" align="left" >  <?php echo    $binaName?> / <?php echo    $build_name?> </td>
          
             <td style="font-family: sans-serif; font-size: 15px; font-weight:bold; vertical-align: top;  text-align: center; padding:10px; color:#000 ; border-left:solid #000 1px;border-bottom:solid #000 1px " valign="top" align="center" >  <?php esc_html_e( 'Door number', 'the-stnc-map' ) ?> </td>
             <td style="border-bottom:solid #000 1px"> => </td>
@@ -106,11 +106,11 @@ function stnc_wp_floor_email_building_info($door_number,$company_name,$square_me
 // $wp_stnc_map_floors = $wpdb->prefix . 'stnc_map_floors';
 // $wp_stnc_map_building = $wpdb->prefix . 'stnc_map_building';
 
-// $mapJoinData = $wpdb->get_row($wpdb->prepare("SELECT bina.name AS bina,kat.name kat_adi,kat.building_id,kat.scheme,bina.id
-//   AS bina_id,kat.id AS katid ,kat.scheme_media_id,full_area,empty_area,total_area  FROM " . $wp_stnc_map_floors . " AS kat INNER JOIN " . $wp_stnc_map_building . " 
+// $mapJoinData = $wpdb->get_row($wpdb->prepare("SELECT bina.name AS bina,kat.name build_name,kat.building_id,kat.scheme,bina.id
+//   AS bina_id,kat.id AS floor_id ,kat.scheme_media_id,full_area,empty_area,total_area  FROM " . $wp_stnc_map_floors . " AS kat INNER JOIN " . $wp_stnc_map_building . " 
 //    AS bina  ON  bina.id=%d AND kat.id = %d", $buildingID, $floorID));
 //    $binaName = $mapJoinData->bina;
-//    $kat_adi = $mapJoinData->kat_adi;
+//    $build_name = $mapJoinData->build_name;
 
 
 }

@@ -73,7 +73,7 @@ function stnc_wp_floor_adminMenu_stnc_map_homepage()
       
         $totalFullOffice= $totalOffice - $totalEmptyOffice;
         
-        $yuzde =  round( $totalFullOffice /  $totalOffice * 100);
+        $percentage=  round( $totalFullOffice /  $totalOffice * 100);
     
     ?>         
       <div class="stnc-col-2">
@@ -86,7 +86,7 @@ function stnc_wp_floor_adminMenu_stnc_map_homepage()
               role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <rect width="100%" height="100%" fill="#fff"></rect>
                      <text x="20%" y="40%" fill="<?php echo $building->text_color ?>" dy=".3em " font-size="1.5em"> %</text>
-                <text x="36%" y="40%" fill="<?php echo $building->text_color ?>" dy=".3em" font-size="3em" font-weight="bold"><?php echo $yuzde?></text>
+                <text x="36%" y="40%" fill="<?php echo $building->text_color ?>" dy=".3em" font-size="3em" font-weight="bold"><?php echo $percentage?></text>
            
                 <text x="25%" y="75%" fill="<?php echo $building->text_color ?>" dy=".3em" font-size="1.5em" font-weight="bold"> <?php esc_html_e( 'FULL', 'the-stnc-map' ) ?></text>
                 <!-- <text x="20%" y="55%" fill="#7066D1" dy=".3em" font-size="2em" font-weight="bold">DOLU</text> -->
@@ -111,7 +111,7 @@ function stnc_wp_floor_adminMenu_stnc_map_homepage()
                   $floorsList = $wpdb->get_results($sql);
                   foreach ($floorsList as $floors) :
                   ?>
-              <option value="/wp-admin/admin.php?page=stnc_map_view&st_trigger=show&binaid=<?php echo $floors->building_id ?>&kat=<?php echo $floors->id ?>"><?php echo $floors->name ?></option>
+              <option value="/wp-admin/admin.php?page=stnc_map_view&st_trigger=show&building_id=<?php echo $floors->building_id ?>&floor_id=<?php echo $floors->id ?>"><?php echo $floors->name ?></option>
               <?php endforeach ?>
             </select>
           </div>
@@ -144,11 +144,11 @@ function stnc_wp_floor_adminMenu_stnc_map_homepage()
             <br>
             <select class="form-select form-select-sm mx-auto" style="width: 130px;" aria-label=".form-select-sm example" onchange="javascript:handleSelect(this)">
               <option value="">Kat Seçiniz</option>
-              <option value="/wp-admin/admin.php?page=stnc_map_view&st_trigger=show&binaid=5&kat=21">Bodrum kat</option>
-              <option value="/wp-admin/admin.php?page=stnc_map_view&st_trigger=show&binaid=5&kat=22">Zemin kat</option>
-              <option value="/wp-admin/admin.php?page=stnc_map_view&st_trigger=show&binaid=5&kat=23">1. kat</option>
-              <option value="/wp-admin/admin.php?page=stnc_map_view&st_trigger=show&binaid=5&kat=24">2. kat</option>
-              <option value="/wp-admin/admin.php?page=stnc_map_view&st_trigger=show&binaid=5&kat=25">3. kat</option>
+              <option value="/wp-admin/admin.php?page=stnc_map_view&st_trigger=show&building_id=5&floor_id=21">Bodrum kat</option>
+              <option value="/wp-admin/admin.php?page=stnc_map_view&st_trigger=show&building_id=5&floor_id=22">Zemin kat</option>
+              <option value="/wp-admin/admin.php?page=stnc_map_view&st_trigger=show&building_id=5&floor_id=23">1. kat</option>
+              <option value="/wp-admin/admin.php?page=stnc_map_view&st_trigger=show&building_id=5&floor_id=24">2. kat</option>
+              <option value="/wp-admin/admin.php?page=stnc_map_view&st_trigger=show&building_id=5&floor_id=25">3. kat</option>
             </select>
           </div>
         </div>

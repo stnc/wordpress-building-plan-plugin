@@ -2,7 +2,7 @@
    session_start();
  
 
-//?page=stnc_map_editor_building&st_trigger=show&binaid=2
+//?page=stnc_map_editor_building&st_trigger=show&building_id=2
 function stnc_wp_floor_adminMenu_stnc_map_editor_stnc()
 {
 
@@ -116,7 +116,7 @@ function stnc_wp_floor_adminMenu_stnc_map_editor_stnc()
         $map_location = '{"left":12,"top":112,"width":82.42500305175781,"height":30,"x":12,"y":112,"right":94.42500305175781,"bottom":142}';
         $company_description = isset($_POST["company_description"]) ? sanitize_text_field($_POST["company_description"]) : " ";
         $address = isset($_POST["address"]) ? sanitize_text_field($_POST["address"]) : " ";
-        $building_id = isset($_GET["binaid"]) ? sanitize_text_field($_GET["binaid"]) : " ";
+        $building_id = isset($_GET["building_id"]) ? sanitize_text_field($_GET["building_id"]) : " ";
         $floor_id = isset($_GET["kat"]) ? sanitize_text_field($_GET["kat"]) : " ";
         $scheme_media_id = isset($_POST["scheme_media_id"]) ? sanitize_text_field($_POST["scheme_media_id"]) : 0;
 
@@ -147,7 +147,7 @@ function stnc_wp_floor_adminMenu_stnc_map_editor_stnc()
         if ($success) {
             $_SESSION['stnc_map_flash_msg'] = 'Kayıt Yapıldı';
             $lastid = $wpdb->insert_id;
-            wp_redirect('/wp-admin/admin.php?page=stnc_building_company&binaid='.$building_id.'&kat='. $floor_id.'&st_trigger=show&id='. $lastid, 302);
+            wp_redirect('/wp-admin/admin.php?page=stnc_building_company&building_id='.$building_id.'&floor_id='. $floor_id.'&st_trigger=show&id='. $lastid, 302);
             die;
         }
 

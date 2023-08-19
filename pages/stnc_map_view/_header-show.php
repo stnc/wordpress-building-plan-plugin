@@ -77,19 +77,19 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" st_trigger=new
-                            href="/wp-admin/admin.php?page=stnc_building_company&st_trigger=new&binaid=<?php echo $_GET['binaid']?>&kat=<?php echo $_GET['kat']?>"><?php esc_html_e( 'Add New Company', 'the-stnc-map' ) ?></a>
+                            href="/wp-admin/admin.php?page=stnc_building_company&st_trigger=new&building_id=<?php echo $_GET['building_id']?>&floor_id=<?php echo $_GET['floor_id']?>"><?php esc_html_e( 'Add New Company', 'the-stnc-map' ) ?></a>
 
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link"
-                            href="/wp-admin/admin.php?page=stnc_map_view&st_trigger=editor&binaid=<?php echo $_GET['binaid']?>&kat=<?php echo $_GET['kat']?>">
+                            href="/wp-admin/admin.php?page=stnc_map_view&st_trigger=editor&building_id=<?php echo $_GET['building_id']?>&floor_id=<?php echo $_GET['floor_id']?>">
                             <?php esc_html_e( 'Change Placement', 'the-stnc-map' ) ?></a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link"
-                            href="/wp-admin/admin.php?page=stnc_map_editor_building&st_trigger=show&teknoid=<?php echo $_GET['binaid']?>&id=<?php echo $_GET['kat']?>">
+                            href="/wp-admin/admin.php?page=stnc_map_editor_building&st_trigger=show&teknoid=<?php echo $_GET['building_id']?>&id=<?php echo $_GET['floor_id']?>">
                             <?php esc_html_e( 'Upload Map', 'the-stnc-map' ) ?></a>
                     </li>
 
@@ -101,7 +101,7 @@
                          <?php 
                     
                          foreach ($buildingsList as $building) : ?>
-                            <li><a class="dropdown-item" href="/wp-admin/admin.php?page=stnc_map_view&st_trigger=show&binaid=<?php echo $_GET['binaid']?>&kat=<?php echo $building->id ?>"><?php echo $building->name ?></a></li>
+                            <li><a class="dropdown-item" href="/wp-admin/admin.php?page=stnc_map_view&st_trigger=show&building_id=<?php echo $_GET['building_id']?>&floor_id=<?php echo $building->floor_id ?>"><?php echo $building->name ?></a></li>
                         <?php endforeach ?>
                         </ul>
                     </li>
