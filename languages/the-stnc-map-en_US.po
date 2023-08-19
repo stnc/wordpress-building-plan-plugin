@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Build\n"
 "POT-Creation-Date: 2023-07-21 21:41-0600\n"
-"PO-Revision-Date: 2023-07-23 02:15-0600\n"
+"PO-Revision-Date: 2023-08-19 01:58-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -44,8 +44,6 @@ msgstr ""
 #: pages/homepage.php:36
 msgid "Wordpress Panel"
 msgstr ""
-
-
 
 #: pages/homepage.php:43 pages/stnc_building_company/_header-show.php:41
 #: pages/stnc_map_editor_building/_header-show.php:50
@@ -150,8 +148,6 @@ msgstr ""
 #: pages/stncForm_company_list.php:639
 msgid "Company list"
 msgstr ""
-
-
 
 #: pages/stnc_building_company/_header-show.php:28
 #: pages/stnc_map_view/_header-show.php:87
@@ -356,7 +352,6 @@ msgstr ""
 msgid "Information about this building"
 msgstr ""
 
-
 msgid "Record Update"
 msgstr ""
 
@@ -390,8 +385,5 @@ msgstr ""
 msgid "Mail Subject"
 msgstr ""
 
-
 msgid "Show company information on website"
 msgstr ""
-
-

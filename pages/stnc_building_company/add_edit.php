@@ -115,6 +115,12 @@ $map = $wpdb->get_row($wpdb->prepare($sql, $building_id,$floor_id));
 
         <?php echo $form  ?>
 
+        <?php if  ($is_empty === "1") :   ?>
+            <input type="hidden" name="office_empty" value="1" >
+         <?php endif ; ?>
+         <input type="hidden" name="floor_id" value="<?php echo  isset($_GET["floor_id"])?>" >
+         <input type="hidden" value="<?php echo $media_id ?>" name="media_id" id="media_id">
+                    <input type="hidden" value="<?php echo $floors_locations_id ?>" name="floors_locations_id" id="floors_locations_id">
         <div class="stnc-row">
 
             <div class="stnc-col-4">
@@ -139,7 +145,7 @@ $map = $wpdb->get_row($wpdb->prepare($sql, $building_id,$floor_id));
                         <div class="form-group">
                             <label for="company_name"><strong> <?php esc_html_e( 'Company Name', 'the-stnc-map' ) ?></strong> </label>
                             <input type="text" name="company_name" value="<?php echo $company_name ?>" class="form-control" id="company_name" min="1" max="50">
-                            <input type="hidden" name="floor_id" value="<?php echo  isset($_GET["floor_id"])?>" >
+                           
                         </div>
                         <hr>
 
@@ -235,8 +241,7 @@ $map = $wpdb->get_row($wpdb->prepare($sql, $building_id,$floor_id));
                         <br>
                         <br>
                 <div class="form-group">
-                    <input type="hidden" value="<?php echo $media_id ?>" name="media_id" id="media_id">
-                    <input type="hidden" value="<?php echo $floors_locations_id ?>" name="floors_locations_id" id="floors_locations_id">
+              
                     <input id="stnc_wp_kiosk_Metabox_video_extra"
                         class="page_upload_trigger_element button btn btn-warning"
                         name="stnc_wp_kiosk_Metabox_video_extra" type="button" value="<?php esc_html_e( 'Upload / Select Image', 'the-stnc-map' ) ?>" style="">

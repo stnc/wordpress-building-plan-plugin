@@ -3,6 +3,21 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+ function stnc_wp_floor_getTurkishDate(){
+  $locale = 'tr_TR'; // a canonicalized locale
+  $format = 'dd-MMMM-YYYY-EEEE'; // ISO format codes, not the typical date ones
+  $dt = new DateTime(); // a DateTime object
+  $df = new IntlDateFormatter(
+      $locale, // string locale
+      IntlDateFormatter::NONE, // int date type
+      IntlDateFormatter::NONE, // int time type
+      'UTC', // string timezone
+      IntlDateFormatter::GREGORIAN, // int cal type
+      $format // string pattern
+    );
+  return $df->format($dt); //string 07-Ağustos-2018-Salı
+} 
+
 
 function stnc_wp_floor_validateEMAIL($mail) {
   return (!preg_match("/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $mail)) ? FALSE : TRUE;

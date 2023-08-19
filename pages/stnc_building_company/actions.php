@@ -47,6 +47,7 @@ function stnc_wp_floor_adminMenu_stnc_building_company()
     if ((isset($_GET['st_trigger'])) && ($_GET['st_trigger'] === 'update')) {
         // session_start();
         $door_number = isset($_POST["door_number"]) ? sanitize_text_field($_POST["door_number"]) : "0";
+        $office_empty = isset($_POST["office_empty"]) ? 1 : 0;//TODO : is not secure process
         $company_name = isset($_POST["company_name"]) ? sanitize_text_field($_POST["company_name"]) : " isim eklenmemiş";
         $square_meters = isset($_POST["square_meters"]) ? sanitize_text_field($_POST["square_meters"]) : 0;
         $email = isset($_POST["email"]) ? sanitize_text_field($_POST["email"]) : " ";
@@ -105,16 +106,19 @@ function stnc_wp_floor_adminMenu_stnc_building_company()
                 'media_id' =>    $media_id,
                 'web_permission' =>    $web_permission,
                 'add_date' =>   $date,
-                'is_empty' =>0,
+                'is_empty' =>0,//ofis bos yada dolu kontrolu 
                 'is_show' =>$is_show,
             ),
             array('id' => $_GET['id'])
         );
 
         if ($success) {
-            $_SESSION['stnc_map_flash_msg'] =  __( 'Record Updated', 'the-stnc-map' );
-            wp_redirect('/wp-admin/admin.php?page=stnc_building_company&st_trigger=show&building_id='.$building_id.'&floor_id='. $floor_id.'&id='.$_GET['id'], 302);
-            die;
+         if  ($office_empty === 1) :  
+            stnc_wp_floor_plans_send_email($door_number,$company_name,$square_meters,$email,$phone,$web_site,$map_location,$company_description,$address, $building_id, $floor_id, "added");
+         endif ;
+        $_SESSION['stnc_map_flash_msg'] =  __( 'Record Updated', 'the-stnc-map' );
+        wp_redirect('/wp-admin/admin.php?page=stnc_building_company&st_trigger=show&building_id='.$building_id.'&floor_id='. $floor_id.'&id='.$_GET['id'], 302);
+        die;
         }
         // include ('add_edit.php');
     }
@@ -138,19 +142,18 @@ function stnc_wp_floor_adminMenu_stnc_building_company()
         $web_permission = '[{\"door_number_permission\":false,\"square_meters_permission\":false,\"email_permission\":false,\"phone_permission\":false,\"mobile_phone_permission\":false,\"web_site_permission\":false,\"company_description_permission\":false,\"address_permission\":false}]';
         $data =  str_replace([" ", '\\'], null, $web_permission);
         $web_permission =  json_decode($data, true, JSON_UNESCAPED_SLASHES);
-  
         $is_empty = 0;
-
         $table=$wpdb->prefix.'stnc_building_ext_categories';
         $sql_company_list = 'SELECT * FROM ' . $table .'  WHERE status=1' ;
         $categoriesList = $wpdb->get_results($sql_company_list);
         include ('add_edit.php');
     }
 
-
-
     if ((isset($_GET['st_trigger'])) && ($_GET['st_trigger'] === 'store')) {
         // session_start();
+        $building_id = isset($_GET["building_id"]) ? sanitize_text_field($_GET["building_id"]) : " ";
+        $floor_id = isset($_GET["floor_id"]) ? sanitize_text_field($_GET["floor_id"]) : " ";
+
         $door_number = isset($_POST["door_number"]) ? sanitize_text_field($_POST["door_number"]) : "0";
         $company_name = isset($_POST["company_name"]) ? sanitize_text_field($_POST["company_name"]) : " isim eklenmemiş";
         $square_meters = isset($_POST["square_meters"]) ? sanitize_text_field($_POST["square_meters"]) : 0;
@@ -161,16 +164,12 @@ function stnc_wp_floor_adminMenu_stnc_building_company()
         $map_location = '{"left":12,"top":112,"width":82.42500305175781,"height":30,"x":12,"y":112,"right":94.42500305175781,"bottom":142}';
         $company_description = isset($_POST["company_description"]) ? sanitize_text_field($_POST["company_description"]) : " ";
         $address = isset($_POST["address"]) ? sanitize_text_field($_POST["address"]) : " ";
-        $building_id = isset($_GET["building_id"]) ? sanitize_text_field($_GET["building_id"]) : " ";
-        $floor_id = isset($_GET["floor_id"]) ? sanitize_text_field($_GET["floor_id"]) : " ";
         $media_id = isset($_POST["media_id"]) ? sanitize_text_field($_POST["media_id"]) : 0;
-   
         $company_category_id = isset($_POST["company_category_id"]) ? sanitize_text_field($_POST["company_category_id"]) : 16;
         $is_show = isset($_POST["is_show"]) ? 0: 1;
         $web_permission = isset($_POST["web_permission"]) ? "" : '';
 // print_r(  json_decode($_POST["web_permission"], true) );
 // die;
-
 
         $success =   $wpdb->insert(
             $stncForm_tableNameMain,
@@ -197,7 +196,6 @@ function stnc_wp_floor_adminMenu_stnc_building_company()
         );
 
         if ($success) {
-            stnc_wp_floor_plans_send_email($door_number,$company_name,$square_meters,$email,$phone,$web_site,$map_location,$company_description,$address,"added");
             $_SESSION['stnc_map_flash_msg'] =  __( 'Record Save', 'the-stnc-map' );
             $lastid = $wpdb->insert_id;
             wp_redirect('/wp-admin/admin.php?page=stnc_building_company&building_id='.$building_id.'&floor_id='. $floor_id.'&st_trigger=show&id='. $lastid, 302);
@@ -276,7 +274,7 @@ function stnc_wp_floor_adminMenu_stnc_building_company()
        // echo $wpdb->last_query;
     
         if ($success) {
-            stnc_wp_floor_plans_send_email($door_number,$company_name,$square_meters,$email,$phone,$web_site,$map_location,$company_description,$address,"empty");
+            stnc_wp_floor_plans_send_email($door_number,$company_name,$square_meters,$email,$phone,$web_site,$map_location,$company_description,$address, $building_id,$floor_id,"empty");
             $_SESSION['stnc_map_flash_msg'] =  __( 'Record Save', 'the-stnc-map' );
             wp_redirect('/wp-admin/admin.php?page=stnc_building_company&st_trigger=show&building_id='.$building_id.'&floor_id='. $floor_id.'&id='. $floors_locations_id, 302);
             die;

@@ -1,7 +1,4 @@
-<?php
 
-function stnc_wp_floor_email_footer(){
-   ?>
     <div class="footer" style="clear: both; margin-top: 10px; text-align: center; width: 100%;">
               <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;" width="100%">
                 <tr>
@@ -16,5 +13,3 @@ function stnc_wp_floor_email_footer(){
                 </tr>
               </table>
             </div>
-  <?php
-}

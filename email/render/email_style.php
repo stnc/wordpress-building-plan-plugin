@@ -1,7 +1,3 @@
-<?php
-
-function stnc_wp_floor_email_template_for_style(){
-   ?>
 <style>
 @media only screen and (max-width: 620px) {
   table.body h1 {
@@ -241,8 +237,4 @@ table.body .article {
   width: 100%!important;
 		}
 
-
-
 </style>
-  <?php
-}

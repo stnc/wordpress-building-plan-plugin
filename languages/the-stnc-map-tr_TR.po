@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Build\n"
 "POT-Creation-Date: 2023-07-21 21:41-0600\n"
-"PO-Revision-Date: 2023-07-23 02:14-0600\n"
+"PO-Revision-Date: 2023-08-19 02:00-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: tr_TR\n"
@@ -45,8 +45,6 @@ msgstr "Bina Listesi"
 #: pages/homepage.php:36
 msgid "Wordpress Panel"
 msgstr ""
-
-
 
 #: pages/homepage.php:43 pages/stnc_building_company/_header-show.php:41
 #: pages/stnc_map_editor_building/_header-show.php:50
@@ -151,7 +149,6 @@ msgstr "Filtre"
 #: pages/stncForm_company_list.php:639
 msgid "Company list"
 msgstr "Firma Listesi"
-
 
 msgid "Show Location On Map"
 msgstr "Haritada Konumunu Göster"
@@ -280,8 +277,6 @@ msgstr "Boş Alan"
 msgid "Add New Company"
 msgstr "Yeni Firma Ekle"
 
-
-
 #: pages/stnc_map_view/_header-editor.php:80
 #: pages/stnc_map_view/_header-show.php:81
 msgid "Upload Map"
@@ -348,7 +343,6 @@ msgstr "Ornek Kod"
 msgid "add the above code inside the page"
 msgstr "yukarıdaki kodu sayfanın içine ekleyin"
 
-
 msgid "Map Load"
 msgstr "Harita Yukle"
 
@@ -361,7 +355,6 @@ msgstr "Kayit Guncellendi"
 msgid "Information about this building"
 msgstr "Bu binaya ait bilgiler"
 
-
 msgid "Copy Shortcode"
 msgstr "Kodu Kopyala"
 
@@ -370,9 +363,6 @@ msgstr "Bina ve Kat Bilgisi"
 
 msgid "Company Categories"
 msgstr "Firma Kategorisi"
-
-
-
 
 msgid "Empty Companies List"
 msgstr "Bos Firmalar Listesi"
@@ -387,11 +377,10 @@ msgid "Is mailing enabled for events?"
 msgstr "Olaylar icin email gonderimi aktif olsun mu?"
 
 msgid "You can increase email addresses by pressing the plus sign."
-msgstr "Email adreslerini arti isaretine basarak artirabilirsiniz"
+msgstr "Email adreslerini artı işaretine basarak artırabilirsiniz."
 
 msgid "Email Addresses"
 msgstr "Email Adresleri"
-
 
 msgid "Mail Subject"
 msgstr "Mail Konusu"

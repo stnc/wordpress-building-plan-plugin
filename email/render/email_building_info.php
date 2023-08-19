@@ -1,8 +1,16 @@
 <?php
 
-function stnc_wp_floor_email_building_info($door_number,$company_name,$square_meters,$email,$phone,$web_site,$map_location,$company_description,$address){
+// function stnc_wp_floor_email_building_info($door_number,$company_name,$square_meters,$email,$phone,$web_site,$map_location,$company_description,$address){
 
-  
+  global $wpdb;
+  $wp_stnc_map_floors =$wpdb->prefix .'stnc_map_floors' ;
+  $wp_stnc_map_building =$wpdb->prefix .'stnc_map_building' ;
+  $mapJoinData = $wpdb->get_row($wpdb->prepare("SELECT bina.name AS bina,kat.name build_name,kat.building_id,kat.scheme,bina.id
+    AS bina_id,kat.id AS floor_id ,kat.scheme_media_id,full_area,empty_area,total_area  FROM " . $wp_stnc_map_floors . " AS kat INNER JOIN " . $wp_stnc_map_building . " 
+     AS bina  ON  bina.id=%d AND kat.id = %d", $building_id,$floor_id));
+     $binaName = $mapJoinData->bina;
+     $build_name = $mapJoinData->build_name;
+
 ?>
 
 <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; box-sizing: border-box; width: 100%;" width="100%">
@@ -113,4 +121,4 @@ function stnc_wp_floor_email_building_info($door_number,$company_name,$square_me
 //    $build_name = $mapJoinData->build_name;
 
 
-}
+// }
