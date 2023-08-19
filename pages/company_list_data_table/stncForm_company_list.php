@@ -158,15 +158,12 @@ class Stnc_wp_floor_List_Table extends WP_List_Table
 				$result = $item['company_name'];
 				break;
 
-			case 'phone':
-				$result = $item['phone'];
-				break;
 
 				case 'bina':
-					$result = $item['bina'];
-					break;
+			    $result = $item['bina'];
+			   break;
 
-				case 'company_description':
+		     case 'company_description':
 					$result = $item['company_description'];
 					break;
 		}
@@ -295,7 +292,7 @@ class Stnc_wp_floor_List_Table extends WP_List_Table
 		    $sql = "SELECT loc.*,build.name AS build_name,floors.name AS floors_name,CONCAT(build.name , ' - ',  floors.name) as bina  
 			FROM {$wpdb->prefix}stnc_map_floors_locations AS loc 
 			INNER JOIN {$wpdb->prefix}stnc_map_building AS build  ON  loc.building_id=build.id 
-			INNER JOIN  {$wpdb->prefix}stnc_map_floors AS floors  ON  loc.floor_id=floors.id 
+			INNER JOIN  {$wpdb->prefix}stnc_map_floors AS floors  ON  loc.floor_id=floors.id and loc.is_empty=0 
 			WHERE company_name LIKE '%$search%' OR company_description LIKE '%$search%' ";
 			if (!empty($_REQUEST['orderby'])) {
 				$sql .= ' ORDER BY ' . esc_sql($_REQUEST['orderby']);
@@ -309,7 +306,7 @@ class Stnc_wp_floor_List_Table extends WP_List_Table
 			  $sql = "SELECT loc.*,build.name AS build_name,floors.name AS floors_name,CONCAT(build.name , '- ',  floors.name) as bina  
 			 FROM {$wpdb->prefix}stnc_map_floors_locations AS loc 
 			 INNER JOIN {$wpdb->prefix}stnc_map_building AS build  ON  loc.building_id=build.id 
-			 INNER JOIN  {$wpdb->prefix}stnc_map_floors AS floors  ON  loc.floor_id=floors.id  ";
+			 INNER JOIN  {$wpdb->prefix}stnc_map_floors AS floors  ON  loc.floor_id=floors.id and loc.is_empty=0 ";
 	
 			if (!empty($_REQUEST['orderby'])) {
 				$sql .= ' ORDER BY ' . esc_sql($_REQUEST['orderby']);
@@ -620,6 +617,17 @@ function stnc_wp_floor_render_list_page()
 
 	?>
 <div class="wrap">
+
+<a style=" background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;" href="/wp-admin/admin.php?page=stnc_empty_building_list"><?php esc_html_e( 'Empty Buildings', 'the-stnc-map' ) ?></a>
 
     <div id="icon-users" class="icon32"><br /></div>
     <h2> <?php esc_html_e( 'Company list', 'the-stnc-map' ) ?></h2>

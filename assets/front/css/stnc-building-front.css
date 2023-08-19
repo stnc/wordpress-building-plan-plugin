@@ -1,0 +1,353 @@
+/* ==== this used the classic shorrtcode ==== */
+
+.center,
+.container-stnc-grid {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.business-container figure,
+.row-stnc-grid {
+    position: relative;
+    width: 100%;
+}
+/* 
+.row [class^="col"] {
+    float: left;
+    margin: 0.5rem 2%;
+    min-height: 0.125rem;
+} */
+
+.cl-left {
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.business-container .img-responsive {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+.business-container .short-bio p {
+    margin-bottom: 10px;
+}
+.business-container .contact-info {
+    margin: 0;
+    padding: 0 0 10px;
+}
+.business-container .contact-info ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.business-container .contact-info ul li {
+    margin: 0;
+    padding: 0;
+    line-height: 22px;
+    list-style: none !important;
+    border: none;
+    background: no-repeat;
+}
+.business-container a {
+    text-decoration: none;
+    box-shadow: none;
+    border: none !important;
+}
+.business-container .contact-info i {
+    width: 20px;
+    margin-right: 4px;
+    text-align: center;
+    color: #0367bf;
+}
+.business-container .contact-info ul li + li {
+    margin-top: 10px;
+}
+.team-name a {
+    font-size: 30px;
+    line-height: 1.3;
+    color: #3b69e1;
+}
+.business-container {
+    padding-bottom: 10px;
+}
+.business-container .grid-display {
+    margin-bottom: 25px;
+    border-bottom: 1px solid #a9a9a9;
+}
+/* ==== this used the classic shorrtcode ** end ==== */
+
+
+/* ==== this used the minimal shorrtcode ==== */
+
+
+
+/**
+*** SIMPLE GRID
+*** (C) ZACH stnc-colE 2016
+**/
+
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic);
+
+/* UNIVERSAL */
+/* 
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  top: 0;
+  font-size: 100%;
+} */
+
+/* ROOT FONT STYLES */
+
+/* * {
+  font-family: 'Lato', Helvetica, sans-serif;
+  stnc-color: #333447;
+  line-height: 1.5;
+} */
+
+/* TYPOGRAPHY */
+
+/* h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.375rem;
+}
+
+h4 {
+  font-size: 1.125rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+h6 {
+  font-size: 0.875rem;
+} */
+
+p {
+  font-size: 1.125rem;
+  font-weight: 200;
+  line-height: 1.8;
+}
+
+.font-light {
+  font-weight: 300;
+}
+
+.font-regular {
+  font-weight: 400;
+}
+
+.font-heavy {
+  font-weight: 700;
+}
+
+/* POSITIONING */
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.justify {
+  text-align: justify;
+}
+
+/* ==== GRID SYSTEM ==== */
+
+
+.stnc-container-fluid, .stnc-container-lg, .stnc-container-md, .stnc-container-sm, .stnc-container-xl{
+    width: 100%;
+    padding-right: var(--bs-gutter-x,.75rem);
+    padding-left: var(--bs-gutter-x,.75rem);
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+
+.stnc-container {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.stnc-row {
+  position: relative;
+  width: 100%;
+}
+
+.stnc-row [class^="stnc-col"] {
+  float: left;
+  margin: 0.5rem 2%;
+  min-height: 0.125rem;
+}
+
+.stnc-col-1,
+.stnc-col-2,
+.stnc-col-3,
+.stnc-col-4,
+.stnc-col-5,
+.stnc-col-6,
+.stnc-col-7,
+.stnc-col-8,
+.stnc-col-9,
+.stnc-col-10,
+.stnc-col-11,
+.stnc-col-12 {
+  width: 96%;
+}
+
+.stnc-col-1-sm {
+  width: 4.33%;
+}
+
+.stnc-col-2-sm {
+  width: 12.66%;
+}
+
+.stnc-col-3-sm {
+  width: 21%;
+}
+
+.stnc-col-4-sm {
+  width: 29.33%;
+}
+
+.stnc-col-5-sm {
+  width: 37.66%;
+}
+
+.stnc-col-6-sm {
+  width: 46%;
+}
+
+.stnc-col-7-sm {
+  width: 54.33%;
+}
+
+.stnc-col-8-sm {
+  width: 62.66%;
+}
+
+.stnc-col-9-sm {
+  width: 71%;
+}
+
+.stnc-col-10-sm {
+  width: 79.33%;
+}
+
+.stnc-col-11-sm {
+  width: 87.66%;
+}
+
+.stnc-col-12-sm {
+  width: 96%;
+}
+
+.stnc-row::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.hidden-sm {
+  display: none;
+}
+
+@media only screen and (min-width: 33.75em) {  /* 540px */
+  .stnc-container {
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 45em) {  /* 720px */
+  .stnc-col-1 {
+    width: 4.33%;
+  }
+
+  .stnc-col-2 {
+    width: 12.66%;
+  }
+
+  .stnc-col-3 {
+    width: 21%;
+  }
+
+  .stnc-col-4 {
+    width: 29.33%;
+  }
+
+  .stnc-col-5 {
+    width: 37.66%;
+  }
+
+  .stnc-col-6 {
+    width: 46%;
+  }
+
+  .stnc-col-7 {
+    width: 54.33%;
+  }
+
+  .stnc-col-8 {
+    width: 62.66%;
+  }
+
+  .stnc-col-9 {
+    width: 71%;
+  }
+
+  .stnc-col-10 {
+    width: 79.33%;
+  }
+
+  .stnc-col-11 {
+    width: 87.66%;
+  }
+
+  .stnc-col-12 {
+    width: 96%;
+  }
+
+  .hidden-sm {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 60em) { /* 960px */
+  .stnc-container {
+    width: 75%;
+    max-width: 60rem;
+  }
+}
+
+
+
+
+
+/* ==== this used the minimal shorrtcode ** end ==== */

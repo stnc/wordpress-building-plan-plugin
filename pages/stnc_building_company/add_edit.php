@@ -93,10 +93,7 @@ $map = $wpdb->get_row($wpdb->prepare($sql, $binaId,$katId));
 ?>
 
 <main class="flex-shrink-0" style="margin-top:88px">
-
-
     <div class="stnc-container-fluid">
-
         <div> 
         <span style="color:red"><?php echo $binaName ?> / <?php  echo $kat_adi ?> </span> EDIT
         </div>
@@ -161,13 +158,6 @@ $map = $wpdb->get_row($wpdb->prepare($sql, $binaId,$katId));
                             </select>
                         </div>
                         <hr>
-
-
-
-                  
-
-
-
 
                         <div class="form-group">
                             <label for="email"> <strong><?php esc_html_e( 'Company email address', 'the-stnc-map' ) ?></strong> </label>

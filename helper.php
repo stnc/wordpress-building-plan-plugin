@@ -4,6 +4,9 @@ if (!defined('ABSPATH')) {
 }
 
 
+function stnc_wp_floor_validateEMAIL($mail) {
+  return (!preg_match("/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $mail)) ? FALSE : TRUE;
+}
 
 
 // used for tracking error messages

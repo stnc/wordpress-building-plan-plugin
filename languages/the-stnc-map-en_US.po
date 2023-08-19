@@ -45,9 +45,7 @@ msgstr ""
 msgid "Wordpress Panel"
 msgstr ""
 
-#: pages/homepage.php:39
-msgid "Company List"
-msgstr ""
+
 
 #: pages/homepage.php:43 pages/stnc_building_company/_header-show.php:41
 #: pages/stnc_map_editor_building/_header-show.php:50
@@ -389,5 +387,11 @@ msgstr ""
 msgid "Email Addresses"
 msgstr ""
 
+msgid "Mail Subject"
+msgstr ""
+
+
 msgid "Show company information on website"
-msgstr "Sirket bilgisini web sitesinde gosterme"
+msgstr ""
+
+

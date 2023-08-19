@@ -46,9 +46,7 @@ msgstr "Bina Listesi"
 msgid "Wordpress Panel"
 msgstr ""
 
-#: pages/homepage.php:39
-msgid "Company List"
-msgstr "Firma Listesi"
+
 
 #: pages/homepage.php:43 pages/stnc_building_company/_header-show.php:41
 #: pages/stnc_map_editor_building/_header-show.php:50
@@ -282,9 +280,7 @@ msgstr "Boş Alan"
 msgid "Add New Company"
 msgstr "Yeni Firma Ekle"
 
-#: pages/stnc_map_view/_header-editor.php:75
-msgid "Show location"
-msgstr "Konumu göster"
+
 
 #: pages/stnc_map_view/_header-editor.php:80
 #: pages/stnc_map_view/_header-show.php:81
@@ -376,8 +372,7 @@ msgid "Company Categories"
 msgstr "Firma Kategorisi"
 
 
-msgid "Show Location On Map"
-msgstr "Haritada Konumunu Göster"
+
 
 msgid "Empty Companies List"
 msgstr "Bos Firmalar Listesi"
@@ -397,5 +392,9 @@ msgstr "Email adreslerini arti isaretine basarak artirabilirsiniz"
 msgid "Email Addresses"
 msgstr "Email Adresleri"
 
+
+msgid "Mail Subject"
+msgstr "Mail Konusu"
+
 msgid "Show company information on website"
-msgstr ""
+msgstr "Sirket bilgisini web sitesinde gosterme"

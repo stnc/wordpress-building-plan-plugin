@@ -147,7 +147,7 @@ table.body .article {
     }
 
     .dcf-table-bordered tr:not(:last-child), .dcf-table-striped tr:not(:last-child) {
-      border-bottom: 1px solid var(--b-table)
+      border-bottom: 1px solid  #242423
     }
 
     .dcf-table-striped tbody tr:nth-of-type(2n) {
@@ -207,10 +207,10 @@ table.body .article {
         text-align: left!important
       }
       .dcf-table-responsive.dcf-table-bordered, .dcf-table-responsive.dcf-table-bordered thead th {
-        border-width: 0
+        border-width: 1
       }
       .dcf-table-responsive.dcf-table-bordered tbody td {
-        border-top-width: 0
+        border-top-width: 1
       }
       .dcf-table-responsive:not(.dcf-table-bordered) tbody tr {
         padding-bottom: .75em
@@ -222,7 +222,7 @@ table.body .article {
         padding-right: 0
       }
       .dcf-table-responsive.dcf-table-bordered tbody tr:last-child td:last-child {
-        border-bottom-width: 0
+        border-bottom-width: 1
       }
       .dcf-table-responsive tbody td:before {
         content: attr(data-label);

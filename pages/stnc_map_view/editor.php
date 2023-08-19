@@ -43,7 +43,8 @@
 
             <div class="stnc-col-3">
             <h6 style="color:red"> <?php esc_html_e( 'You can move the red boxes on the map by dragging and dropping them.', 'the-stnc-map' ) ?></h6>
-
+            <a class="btn btn-danger rounded-pill px-2"
+                            href="/wp-admin/admin.php?page=stnc_map_view&st_trigger=show&binaid=<?php echo $_GET['binaid']?>&kat=<?php echo $_GET['kat']?>"> <?php esc_html_e( 'Show location', 'the-stnc-map' ) ?></a>
             <div class="stnc-col-12">
             <div class="card flex-md-row mb-4 box-shadow h-md-250">
                 <div class="d-flex flex-column align-items-start">
@@ -54,6 +55,7 @@
                 </div>
             </div>
             </div>
+        
 
                 <span class="badge bg-secondary"><?php esc_html_e( 'Company List', 'the-stnc-map' ) ?></span>
 

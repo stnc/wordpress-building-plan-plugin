@@ -32,11 +32,12 @@ function stnc_wp_floor_adminMenu_stnc_map_homepage()
           <li class="nav-item">
             <a class="nav-link" href="/wp-admin/admin.php?page=stnc_map_homepage"><?php esc_html_e( 'Building List', 'the-stnc-map' ) ?></a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/wp-admin"><?php esc_html_e( 'Wordpress Panel', 'the-stnc-map' ) ?></a>
-          </li>
+       
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/wp-admin/admin.php?page=stnc_building_list"><?php esc_html_e( 'Company List', 'the-stnc-map' ) ?></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/wp-admin"><?php esc_html_e( 'Wordpress Panel', 'the-stnc-map' ) ?></a>
           </li>
         </ul>
         <div class="text-center">

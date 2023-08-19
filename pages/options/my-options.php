@@ -22,8 +22,15 @@
                 'type' => 'switcher',
                 'title' => esc_html__('Is mailing enabled for events?', 'the-stnc-map'),
                 'default' => true,
-           
             ),
+
+            array(
+              'id' => 'mail_subject',
+              'type' => 'text',
+              'title' => esc_html__('Mail Subject', 'the-stnc-map'),
+              'default' => "Erciyes Teknopark Kat Planlari Degisiklik Bildirimi",
+          ),
+
 
             array(
               'id'        => 'email_adress',
@@ -36,11 +43,12 @@
                   'id'    => 'mailadress',
                   'type'  => 'text',
                   'title' => 'Email',
+                  'validate' => 'csf_validate_email',
                 ),
               ),
               'default'   => array(
                 array(
-                  'mail-1' => 'admin@website.com',
+                  'mailadress' => 'serhat@erciyesteknopark.com',
      
                 ),
             

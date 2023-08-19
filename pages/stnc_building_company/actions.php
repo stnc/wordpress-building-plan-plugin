@@ -192,11 +192,12 @@ function stnc_wp_floor_adminMenu_stnc_building_company()
                 'web_permission' =>    $web_permission,
                 'add_date' =>   $date,
                 'is_show' =>   $is_show,
-                   'is_empty' => 0,
+                'is_empty' => 0,
             ),
         );
 
         if ($success) {
+            stnc_wp_floor_plans_send_email($door_number,$company_name,$square_meters,$email,$phone,$web_site,$map_location,$company_description,$address,"added");
             $_SESSION['stnc_map_flash_msg'] =  __( 'Record Save', 'the-stnc-map' );
             $lastid = $wpdb->insert_id;
             wp_redirect('/wp-admin/admin.php?page=stnc_building_company&binaid='.$building_id.'&kat='. $floor_id.'&st_trigger=show&id='. $lastid, 302);
@@ -275,7 +276,7 @@ function stnc_wp_floor_adminMenu_stnc_building_company()
        // echo $wpdb->last_query;
     
         if ($success) {
-         
+            stnc_wp_floor_plans_send_email($door_number,$company_name,$square_meters,$email,$phone,$web_site,$map_location,$company_description,$address,"empty");
             $_SESSION['stnc_map_flash_msg'] =  __( 'Record Save', 'the-stnc-map' );
             wp_redirect('/wp-admin/admin.php?page=stnc_building_company&st_trigger=show&binaid='.$building_id.'&kat='. $floor_id.'&id='. $floors_locations_id, 302);
             die;

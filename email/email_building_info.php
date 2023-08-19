@@ -1,44 +1,11 @@
 <?php
 
-function stnc_wp_floor_email_building_info(){
-    global $wpdb;
-    $floorInfoData = $wpdb->get_row($wpdb->prepare("SELECT *  FROM " . $wpdb->prefix ."stnc_map_floors_locations WHERE id = %d", 73));
+function stnc_wp_floor_email_building_info($door_number,$company_name,$square_meters,$email,$phone,$web_site,$map_location,$company_description,$address){
 
-    $door_number = $floorInfoData->door_number;
-    $floors_locations_id = $floorInfoData->id;
-    $company_name = $floorInfoData->company_name;
-    $square_meters = $floorInfoData->square_meters;
-    $email =  $floorInfoData->email;
-    $phone = $floorInfoData->phone;
-    $mobile_phone = $floorInfoData->mobile_phone;
-    $web_site = $floorInfoData->web_site;
-    $map_location = $floorInfoData->map_location;
-    $company_description =  $floorInfoData->company_description;
-    $address =  $floorInfoData->address;
-    $id =  $floorInfoData->id;
-    $media_id =  $floorInfoData->media_id;
-    $web_permission =  $floorInfoData->web_permission;
-     $buildingID =  $floorInfoData->building_id;
-     $floorID =  $floorInfoData->floor_id;
-
-    //SELECT bina.name AS bina,kat.name kat_adi,kat.building_id,kat.scheme,bina.id AS bina_id,kat.id AS katid ,kat.scheme_media_id,full_area,empty_area,total_area FROM wp_stnc_map_floors AS kat INNER JOIN wp_stnc_map_building AS bina ON bina.id=2 AND kat.id = 9 
-
-    $wp_stnc_map_floors = $wpdb->prefix . 'stnc_map_floors';
-    $wp_stnc_map_building = $wpdb->prefix . 'stnc_map_building';
-
-    $mapJoinData = $wpdb->get_row($wpdb->prepare("SELECT bina.name AS bina,kat.name kat_adi,kat.building_id,kat.scheme,bina.id
-      AS bina_id,kat.id AS katid ,kat.scheme_media_id,full_area,empty_area,total_area  FROM " . $wp_stnc_map_floors . " AS kat INNER JOIN " . $wp_stnc_map_building . " 
-       AS bina  ON  bina.id=%d AND kat.id = %d", $buildingID, $floorID));
-       $binaName = $mapJoinData->bina;
-       $kat_adi = $mapJoinData->kat_adi;
   
-   
+?>
 
-
-      //  $full_area  = $mapJoinData->full_area;//dolu alan 
-      //  $empty_area  = $mapJoinData->empty_area;//boş 
-      // $total_area  = $mapJoinData->total_area;//toplam
-?>        <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; box-sizing: border-box; width: 100%;" width="100%">
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; box-sizing: border-box; width: 100%;" width="100%">
 <tbody>
   <tr>
     <td align="left" style="font-family: sans-serif; font-size: 14px; vertical-align: top; padding-bottom: 15px;" valign="top">
@@ -114,6 +81,36 @@ function stnc_wp_floor_email_building_info(){
     </td>
   </tr>
 </tbody>
-</table><?php
+</table>
+<?php
+// global $wpdb;
+// $floorInfoData = $wpdb->get_row($wpdb->prepare("SELECT *  FROM " . $wpdb->prefix ."stnc_map_floors_locations WHERE id = %d", 73));
+
+// $door_number = $floorInfoData->door_number;
+// $floors_locations_id = $floorInfoData->id;
+// $company_name = $floorInfoData->company_name;
+// $square_meters = $floorInfoData->square_meters;
+// $email =  $floorInfoData->email;
+// $phone = $floorInfoData->phone;
+// $mobile_phone = $floorInfoData->mobile_phone;
+// $web_site = $floorInfoData->web_site;
+// $map_location = $floorInfoData->map_location;
+// $company_description =  $floorInfoData->company_description;
+// $address =  $floorInfoData->address;
+// $id =  $floorInfoData->id;
+// $media_id =  $floorInfoData->media_id;
+// $web_permission =  $floorInfoData->web_permission;
+//  $buildingID =  $floorInfoData->building_id;
+//  $floorID =  $floorInfoData->floor_id;
+
+// $wp_stnc_map_floors = $wpdb->prefix . 'stnc_map_floors';
+// $wp_stnc_map_building = $wpdb->prefix . 'stnc_map_building';
+
+// $mapJoinData = $wpdb->get_row($wpdb->prepare("SELECT bina.name AS bina,kat.name kat_adi,kat.building_id,kat.scheme,bina.id
+//   AS bina_id,kat.id AS katid ,kat.scheme_media_id,full_area,empty_area,total_area  FROM " . $wp_stnc_map_floors . " AS kat INNER JOIN " . $wp_stnc_map_building . " 
+//    AS bina  ON  bina.id=%d AND kat.id = %d", $buildingID, $floorID));
+//    $binaName = $mapJoinData->bina;
+//    $kat_adi = $mapJoinData->kat_adi;
+
 
 }

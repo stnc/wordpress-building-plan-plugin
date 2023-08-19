@@ -4,10 +4,11 @@ Plugin Name:  Teknopark Binalar
 Plugin URI:	https://github.com/stnc/wp-kat-planlari		
 Description: Erciyes Teknopark Kat Planları
 Version: 2.4.0
-Author: selman tunç
+Author: Selman TUNC
 Text Domain: the-stnc-map
 Domain Path: /languages/
 
+-- tenplate yazmak icin ama kullanilmiyor 
 * Template Name: Firmalar Listesi
 * Description: firmalar listesi sayfası 
 * @package WordPress
@@ -50,14 +51,25 @@ require_once "pages/company_empty_list_data_table/stncForm_empty_company_list.ph
 require_once "pages/about/stncForm-adminMenu_About.php";
 require_once "pages/update/update_pack.php";
 
-require_once "pages/shortcut-classic/shortcode_admin.php";
+require_once "pages/shortcut-classic/admin-menu.php";
 require_once "pages/shortcut-classic/company-frontpage.php";
 
 require_once "pages/shortcut-minimal/company-frontpage.php";
 
 require_once 'codestar-framework/codestar-framework.php';
-require_once 'codestar-framework/samples/admin-options.php';
+// require_once 'codestar-framework/samples/admin-options.php';
 require_once 'pages/options/my-options.php';
+
+require_once 'email/_mail_.php';
+
+
+// Load plugin text-domain https://daext.com/blog/how-to-make-a-wordpress-plugin-translatable/
+function stnc_wp_floor_initialize_plugin_lang() {
+	// Retrieve the directory for the internationalization files
+    load_plugin_textdomain('the-stnc-map', false, dirname(plugin_basename(__FILE__)) . '/languages/');
+}
+add_action( 'plugins_loaded', 'stnc_wp_floor_initialize_plugin_lang' );
+
 
 /*
 // load css into the login page
@@ -67,11 +79,3 @@ function mytheme_enqueue_login_style() {
 add_action( 'login_enqueue_scripts', 'mytheme_enqueue_login_style' );
 
 */
-
-
-// Load plugin text-domain https://daext.com/blog/how-to-make-a-wordpress-plugin-translatable/
-function stnc_wp_floor_initialize_plugin_lang() {
-	// Retrieve the directory for the internationalization files
-    load_plugin_textdomain('the-stnc-map', false, dirname(plugin_basename(__FILE__)) . '/languages/');
-}
-add_action( 'plugins_loaded', 'stnc_wp_floor_initialize_plugin_lang' );

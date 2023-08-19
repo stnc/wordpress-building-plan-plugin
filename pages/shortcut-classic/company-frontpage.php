@@ -56,13 +56,13 @@ function stnc_map_building_company_shortcode($attr)
 
 
 
-<div class="row" style="margin: 20px 0 20px 0 !important;
+<div class="stnc-row" style="margin: 20px 0 20px 0 !important;
 display: block;
 padding: 15px;
 background-color: #eee;
 border-radius: 5px;">
 
-<div class="col-6 cl-left">
+<div class="stnc-col-6 cl-left">
    <label for="sas"> <?php esc_html_e( 'Choose Sector', 'the-stnc-map' ) ?></label>
       <select class="filters-select">
         <option value="*"> <?php esc_html_e( 'Show All', 'the-stnc-map' ) ?></option>
@@ -72,7 +72,7 @@ border-radius: 5px;">
       </select>
 </div>
 
-<div class="col-6 cl-left">
+<div class="stnc-col-6 cl-left">
 <label for="sas"> <?php esc_html_e( 'Select Building', 'the-stnc-map' ) ?></label>
       <select class="filters-select-comnpany">
       <option value="*"> <?php esc_html_e( 'Show All', 'the-stnc-map' ) ?></option>
@@ -168,7 +168,7 @@ border-radius: 5px;">
 
     <div class="grid-display element-item company<?php echo $building->company_category_id; ?> build<?php echo $building->building_id; ?>  ">
       <div class="row">
-          <div class="img-area col-3 cl-left">
+          <div class="img-area stnc-col-3 cl-left">
             <figure>
               <a  target="_target" href="<?php echo $building->web_site; ?>">
                 <img src="<?php echo $images; ?>" class="img-responsive- rt-team-img" alt="<?php echo $building->company_name; ?>" loading="lazy" width="197" height="78">
@@ -176,7 +176,7 @@ border-radius: 5px;">
             </figure>
           </div>
 
-          <div class="rttm-content-area col-9 cl-left">
+          <div class="rttm-content-area stnc-col-9 cl-left">
               <span class="team-name">
                 <a  target="_blank" title="<?php echo $building->company_name; ?>" href="<?php echo $building->web_site; ?>"><?php echo $building->company_name; ?></a>
                 <div class="name" ><?php echo $building->company_name; ?></div>
