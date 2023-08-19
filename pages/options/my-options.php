@@ -4,7 +4,8 @@
   $prefix = 'stnc_wp_floor_option';
   
   CSF::createOptions( $prefix, array(
-    'framework_title' => __('Options', 'the-stnc-map'),
+    'framework_title' => __('Ayarlar'),
+    // 'framework_title' => __('Options'),
     'menu_slug'   => 'stnc_building_setting',
     'menu_type'   => 'submenu',
     'theme' => 'dark',
@@ -20,7 +21,8 @@
             array(
                 'id' => 'is_mail_send',
                 'type' => 'switcher',
-                'title' => __('Is mailing enabled for events?', 'the-stnc-map'),
+                // 'title' =>  __( 'Is mailing enabled for events?', 'the-stnc-map' ) ,
+                'title' =>  __( 'Olaylar icin email gonderimi aktif olsun mu?', 'the-stnc-map' ) ,
                 'default' => true,
             ),
 
@@ -35,8 +37,10 @@
             array(
               'id'        => 'email_adress',
               'type'      => 'repeater',
-              'title'     => __('Email Addresses', 'the-stnc-map'),
-              'subtitle' =>  __('You can increase email addresses by pressing the plus sign.', 'the-stnc-map'),
+              // 'title'     => __('Email Addresses', 'the-stnc-map'),
+              'title'     => __('Email Adresleri', 'the-stnc-map'),
+              // 'subtitle' =>  __('You can increase email addresses by pressing the plus sign.', 'the-stnc-map'),
+              'subtitle' =>  __('Email adreslerini artı işaretine basarak artırabilirsiniz.', 'the-stnc-map'),
               'fields'    => array(
             
                 array(
@@ -49,9 +53,7 @@
               'default'   => array(
                 array(
                   'mailadress' => 'serhat@erciyesteknopark.com',
-     
                 ),
-            
               )
             ),
         )

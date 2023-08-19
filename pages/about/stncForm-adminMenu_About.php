@@ -6,26 +6,6 @@ function stnc_wp_floor_plans_adminMenu_About_contents()
     // $options = get_option( 'stnc_wp_floor_option' ); 
     // echo "<pre>";
     // print_r($options['email_adress']); // id of the field
-    // print_r($options['is_mail_send']); // id of the field
-
-//     $json_string = json_encode($options, JSON_PRETTY_PRINT);
-// echo   $json_string;
-
-https://stackoverflow.com/questions/4798142/php-capture-print-require-output-in-variable
-
-//https://www.google.com/search?q=how+to+php++capture+&client=firefox-b-1-d&sca_esv=558074753&sxsrf=AB5stBj8Hlh1RRVzlCc_t5E5P8qTeyvZhw%3A1692351750300&ei=Bj3fZN-CEoT7kPIPxp2ziAE&ved=0ahUKEwjfnaXH9eWAAxWEPUQIHcbODBEQ4dUDCA8&uact=5&oq=how+to+php++capture+&gs_lp=Egxnd3Mtd2l6LXNlcnAiFGhvdyB0byBwaHAgIGNhcHR1cmUgMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB5IhUpQ-AhYzBFwAXgBkAEAmAFnoAHGBaoBAzUuM7gBA8gBAPgBAcICChAAGEcY1gQYsAPCAgUQABiABMICCBAAGBYYHhgPwgIIEAAYigUYhgPiAwQYACBBiAYBkAYI&sclient=gws-wiz-serp
-
-$options = get_option( 'stnc_wp_floor_option' ); 
-    if (($options['is_mail_send'])) :
-        if (!empty($options['email_adress'])) :
-            foreach ($options['email_adress'] as $key =>  $option) :     
-            if (stnc_wp_floor_validateEMAIL($option["mailadress"])) {
-                echo $option["mailadress"];
-                echo "<br>";
-            }
-            endforeach;
-        endif;
-    endif;
 
 ?>
     <div id="advanced" class="postbox ">
@@ -33,10 +13,7 @@ $options = get_option( 'stnc_wp_floor_option' );
             <div class="card shadow1" style="max-width:100%!important">
                 <h2>    <?php esc_html_e( 'Support', 'the-stnc-map' ) ?>  </h2>
 
-               
             </div>
-
-
 <pre>
 ================================================================================
         v2.4.0 Important changes and bug fixes in the release 
