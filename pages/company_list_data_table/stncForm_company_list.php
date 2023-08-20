@@ -627,7 +627,7 @@ function stnc_wp_floor_render_list_page()
   display: inline-block;
   font-size: 16px;
   margin: 4px 2px;
-  cursor: pointer;" href="/wp-admin/admin.php?page=stnc_empty_building_list"><?php esc_html_e( 'Empty Buildings', 'the-stnc-map' ) ?></a>
+  cursor: pointer;" href="/wp-admin/admin.php?page=stnc_empty_building_list"><?php esc_html_e( 'Empty Offices', 'the-stnc-map' ) ?></a>
 
     <div id="icon-users" class="icon32"><br /></div>
     <h2> <?php esc_html_e( 'Company list', 'the-stnc-map' ) ?></h2>

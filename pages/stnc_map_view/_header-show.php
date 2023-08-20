@@ -98,10 +98,8 @@
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown"
                             aria-expanded="false"><?php esc_html_e( 'Other Floors', 'the-stnc-map' ) ?></a>
                         <ul class="dropdown-menu" aria-labelledby="dropdown01">
-                         <?php 
-                    
-                         foreach ($buildingsList as $building) : ?>
-                            <li><a class="dropdown-item" href="/wp-admin/admin.php?page=stnc_map_view&st_trigger=show&building_id=<?php echo $_GET['building_id']?>&floor_id=<?php echo $building->floor_id ?>"><?php echo $building->name ?></a></li>
+                         <?php foreach ($buildingsList as $building) : ?>
+                            <li><a class="dropdown-item" href="/wp-admin/admin.php?page=stnc_map_view&st_trigger=show&building_id=<?php echo $_GET['building_id']?>&floor_id=<?php echo $building->id ?>"><?php echo $building->name ?></a></li>
                         <?php endforeach ?>
                         </ul>
                     </li>

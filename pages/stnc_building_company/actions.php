@@ -9,6 +9,13 @@ function stnc_wp_floor_adminMenu_stnc_building_company()
     date_default_timezone_set('Europe/Istanbul');
     $date = date('Y-m-d h:i:s');
 
+        //others build
+        $building_id = $_GET['building_id'];
+        $wp_stnc_map_floors = $wpdb->prefix . 'stnc_map_floors';
+           $sql = 'SELECT * FROM ' . $wp_stnc_map_floors . ' WHERE building_id=' . $building_id ;
+        $buildingsList = $wpdb->get_results($sql);
+
+
     if ((isset($_GET['st_trigger'])) && ($_GET['st_trigger'] === 'show')) {
         // session_start();
         $floorInfoData = $wpdb->get_row($wpdb->prepare("SELECT *  FROM " . $stncForm_tableNameMain . "  WHERE id = %d", $_GET['id']));

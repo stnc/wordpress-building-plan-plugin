@@ -16,7 +16,7 @@ function stnc_wp_floor_adminMenu_stnc_map_view()
 
 
 
-     echo $sql="SELECT building.name AS building_name ,floor.name as floor_name,floor.building_id,floor.scheme,floor.id AS floor_id 
+      $sql="SELECT building.name AS building_name ,floor.name as floor_name,floor.building_id,floor.scheme,floor.id AS floor_id 
     ,building.id AS building_id ,floor.scheme_media_id,full_area,empty_area,total_area  FROM ".   $wp_stnc_map_floors." AS floor 
      INNER JOIN ".$wp_stnc_map_building."  AS building  ON  building.id=%d AND floor.id = %d";
    
@@ -48,8 +48,7 @@ function stnc_wp_floor_adminMenu_stnc_map_view()
     $i = 0;
     $top = 88;
 
-    //others build
-    $sql = 'SELECT * FROM ' . $wp_stnc_map_floors . ' WHERE building_id=' . $building_id ;
+
 
 
      $totalOffice = $wpdb->get_var('SELECT COUNT(*) FROM ' . $stncForm_tableNameMain . ' WHERE building_id=' . $building_id . ' and  floor_id=' . $floor_id  );
@@ -63,8 +62,10 @@ function stnc_wp_floor_adminMenu_stnc_map_view()
   
 
 
-
+    //others build
+        $sql = 'SELECT * FROM ' . $wp_stnc_map_floors . ' WHERE building_id=' . $building_id ;
     $buildingsList = $wpdb->get_results($sql);
+
 
     if ((isset($_GET['st_trigger'])) && ($_GET['st_trigger'] === 'show'))
     {

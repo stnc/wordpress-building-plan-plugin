@@ -29,7 +29,8 @@
             array(
               'id' => 'mail_subject',
               'type' => 'text',
-              'title' => __('Mail Subject', 'the-stnc-map'),
+              'title' => __('Mail Basligi', 'the-stnc-map'),
+              // 'title' => __('Mail Subject', 'the-stnc-map'),
               'default' => "Erciyes Teknopark Kat Planlari Degisiklik Bildirimi",
           ),
 

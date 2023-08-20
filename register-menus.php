@@ -5,7 +5,7 @@ function stnc_wp_floor_MainMenu(){
 
  add_menu_page('STNC Building',__( 'STNC Building', 'the-stnc-map' ) , 'manage_options', 'stnc_map_homepage', 'stnc_wp_floor_adminMenu_stnc_map_homepage','dashicons-networking',67); ////burası main menuyu ekler yani üst ksıım 
  add_submenu_page( "stnc_map_homepage", 'Build',  __( 'Companies List', 'the-stnc-map' ) , 'manage_options', 'stnc_building_list', 'stnc_wp_floor_render_list_page',null ); ////burası alt kısım onun altında olacak olan bolum için 
- add_submenu_page( "stnc_map_homepage", 'Build',  __( 'Empty Buildings', 'the-stnc-map' ) , 'manage_options', 'stnc_empty_building_list', 'stnc_wp_floor_render_empty_list_page',null ); ////burası alt kısım onun altında olacak olan bolum için 
+ add_submenu_page( "stnc_map_homepage", 'Build',  __( 'Empty Offices', 'the-stnc-map' ) , 'manage_options', 'stnc_empty_building_list', 'stnc_wp_floor_render_empty_list_page',null ); ////burası alt kısım onun altında olacak olan bolum için 
  add_submenu_page( "stnc_map_homepage", 'Build', __( 'Shortcut', 'the-stnc-map' ), 'manage_options', 'stnc_map_shortcut', 'stnc_wp_floor_shortcut_page' ,null); ////burası alt kısım onun altında olacak olan bolum için 
  add_submenu_page( "stnc_map_homepage", 'Build', __( 'About', 'the-stnc-map' ), 'manage_options', 'stnc_map_about', 'stnc_wp_floor_plans_adminMenu_About_contents',null ); ////burası alt kısım onun altında olacak olan bolum için 
  

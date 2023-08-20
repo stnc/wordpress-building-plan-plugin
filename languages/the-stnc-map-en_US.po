@@ -367,7 +367,7 @@ msgstr ""
 msgid "Show Location On Map"
 msgstr ""
 
-msgid "Empty Buildings"
+msgid "Empty Offices"
 msgstr ""
 
 msgid "Options"
@@ -382,7 +382,7 @@ msgstr ""
 msgid "Email Addresses"
 msgstr ""
 
-msgid "Mail Subject"
+msgid "Mail Title"
 msgstr ""
 
 msgid "Show company information on website"

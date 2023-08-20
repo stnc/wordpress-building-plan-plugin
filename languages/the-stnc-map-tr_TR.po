@@ -365,10 +365,10 @@ msgid "Company Categories"
 msgstr "Firma Kategorisi"
 
 msgid "Empty Companies List"
-msgstr "Bos Firmalar Listesi"
+msgstr "Boş Firmalar Listesi"
 
-msgid "Empty Buildings"
-msgstr "Bos Binalar"
+msgid "Empty Offices"
+msgstr "Boş Ofisler"
 
 msgid "Options"
 msgstr "Ayarlar"
@@ -382,8 +382,8 @@ msgstr "Email adreslerini artı işaretine basarak artırabilirsiniz."
 msgid "Email Addresses"
 msgstr "Email Adresleri"
 
-msgid "Mail Subject"
-msgstr "Mail Konusu"
+msgid "Mail Title"
+msgstr "Mail Basligi"
 
 msgid "Show company information on website"
-msgstr "Sirket bilgisini web sitesinde gosterme"
+msgstr "Sirket bilgisini web sitesinde gösterme"
