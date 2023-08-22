@@ -386,4 +386,4 @@ msgid "Mail Title"
 msgstr "Mail Basligi"
 
 msgid "Show company information on website"
-msgstr "Sirket bilgisini web sitesinde gösterme"
+msgstr "Sirket bilgisini firmalarimiz sayfasinda gösterme"

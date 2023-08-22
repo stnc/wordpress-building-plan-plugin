@@ -236,7 +236,7 @@ $map = $wpdb->get_row($wpdb->prepare($sql, $building_id,$floor_id));
                            
                  
                             <input type="checkbox" class="is_show"  name="is_show" <?php  echo $is_show==0 ? 'checked' : '' ?> id="is_show"> 
-                            <label for="email"> <strong><?php esc_html_e( 'Sirket bilgisini web sitesinde gosterme', 'the-stnc-map' ) ?></strong> </label>
+                            <label for="is_show"> <strong><?php esc_html_e( 'Show company information on website', 'the-stnc-map' ) ?></strong> </label>
                         </div>
                         <br>
                         <br>

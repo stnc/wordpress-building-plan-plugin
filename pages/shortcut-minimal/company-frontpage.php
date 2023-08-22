@@ -317,10 +317,10 @@ table.datatable-table:focus {
 }
 
 </style>
-
 <table class="table">
     
             <tbody>
+             
             <?php
 		  	foreach ($buildingsList as $building) : ?>
                 <tr>
