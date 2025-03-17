@@ -31,7 +31,7 @@
                             
                             $data = str_replace(
                                 [" ", "\\"],
-                                null,
+                                "",
                                 $result->map_location
                             );
                             $position = json_decode(
@@ -168,7 +168,7 @@
                                     $key++;
                                     $data = str_replace(
                                         [" ", "\\"],
-                                        null,
+                                        "",
                                         $result->map_location
                                     );
                                     $position = json_decode(

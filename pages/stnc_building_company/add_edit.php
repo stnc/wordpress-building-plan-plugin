@@ -1,8 +1,8 @@
 <?php
 
-$building_id=$_GET['building_id'];
-$floor_id=$_GET['floor_id'];
-$id=$_GET['id'];
+$building_id=isset($_GET['building_id']) ? sanitize_text_field($_GET['building_id']) : "";   
+$floor_id= isset($_GET['floor_id']) ? sanitize_text_field($_GET['floor_id']) : "";   
+$id=   isset($_GET['id']) ? sanitize_text_field($_GET['id']) : "";   
 
 
 

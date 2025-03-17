@@ -73,7 +73,7 @@
                           <?php
                               foreach ($results as $key => $result) :
                                    $key++;
-                                   $data =  str_replace([" ", '\\'], null, $result->map_location);
+                                   $data =  str_replace([" ", '\\'], "", $result->map_location);
                                    $position =  json_decode($data, true, JSON_UNESCAPED_SLASHES);
                             ?>
 
@@ -123,7 +123,7 @@ window.addEventListener('load', function() {
 
   
         foreach ($results as $key => $result) :
-            $data =  str_replace([" ", '\\'], null, $result->map_location);
+            $data =  str_replace([" ", '\\'], "", $result->map_location);
             $position =  json_decode($data, true, JSON_UNESCAPED_SLASHES);
 
         ?>

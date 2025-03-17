@@ -95,7 +95,7 @@ border-radius: 5px;">
     $web_site_permission_check = true;
     $company_description_permission_check = true;
     $address_permission_check = true;
-    $data = str_replace([" ", "\\"], null, $building->web_permission);
+    $data = str_replace([" ", "\\"], "", $building->web_permission);
     $web_permission = json_decode($data, true, JSON_UNESCAPED_SLASHES);
 
     if ($web_permission != "") {

@@ -36,7 +36,7 @@ function stnc_wp_floor_adminMenu_stnc_building_company()
         $is_empty =  $floorInfoData->is_empty;
         $company_category_id =  $floorInfoData->company_category_id;
         $is_show =  $floorInfoData->is_show;
-        $data =  str_replace([" ", '\\'], null, $web_permission);
+        $data =  str_replace([" ", '\\'], "", $web_permission);
         $web_permission =  json_decode($data, true, JSON_UNESCAPED_SLASHES);
 
         $table=$wpdb->prefix.'stnc_building_ext_categories';
@@ -147,7 +147,7 @@ function stnc_wp_floor_adminMenu_stnc_building_company()
         $company_category_id = isset($_POST["company_category_id"]) ? sanitize_text_field($_POST["company_category_id"]) : 0;
         $is_show = isset($_POST["is_show"]) ? 0: 1;
         $web_permission = '[{\"door_number_permission\":false,\"square_meters_permission\":false,\"email_permission\":false,\"phone_permission\":false,\"mobile_phone_permission\":false,\"web_site_permission\":false,\"company_description_permission\":false,\"address_permission\":false}]';
-        $data =  str_replace([" ", '\\'], null, $web_permission);
+        $data =  str_replace([" ", '\\'], "", $web_permission);
         $web_permission =  json_decode($data, true, JSON_UNESCAPED_SLASHES);
         $is_empty = 0;
         $table=$wpdb->prefix.'stnc_building_ext_categories';
